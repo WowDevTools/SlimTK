@@ -1,5 +1,28 @@
-﻿/*
-* Copyright (c) 2007-2010 SlimDX Group
+﻿// Copyright (c) 2010-2014 OpenTK - Alexandre Mutel
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// -----------------------------------------------------------------------------
+// Original code from SlimMath project. http://code.google.com/p/slimmath/
+// Greetings to SlimDX Group. Original code published with the following license:
+// -----------------------------------------------------------------------------
+/*
+* Copyright (c) 2007-2011 SlimDX Group
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +45,8 @@
 
 using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.ComponentModel;
 using OpenTK;
 
 namespace SlimTK
@@ -31,7 +54,6 @@ namespace SlimTK
 	/// <summary>
 	/// Represents a bounding sphere in three dimensional space.
 	/// </summary>
-	[Serializable]
 	[StructLayout(LayoutKind.Sequential, Pack = 4)]
 	public struct BoundingSphere : IEquatable<BoundingSphere>, IFormattable
 	{
@@ -41,14 +63,14 @@ namespace SlimTK
 		public Vector3 Center;
 
 		/// <summary>
-		/// The radious of the sphere.
+		/// The radius of the sphere.
 		/// </summary>
 		public float Radius;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="BoundingBox"/> struct.
 		/// </summary>
-		/// <param name="center">The center of the sphere.</param>
+		/// <param name="center">The center of the sphere in three dimensional space.</param>
 		/// <param name="radius">The radius of the sphere.</param>
 		public BoundingSphere(Vector3 center, float radius)
 		{
@@ -57,20 +79,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="BoundingBox"/> struct.
-		/// </summary>
-		/// <param name="centerX">The x-coordinate for the center of the sphere.</param>
-		/// <param name="centerY">The y-coordinate for the center of the sphere.</param>
-		/// <param name="centerZ">The z-coordinate for the center of the sphere.</param>
-		/// <param name="radius">The radius of the sphere.</param>
-		public BoundingSphere(float centerX, float centerY, float centerZ, float radius)
-		{
-			this.Center = new Vector3(centerX, centerY, centerZ);
-			this.Radius = radius;
-		}
-
-		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
@@ -81,7 +90,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="distance">When the method completes, contains the distance of the intersection,
@@ -93,7 +102,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="point">When the method completes, contains the point of intersection,
@@ -118,7 +127,7 @@ namespace SlimTK
 		/// Determines if there is an intersection between the current object and a triangle.
 		/// </summary>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
 		public bool Intersects(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3)
@@ -137,6 +146,16 @@ namespace SlimTK
 		}
 
 		/// <summary>
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingBox"/>.
+		/// </summary>
+		/// <param name="box">The box to test.</param>
+		/// <returns>Whether the two objects intersected.</returns>
+		public bool Intersects(BoundingBox box)
+		{
+			return Intersects(ref box);
+		}
+
+		/// <summary>
 		/// Determines if there is an intersection between the current object and a <see cref="BoundingSphere"/>.
 		/// </summary>
 		/// <param name="sphere">The sphere to test.</param>
@@ -144,6 +163,16 @@ namespace SlimTK
 		public bool Intersects(ref BoundingSphere sphere)
 		{
 			return Collision.SphereIntersectsSphere(ref this, ref sphere);
+		}
+
+		/// <summary>
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingSphere"/>.
+		/// </summary>
+		/// <param name="sphere">The sphere to test.</param>
+		/// <returns>Whether the two objects intersected.</returns>
+		public bool Intersects(BoundingSphere sphere)
+		{
+			return Intersects(ref sphere);
 		}
 
 		/// <summary>
@@ -160,7 +189,7 @@ namespace SlimTK
 		/// Determines whether the current objects contains a triangle.
 		/// </summary>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>The type of containment the two objects have.</returns>
 		public ContainmentType Contains(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3)
@@ -189,85 +218,53 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Translates and scales this instance by a <see cref="SlimMath.Matrix"/>.
-		/// </summary>
-		/// <param name="matrix">The <see cref="SlimMath.Matrix"/> to transform this instance by.</param>
-		/// <param name="result">When the method completes, contains the transformed <see cref="BoundingSphere"/>.</param>
-		/// <remarks>
-		/// The result of this operation is undefined if the matrix contains any transformations other than
-		/// translation, rotation, and uniform scaling.
-		/// </remarks>
-		public void Transform(ref Matrix4 matrix, out BoundingSphere result)
-		{
-			Vector3.TransformVector(ref Center, ref matrix, out result.Center);
-
-			float row1 = (matrix.M11 * matrix.M11) + (matrix.M12 * matrix.M12) + (matrix.M13 * matrix.M13);
-			float row2 = (matrix.M21 * matrix.M21) + (matrix.M22 * matrix.M22) + (matrix.M23 * matrix.M23);
-			float row3 = (matrix.M31 * matrix.M31) + (matrix.M32 * matrix.M32) + (matrix.M33 * matrix.M33);
-			float num = Math.Max(row1, Math.Max(row2, row3));
-
-			result.Radius = Radius * (float) Math.Sqrt(num);
-
-		}
-
-		/// <summary>
-		/// Translates and scales this instance by a <see cref="SlimMath.Matrix"/>.
-		/// </summary>
-		/// <param name="matrix">The <see cref="SlimMath.Matrix"/> to transform this instance by.</param>
-		/// <returns>The transformed <see cref="BoundingSphere"/>.</returns>
-		/// <remarks>
-		/// The result of this operation is undefined if the matrix contains any transformations other than
-		/// translation, rotation, and uniform scaling.
-		/// </remarks>
-		public BoundingSphere Transform(Matrix4 matrix)
-		{
-			BoundingSphere result;
-			Transform(ref matrix, out result);
-			return result;
-		}
-
-		/// <summary>
-		/// Generates a supporting point for this instance.
-		/// </summary>
-		/// <param name="direction">The direction for which to build the supporting point.</param>
-		/// <param name="result">When the method completes, contains the supporting point.</param>
-		public void SupportMapping(ref Vector3 direction, out Vector3 result)
-		{
-			Collision.SupportPoint(ref this, ref direction, out result);
-		}
-
-		/// <summary>
-		/// Generates a support mapping for this instance.
-		/// </summary>
-		/// <param name="direction">The direction for which to build the support mapping.</param>
-		/// <returns>The resulting support mapping.</returns>
-		public Vector3 SupportMapping(Vector3 direction)
-		{
-			Vector3 result;
-			SupportMapping(ref direction, out result);
-			return result;
-		}
-
-		/// <summary>
-		/// Constructs a <see cref="BoundingSphere"/> that fully contains the given points.
+		/// Constructs a <see cref="BoundingSphere" /> that fully contains the given points.
 		/// </summary>
 		/// <param name="points">The points that will be contained by the sphere.</param>
+		/// <param name="start">The start index from points array to start compute the bounding sphere.</param>
+		/// <param name="count">The count of points to process to compute the bounding sphere.</param>
 		/// <param name="result">When the method completes, contains the newly constructed bounding sphere.</param>
-		public static void FromPoints(Vector3[] points, out BoundingSphere result)
+		/// <exception cref="System.ArgumentNullException">points</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException">
+		/// start
+		/// or
+		/// count
+		/// </exception>
+		public static void FromPoints(Vector3[] points, int start, int count, out BoundingSphere result)
 		{
+			if (points == null)
+			{
+				throw new ArgumentNullException("points");
+			}
+
+			// Check that start is in the correct range
+			if (start < 0 || start >= points.Length)
+			{
+				throw new ArgumentOutOfRangeException("start", start,
+					string.Format("Must be in the range [0, {0}]", points.Length - 1));
+			}
+
+			// Check that count is in the correct range
+			if (count < 0 || (start + count) > points.Length)
+			{
+				throw new ArgumentOutOfRangeException("count", count, string.Format("Must be in the range <= {0}", points.Length));
+			}
+
+			var upperEnd = start + count;
+
 			//Find the center of all points.
 			Vector3 center = Vector3.Zero;
-			for (int i = 0; i < points.Length; ++i)
+			for (int i = start; i < upperEnd; ++i)
 			{
 				Vector3.Add(ref points[i], ref center, out center);
 			}
 
 			//This is the center of our sphere.
-			center /= (float) points.Length;
+			center /= (float) count;
 
 			//Find the radius of the sphere
 			float radius = 0f;
-			for (int i = 0; i < points.Length; ++i)
+			for (int i = start; i < upperEnd; ++i)
 			{
 				//We are doing a relative distance comparison to find the maximum distance
 				//from the center of our sphere.
@@ -283,6 +280,21 @@ namespace SlimTK
 			//Construct the sphere.
 			result.Center = center;
 			result.Radius = radius;
+		}
+
+		/// <summary>
+		/// Constructs a <see cref="BoundingSphere"/> that fully contains the given points.
+		/// </summary>
+		/// <param name="points">The points that will be contained by the sphere.</param>
+		/// <param name="result">When the method completes, contains the newly constructed bounding sphere.</param>
+		public static void FromPoints(Vector3[] points, out BoundingSphere result)
+		{
+			if (points == null)
+			{
+				throw new ArgumentNullException("points");
+			}
+
+			FromPoints(points, 0, points.Length, out result);
 		}
 
 		/// <summary>
@@ -382,9 +394,10 @@ namespace SlimTK
 		/// <param name="left">The first value to compare.</param>
 		/// <param name="right">The second value to compare.</param>
 		/// <returns><c>true</c> if <paramref name="left"/> has the same value as <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool operator ==(BoundingSphere left, BoundingSphere right)
 		{
-			return left.Equals(right);
+			return left.Equals(ref right);
 		}
 
 		/// <summary>
@@ -393,9 +406,10 @@ namespace SlimTK
 		/// <param name="left">The first value to compare.</param>
 		/// <param name="right">The second value to compare.</param>
 		/// <returns><c>true</c> if <paramref name="left"/> has a different value than <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool operator !=(BoundingSphere left, BoundingSphere right)
 		{
-			return !left.Equals(right);
+			return !left.Equals(ref right);
 		}
 
 		/// <summary>
@@ -463,7 +477,10 @@ namespace SlimTK
 		/// </returns>
 		public override int GetHashCode()
 		{
-			return Center.GetHashCode() + Radius.GetHashCode();
+			unchecked
+			{
+				return (Center.GetHashCode() * 397) ^ Radius.GetHashCode();
+			}
 		}
 
 		/// <summary>
@@ -473,71 +490,39 @@ namespace SlimTK
 		/// <returns>
 		/// <c>true</c> if the specified <see cref="Vector4"/> is equal to this instance; otherwise, <c>false</c>.
 		/// </returns>
-		public bool Equals(BoundingSphere value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool Equals(ref BoundingSphere value)
 		{
 			return Center == value.Center && Radius == value.Radius;
 		}
 
 		/// <summary>
+		/// Determines whether the specified <see cref="Vector4"/> is equal to this instance.
+		/// </summary>
+		/// <param name="value">The <see cref="Vector4"/> to compare with this instance.</param>
+		/// <returns>
+		/// <c>true</c> if the specified <see cref="Vector4"/> is equal to this instance; otherwise, <c>false</c>.
+		/// </returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool Equals(BoundingSphere value)
+		{
+			return Equals(ref value);
+		}
+
+		/// <summary>
 		/// Determines whether the specified <see cref="System.Object"/> is equal to this instance.
 		/// </summary>
-		/// <param name="obj">The <see cref="System.Object"/> to compare with this instance.</param>
+		/// <param name="value">The <see cref="System.Object"/> to compare with this instance.</param>
 		/// <returns>
 		/// <c>true</c> if the specified <see cref="System.Object"/> is equal to this instance; otherwise, <c>false</c>.
 		/// </returns>
-		public override bool Equals(object obj)
+		public override bool Equals(object value)
 		{
-			if (obj == null)
+			if (!(value is BoundingSphere))
 				return false;
 
-			if (obj.GetType() != GetType())
-				return false;
-
-			return Equals((BoundingSphere) obj);
+			var strongValue = (BoundingSphere) value;
+			return Equals(ref strongValue);
 		}
-
-#if SlimDX1xInterop
-/// <summary>
-/// Performs an implicit conversion from <see cref="SlimMath.BoundingSphere"/> to <see cref="SlimDX.BoundingSphere"/>.
-/// </summary>
-/// <param name="value">The value.</param>
-/// <returns>The result of the conversion.</returns>
-        public static implicit operator SlimDX.BoundingSphere(BoundingSphere value)
-        {
-            return new SlimDX.BoundingSphere(value.Center, value.Radius);
-        }
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="SlimDX.BoundingSphere"/> to <see cref="SlimMath.BoundingSphere"/>.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>The result of the conversion.</returns>
-        public static implicit operator BoundingSphere(SlimDX.BoundingSphere value)
-        {
-            return new BoundingSphere(value.Center, value.Radius);
-        }
-#endif
-
-#if XnaInterop
-/// <summary>
-/// Performs an implicit conversion from <see cref="SlimMath.BoundingSphere"/> to <see cref="Microsoft.Xna.Framework.BoundingSphere"/>.
-/// </summary>
-/// <param name="value">The value.</param>
-/// <returns>The result of the conversion.</returns>
-        public static implicit operator Microsoft.Xna.Framework.BoundingSphere(BoundingSphere value)
-        {
-            return new Microsoft.Xna.Framework.BoundingSphere(value.Center, value.Radius);
-        }
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="Microsoft.Xna.Framework.BoundingSphere"/> to <see cref="SlimMath.BoundingSphere"/>.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>The result of the conversion.</returns>
-        public static implicit operator BoundingSphere(Microsoft.Xna.Framework.BoundingSphere value)
-        {
-            return new BoundingSphere(value.Center, value.Radius);
-        }
-#endif
 	}
 }

@@ -1,5 +1,28 @@
-﻿/*
-* Copyright (c) 2007-2010 SlimDX Group
+﻿// Copyright (c) 2010-2014 OpenTK - Alexandre Mutel
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// -----------------------------------------------------------------------------
+// Original code from SlimMath project. http://code.google.com/p/slimmath/
+// Greetings to SlimDX Group. Original code published with the following license:
+// -----------------------------------------------------------------------------
+/*
+* Copyright (c) 2007-2011 SlimDX Group
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -21,10 +44,6 @@
 */
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
-using System.Runtime.InteropServices;
 using OpenTK;
 
 namespace SlimTK
@@ -41,18 +60,16 @@ namespace SlimTK
 	 * 3. Segment
 	 * 4. Plane
 	 * 5. Triangle
-	 * 6. Polygon (polygon that lies on a single plane)
-	 * 7. Tetrahedron
-	 * 8. Box
-	 * 9. AABox
-	 * 10. Sphere
-	 * 11. Ellipsoid
-	 * 12. Cylinder
-	 * 13. Cone
-	 * 14. Capsule
-	 * 15. Torus
-	 * 16. Polyhedron
-	 * 17. Frustum
+	 * 6. Polygon
+	 * 7. Box
+	 * 8. Sphere
+	 * 9. Ellipsoid
+	 * 10. Cylinder
+	 * 11. Cone
+	 * 12. Capsule
+	 * 13. Torus
+	 * 14. Polyhedron
+	 * 15. Frustum
 	*/
 
 	/// <summary>
@@ -61,46 +78,6 @@ namespace SlimTK
 	public static class Collision
 	{
 		/// <summary>
-		/// Determines the closest point between a point and a segment.
-		/// </summary>
-		/// <param name="point">The point to test.</param>
-		/// <param name="segment1">The starting point of the segment to test.</param>
-		/// <param name="segment2">The ending point of the segment to test.</param>
-		/// <param name="result">When the method completes, contains the closest point between the two objects.</param>
-		public static void ClosestPointOnSegmentToPoint(ref Vector3 segment1, ref Vector3 segment2, ref Vector3 point,
-			out Vector3 result)
-		{
-			Vector3 ab = segment2 - segment1;
-			float t = Vector3.Dot(point - segment1, ab) / Vector3.Dot(ab, ab);
-
-			if (t < 0.0f)
-				t = 0.0f;
-
-			if (t > 1.0f)
-				t = 1.0f;
-
-			result = segment1 + t * ab;
-		}
-
-		/// <summary>
-		/// Determines the closest point between a <see cref="Plane"/> and a point.
-		/// </summary>
-		/// <param name="plane">The plane to test.</param>
-		/// <param name="point">The point to test.</param>
-		/// <param name="result">When the method completes, contains the closest point between the two objects.</param>
-		public static void ClosestPointOnPlaneToPoint(ref Plane plane, ref Vector3 point, out Vector3 result)
-		{
-			//Source: Real-Time Collision Detection by Christer Ericson
-			//Reference: Page 126
-
-			float dot;
-			Vector3.Dot(ref plane.Normal, ref point, out dot);
-			float t = dot - plane.D;
-
-			result = point - (t * plane.Normal);
-		}
-
-		/// <summary>
 		/// Determines the closest point between a point and a triangle.
 		/// </summary>
 		/// <param name="point">The point to test.</param>
@@ -108,8 +85,8 @@ namespace SlimTK
 		/// <param name="vertex2">The second vertex to test.</param>
 		/// <param name="vertex3">The third vertex to test.</param>
 		/// <param name="result">When the method completes, contains the closest point between the two objects.</param>
-		public static void ClosestPointOnTriangleToPoint(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3,
-			ref Vector3 point, out Vector3 result)
+		public static void ClosestPointPointTriangle(ref Vector3 point, ref Vector3 vertex1, ref Vector3 vertex2,
+			ref Vector3 vertex3, out Vector3 result)
 		{
 			//Source: Real-Time Collision Detection by Christer Ericson
 			//Reference: Page 136
@@ -133,7 +110,7 @@ namespace SlimTK
 			float d4 = Vector3.Dot(ac, bp);
 			if (d3 >= 0.0f && d4 <= d3)
 			{
-				result = vertex2; // barycentric coordinates (0,1,0)
+				result = vertex2; // Barycentric coordinates (0,1,0)
 				return;
 			}
 
@@ -174,11 +151,29 @@ namespace SlimTK
 				return;
 			}
 
-			//P inside face region. Compute Q through its barycentric coordinates (u,v,w)
+			//P inside face region. Compute Q through its Barycentric coordinates (u,v,w)
 			float denom = 1.0f / (va + vb + vc);
 			float v2 = vb * denom;
 			float w2 = vc * denom;
 			result = vertex1 + ab * v2 + ac * w2; //= u*vertex1 + v*vertex2 + w*vertex3, u = va * denom = 1.0f - v - w
+		}
+
+		/// <summary>
+		/// Determines the closest point between a <see cref="Plane"/> and a point.
+		/// </summary>
+		/// <param name="plane">The plane to test.</param>
+		/// <param name="point">The point to test.</param>
+		/// <param name="result">When the method completes, contains the closest point between the two objects.</param>
+		public static void ClosestPointPlanePoint(ref Plane plane, ref Vector3 point, out Vector3 result)
+		{
+			//Source: Real-Time Collision Detection by Christer Ericson
+			//Reference: Page 126
+
+			float dot;
+			Vector3.Dot(ref plane.Normal, ref point, out dot);
+			float t = dot - plane.D;
+
+			result = point - (t * plane.Normal);
 		}
 
 		/// <summary>
@@ -187,12 +182,13 @@ namespace SlimTK
 		/// <param name="box">The box to test.</param>
 		/// <param name="point">The point to test.</param>
 		/// <param name="result">When the method completes, contains the closest point between the two objects.</param>
-		public static void ClosestPointOnBoxToPoint(ref BoundingBox box, ref Vector3 point, out Vector3 result)
+		public static void ClosestPointBoxPoint(ref BoundingBox box, ref Vector3 point, out Vector3 result)
 		{
 			//Source: Real-Time Collision Detection by Christer Ericson
 			//Reference: Page 130
+
 			var temp = Vector3.Max(point, box.Minimum);
-			result = Vector3.Min(temp, box.Maximum);
+			result = Vector3.Min(temp,box.Maximum);
 		}
 
 		/// <summary>
@@ -202,7 +198,7 @@ namespace SlimTK
 		/// <param name="point">The point to test.</param>
 		/// <param name="result">When the method completes, contains the closest point between the two objects;
 		/// or, if the point is directly in the center of the sphere, contains <see cref="Vector3.Zero"/>.</param>
-		public static void ClosestPointOnSphereToPoint(ref BoundingSphere sphere, ref Vector3 point, out Vector3 result)
+		public static void ClosestPointSpherePoint(ref BoundingSphere sphere, ref Vector3 point, out Vector3 result)
 		{
 			//Source: Jorgy343
 			//Reference: None
@@ -227,12 +223,11 @@ namespace SlimTK
 		/// <param name="result">When the method completes, contains the closest point between the two objects;
 		/// or, if the point is directly in the center of the sphere, contains <see cref="Vector3.Zero"/>.</param>
 		/// <remarks>
-		/// If the two spheres are overlapping, but not directly ontop of each other, the closest point
+		/// If the two spheres are overlapping, but not directly on top of each other, the closest point
 		/// is the 'closest' point of intersection. This can also be considered is the deepest point of
 		/// intersection.
 		/// </remarks>
-		public static void ClosestPointOnSphereToSphere(ref BoundingSphere sphere1, ref BoundingSphere sphere2,
-			out Vector3 result)
+		public static void ClosestPointSphereSphere(ref BoundingSphere sphere1, ref BoundingSphere sphere2, out Vector3 result)
 		{
 			//Source: Jorgy343
 			//Reference: None
@@ -304,6 +299,9 @@ namespace SlimTK
 		/// <returns>The distance between the two objects.</returns>
 		public static float DistanceBoxBox(ref BoundingBox box1, ref BoundingBox box2)
 		{
+			//Source:
+			//Reference:
+
 			float distance = 0f;
 
 			//Distance for X.
@@ -396,7 +394,7 @@ namespace SlimTK
 			//Same thing as RayIntersectsSphere except that the radius of the sphere (point)
 			//is the epsilon for zero.
 			float b = Vector3.Dot(m, ray.Direction);
-			float c = Vector3.Dot(m, m) - Utilities.ZeroTolerance;
+			float c = Vector3.Dot(m, m) - MathUtil.ZeroTolerance;
 
 			if (c > 0f && b > 0f)
 				return false;
@@ -420,12 +418,12 @@ namespace SlimTK
 		/// <remarks>
 		/// This method performs a ray vs ray intersection test based on the following formula
 		/// from Goldman.
-		/// <code>s = det([o₂ − o₁, d₂, d₁ ⨯ d₂]) / ‖d₁ ⨯ d₂‖²</code>
-		/// <code>t = det([o₂ − o₁, d₁, d₁ ⨯ d₂]) / ‖d₁ ⨯ d₂‖²</code>
-		/// Where o₁ is the position of the first ray, o₂ is the position of the second ray,
-		/// d₁ is the normalized direction of the first ray, d₂ is the normalized direction
-		/// of the second ray, det denotes the determinant of a matrix, ⨯ denotes the cross
-		/// product, [ ] denotes a matrix, and ‖ ‖ denotes the length or magnitude of a vector.
+		/// <code>s = det([o_2 - o_1, d_2, d_1 x d_2]) / ||d_1 x d_2||^2</code>
+		/// <code>t = det([o_2 - o_1, d_1, d_1 x d_2]) / ||d_1 x d_2||^2</code>
+		/// Where o_1 is the position of the first ray, o_2 is the position of the second ray,
+		/// d_1 is the normalized direction of the first ray, d_2 is the normalized direction
+		/// of the second ray, det denotes the determinant of a matrix, x denotes the cross
+		/// product, [ ] denotes a matrix, and || || denotes the length or magnitude of a vector.
 		/// </remarks>
 		public static bool RayIntersectsRay(ref Ray ray1, ref Ray ray2, out Vector3 point)
 		{
@@ -438,12 +436,12 @@ namespace SlimTK
 			float denominator = cross.Length;
 
 			//Lines are parallel.
-			if (Math.Abs(denominator) < Utilities.ZeroTolerance)
+			if (MathUtil.IsZero(denominator))
 			{
 				//Lines are parallel and on top of each other.
-				if (Math.Abs(ray2.Position.X - ray1.Position.X) < Utilities.ZeroTolerance &&
-				    Math.Abs(ray2.Position.Y - ray1.Position.Y) < Utilities.ZeroTolerance &&
-				    Math.Abs(ray2.Position.Z - ray1.Position.Z) < Utilities.ZeroTolerance)
+				if (MathUtil.NearEqual(ray2.Position.X, ray1.Position.X) &&
+				    MathUtil.NearEqual(ray2.Position.Y, ray1.Position.Y) &&
+				    MathUtil.NearEqual(ray2.Position.Z, ray1.Position.Z))
 				{
 					point = Vector3.Zero;
 					return true;
@@ -494,10 +492,10 @@ namespace SlimTK
 			Vector3 point1 = ray1.Position + (s * ray1.Direction);
 			Vector3 point2 = ray2.Position + (t * ray2.Direction);
 
-			//If the points are not equal, no intersection has occured.
-			if (Math.Abs(point2.X - point1.X) > Utilities.ZeroTolerance ||
-			    Math.Abs(point2.Y - point1.Y) > Utilities.ZeroTolerance ||
-			    Math.Abs(point2.Z - point1.Z) > Utilities.ZeroTolerance)
+			//If the points are not equal, no intersection has occurred.
+			if (!MathUtil.NearEqual(point2.X, point1.X) ||
+			    !MathUtil.NearEqual(point2.Y, point1.Y) ||
+			    !MathUtil.NearEqual(point2.Z, point1.Z))
 			{
 				point = Vector3.Zero;
 				return false;
@@ -523,7 +521,7 @@ namespace SlimTK
 			float direction;
 			Vector3.Dot(ref plane.Normal, ref ray.Direction, out direction);
 
-			if (Math.Abs(direction) < Utilities.ZeroTolerance)
+			if (MathUtil.IsZero(direction))
 			{
 				distance = 0f;
 				return false;
@@ -535,13 +533,8 @@ namespace SlimTK
 
 			if (distance < 0f)
 			{
-				if (distance < -Utilities.ZeroTolerance)
-				{
-					distance = 0;
-					return false;
-				}
-
 				distance = 0f;
+				return false;
 			}
 
 			return true;
@@ -576,7 +569,7 @@ namespace SlimTK
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <param name="distance">When the method completes, contains the distance of the intersection,
 		/// or 0 if there was no intersection.</param>
@@ -622,7 +615,7 @@ namespace SlimTK
 			//If the ray is parallel to the triangle plane, there is no collision.
 			//This also means that we are not culling, the ray may hit both the
 			//back and the front of the triangle.
-			if (determinant > -Utilities.ZeroTolerance && determinant < Utilities.ZeroTolerance)
+			if (MathUtil.IsZero(determinant))
 			{
 				distance = 0f;
 				return false;
@@ -687,7 +680,7 @@ namespace SlimTK
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <param name="point">When the method completes, contains the point of intersection,
 		/// or <see cref="Vector3.Zero"/> if there was no intersection.</param>
@@ -722,7 +715,7 @@ namespace SlimTK
 			distance = 0f;
 			float tmax = float.MaxValue;
 
-			if (Math.Abs(ray.Direction.X) < Utilities.ZeroTolerance)
+			if (MathUtil.IsZero(ray.Direction.X))
 			{
 				if (ray.Position.X < box.Minimum.X || ray.Position.X > box.Maximum.X)
 				{
@@ -753,7 +746,7 @@ namespace SlimTK
 				}
 			}
 
-			if (Math.Abs(ray.Direction.Y) < Utilities.ZeroTolerance)
+			if (MathUtil.IsZero(ray.Direction.Y))
 			{
 				if (ray.Position.Y < box.Minimum.Y || ray.Position.Y > box.Maximum.Y)
 				{
@@ -784,7 +777,7 @@ namespace SlimTK
 				}
 			}
 
-			if (Math.Abs(ray.Direction.Z) < Utilities.ZeroTolerance)
+			if (MathUtil.IsZero(ray.Direction.Z))
 			{
 				if (ray.Position.Z < box.Minimum.Z || ray.Position.Z > box.Maximum.Z)
 				{
@@ -847,45 +840,16 @@ namespace SlimTK
 		/// <param name="distance">When the method completes, contains the distance of the intersection,
 		/// or 0 if there was no intersection.</param>
 		/// <returns>Whether the two objects intersected.</returns>
-		/// <remarks>
-		/// <para>
-		/// This method uses the following math to compute the intersection:
-		/// ‖x − c‖² = r²           Equation of sphere
-		/// x = s + td              Equation of ray
-		///
-		/// Solve for t
-		/// ‖s + td − c‖² = r²      Substitute equation of ray into equation of sphere
-		/// v ≝ s − c
-		/// ‖v + td‖² = r²
-		/// v² + 2v⋅td + t²d² = r²
-		/// d²t² + (2v⋅d)t + (v² − r²) = 0
-		/// t² + (2v⋅d)t + (v² − r²) = 0    If d is a normalized vector
-		///
-		/// Quadratic equation gives us
-		/// t = (−(2v⋅d) ± √((2v⋅d)² − 4(v² − r)²)) / 2
-		/// t = −(v⋅d) ± √((v⋅d)² − (v² − r)²)
-		/// </para>
-		/// <para>
-		/// Entrance of intersection is given by the smaller t
-		/// t = −(v⋅d) − √((v⋅d)² − (v² − r)²)
-		///
-		/// Exit of intersection is given by the larger t
-		/// t = −(v⋅d) + √((v⋅d)² − (v² − r)²)
-		///
-		/// If the smaller t value is &lt; 0 than the ray started inside of the sphere.
-		///
-		/// If the descriminant (v⋅d)² − (v² − r)² is &lt; 0 than no intersection occured. If the
-		/// descriminant (v⋅d)² − (v² − r)² is = 0 than the ray is tangential to the sphere. If
-		/// the descriminant (v⋅d)² − (v² − r)² is > 0 than the ray passes through the sphere.
-		/// </para>
-		/// </remarks>
 		public static bool RayIntersectsSphere(ref Ray ray, ref BoundingSphere sphere, out float distance)
 		{
-			Vector3 v;
-			Vector3.Subtract(ref ray.Position, ref sphere.Center, out v);
+			//Source: Real-Time Collision Detection by Christer Ericson
+			//Reference: Page 177
 
-			float b = Vector3.Dot(v, ray.Direction);
-			float c = Vector3.Dot(v, v) - (sphere.Radius * sphere.Radius);
+			Vector3 m;
+			Vector3.Subtract(ref ray.Position, ref sphere.Center, out m);
+
+			float b = Vector3.Dot(m, ray.Direction);
+			float c = Vector3.Dot(m, m) - (sphere.Radius * sphere.Radius);
 
 			if (c > 0f && b > 0f)
 			{
@@ -917,38 +881,6 @@ namespace SlimTK
 		/// <param name="point">When the method completes, contains the point of intersection,
 		/// or <see cref="Vector3.Zero"/> if there was no intersection.</param>
 		/// <returns>Whether the two objects intersected.</returns>
-		/// <remarks>
-		/// <para>
-		/// This method uses the following math to compute the intersection:
-		/// ‖x − c‖² = r²           Equation of sphere
-		/// x = s + td              Equation of ray
-		///
-		/// Solve for t
-		/// ‖s + td − c‖² = r²      Substitute equation of ray into equation of sphere
-		/// v ≝ s − c
-		/// ‖v + td‖² = r²
-		/// v² + 2v⋅td + t²d² = r²
-		/// d²t² + (2v⋅d)t + (v² − r²) = 0
-		/// t² + (2v⋅d)t + (v² − r²) = 0    If d is a normalized vector
-		///
-		/// Quadratic equation gives us
-		/// t = (−(2v⋅d) ± √((2v⋅d)² − 4(v² − r)²)) / 2
-		/// t = −(v⋅d) ± √((v⋅d)² − (v² − r)²)
-		/// </para>
-		/// <para>
-		/// Entrance of intersection is given by the smaller t
-		/// t = −(v⋅d) − √((v⋅d)² − (v² − r)²)
-		///
-		/// Exit of intersection is given by the larger t
-		/// t = −(v⋅d) + √((v⋅d)² − (v² − r)²)
-		///
-		/// If the smaller t value is &lt; 0 than the ray started inside of the sphere.
-		///
-		/// If the descriminant (v⋅d)² − (v² − r)² is &lt; 0 than no intersection occured. If the
-		/// descriminant (v⋅d)² − (v² − r)² is = 0 than the ray is tangential to the sphere. If
-		/// the descriminant (v⋅d)² − (v² − r)² is > 0 than the ray passes through the sphere.
-		/// </para>
-		/// </remarks>
 		public static bool RayIntersectsSphere(ref Ray ray, ref BoundingSphere sphere, out Vector3 point)
 		{
 			float distance;
@@ -959,163 +891,6 @@ namespace SlimTK
 			}
 
 			point = ray.Position + (ray.Direction * distance);
-			return true;
-		}
-
-		/// <summary>
-		/// Determines whether there is an intersection between a <see cref="Ray"/> and a <see cref="BoundingSphere"/>.
-		/// </summary>
-		/// <param name="ray">The ray to test.</param>
-		/// <param name="sphere">The sphere to test.</param>
-		/// <param name="point">When the method completes, contains the point of intersection,
-		/// or <see cref="Vector3.Zero"/> if there was no intersection.</param>
-		/// <param name="normal">When the method completes, contains the normal vector on the
-		/// sphere at the point of intersection.</param>
-		/// <returns>Whether the two objects intersected.</returns>
-		/// <remarks>
-		/// <para>
-		/// This method uses the following math to compute the intersection:
-		/// ‖x − c‖² = r²           Equation of sphere
-		/// x = s + td              Equation of ray
-		///
-		/// Solve for t
-		/// ‖s + td − c‖² = r²      Substitute equation of ray into equation of sphere
-		/// v ≝ s − c
-		/// ‖v + td‖² = r²
-		/// v² + 2v⋅td + t²d² = r²
-		/// d²t² + (2v⋅d)t + (v² − r²) = 0
-		/// t² + (2v⋅d)t + (v² − r²) = 0    If d is a normalized vector
-		///
-		/// Quadratic equation gives us
-		/// t = (−(2v⋅d) ± √((2v⋅d)² − 4(v² − r)²)) / 2
-		/// t = −(v⋅d) ± √((v⋅d)² − (v² − r)²)
-		/// </para>
-		/// <para>
-		/// Entrance of intersection is given by the smaller t
-		/// t = −(v⋅d) − √((v⋅d)² − (v² − r)²)
-		///
-		/// Exit of intersection is given by the larger t
-		/// t = −(v⋅d) + √((v⋅d)² − (v² − r)²)
-		///
-		/// If the smaller t value is &lt; 0 than the ray started inside of the sphere.
-		///
-		/// If the descriminant (v⋅d)² − (v² − r)² is &lt; 0 than no intersection occured. If the
-		/// descriminant (v⋅d)² − (v² − r)² is = 0 than the ray is tangential to the sphere. If
-		/// the descriminant (v⋅d)² − (v² − r)² is > 0 than the ray passes through the sphere.
-		/// </para>
-		/// </remarks>
-		public static bool RayIntersectsSphere(ref Ray ray, ref BoundingSphere sphere, out Vector3 point, out Vector3 normal)
-		{
-			float distance;
-			if (!RayIntersectsSphere(ref ray, ref sphere, out distance))
-			{
-				point = Vector3.Zero;
-				normal = Vector3.Zero;
-				return false;
-			}
-
-			point = ray.Position + (ray.Direction * distance);
-			normal = point - sphere.Center;
-			normal.Normalize();
-			return true;
-		}
-
-		/// <summary>
-		/// Determines whether there is an intersection between a <see cref="Ray"/> and a <see cref="BoundingSphere"/>.
-		/// </summary>
-		/// <param name="ray">The ray to test.</param>
-		/// <param name="sphere">The sphere to test.</param>
-		/// <param name="entrancePoint">When the method completes, contains the closest point of intersection,
-		/// or <see cref="Vector3.Zero"/> if there was no intersection.</param>
-		/// <param name="entranceNormal">When the method completes, contains the normal vector on the
-		/// sphere at the point of closest intersection.</param>
-		/// <param name="exitPoint">When the method completes, contains the farthest point of intersection,
-		/// or <see cref="Vector3.Zero"/> if there was no intersection.</param>
-		/// <param name="exitNormal">Whent he method completes, contains the normal vector on the
-		/// sphere at the point of farthest intersection.</param>
-		/// <returns>Whether the two objects intersected.</returns>
-		/// <remarks>
-		/// <para>
-		/// This method uses the following math to compute the intersection:
-		/// ‖x − c‖² = r²           Equation of sphere
-		/// x = s + td              Equation of ray
-		///
-		/// Solve for t
-		/// ‖s + td − c‖² = r²      Substitute equation of ray into equation of sphere
-		/// v ≝ s − c
-		/// ‖v + td‖² = r²
-		/// v² + 2v⋅td + t²d² = r²
-		/// d²t² + (2v⋅d)t + (v² − r²) = 0
-		/// t² + (2v⋅d)t + (v² − r²) = 0    If d is a normalized vector
-		///
-		/// Quadratic equation gives us
-		/// t = (−(2v⋅d) ± √((2v⋅d)² − 4(v² − r)²)) / 2
-		/// t = −(v⋅d) ± √((v⋅d)² − (v² − r)²)
-		/// </para>
-		/// <para>
-		/// Entrance of intersection is given by the smaller t
-		/// t = −(v⋅d) − √((v⋅d)² − (v² − r)²)
-		///
-		/// Exit of intersection is given by the larger t
-		/// t = −(v⋅d) + √((v⋅d)² − (v² − r)²)
-		///
-		/// If the smaller t value is &lt; 0 than the ray started inside of the sphere.
-		///
-		/// If the descriminant (v⋅d)² − (v² − r)² is &lt; 0 than no intersection occured. If the
-		/// descriminant (v⋅d)² − (v² − r)² is = 0 than the ray is tangential to the sphere. If
-		/// the descriminant (v⋅d)² − (v² − r)² is > 0 than the ray passes through the sphere.
-		/// </para>
-		/// </remarks>
-		public static bool RayIntersectsSphere(ref Ray ray, ref BoundingSphere sphere, out Vector3 entrancePoint,
-			out Vector3 entranceNormal, out Vector3 exitPoint, out Vector3 exitNormal)
-		{
-			Vector3 v;
-			Vector3.Subtract(ref ray.Position, ref sphere.Center, out v);
-
-			float b = Vector3.Dot(v, ray.Direction);
-			float c = Vector3.Dot(v, v) - (sphere.Radius * sphere.Radius);
-
-			if (c > 0f && b > 0f)
-			{
-				entrancePoint = Vector3.Zero;
-				entranceNormal = Vector3.Zero;
-				exitPoint = Vector3.Zero;
-				exitNormal = Vector3.Zero;
-				return false;
-			}
-
-			float discriminant = b * b - c;
-
-			if (discriminant < 0f)
-			{
-				entrancePoint = Vector3.Zero;
-				entranceNormal = Vector3.Zero;
-				exitPoint = Vector3.Zero;
-				exitNormal = Vector3.Zero;
-				return false;
-			}
-
-			float discriminantSquared = (float) Math.Sqrt(discriminant);
-			float distance1 = -b - discriminantSquared;
-			float distance2 = -b + discriminantSquared;
-
-			if (distance1 < 0f)
-			{
-				distance1 = 0f;
-				entrancePoint = Vector3.Zero;
-				entranceNormal = Vector3.Zero;
-			}
-			else
-			{
-				entrancePoint = ray.Position + (ray.Direction * distance1);
-				entranceNormal = entrancePoint - sphere.Center;
-				entranceNormal.Normalize();
-			}
-
-			exitPoint = ray.Position + (ray.Direction * distance2);
-			exitNormal = exitPoint - sphere.Center;
-			exitNormal.Normalize();
-
 			return true;
 		}
 
@@ -1156,7 +931,7 @@ namespace SlimTK
 			float denominator;
 			Vector3.Dot(ref direction, ref direction, out denominator);
 
-			if (Math.Abs(denominator) < Utilities.ZeroTolerance)
+			if (MathUtil.IsZero(denominator))
 				return false;
 
 			return true;
@@ -1190,8 +965,8 @@ namespace SlimTK
 
 			//We assume the planes are normalized, therefore the denominator
 			//only serves as a parallel and coincident check. Otherwise we need
-			//to deivide the point by the denominator.
-			if (Math.Abs(denominator) < Utilities.ZeroTolerance)
+			//to divide the point by the denominator.
+			if (MathUtil.IsZero(denominator))
 			{
 				line = new Ray();
 				return false;
@@ -1213,7 +988,7 @@ namespace SlimTK
 		/// </summary>
 		/// <param name="plane">The plane to test.</param>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
 		public static PlaneIntersectionType PlaneIntersectsTriangle(ref Plane plane, ref Vector3 vertex1, ref Vector3 vertex2,
@@ -1295,76 +1070,29 @@ namespace SlimTK
 			return PlaneIntersectionType.Intersecting;
 		}
 
-		//THIS IMPLEMENTATION IS INCOMPLETE!
-		//NEEDS TO BE COMPLETED SOON
+		/* This implementation is wrong
 		/// <summary>
-		/// Determines whether there is an intersection between a <see cref="BoundingBox"/> and a triangle.
+		/// Determines whether there is an intersection between a <see cref="OpenTK.BoundingBox"/> and a triangle.
 		/// </summary>
 		/// <param name="box">The box to test.</param>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
-		public static bool BoxIntersectsTriangle(ref BoundingBox box, ref Vector3 vertex1, ref Vector3 vertex2,
-			ref Vector3 vertex3)
+		public static bool BoxIntersectsTriangle(ref BoundingBox box, ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3)
 		{
-			//Source: Real-Time Collision Detection by Christer Ericson
-			//Reference: Page 169
+		    if (BoxContainsPoint(ref box, ref vertex1) == ContainmentType.Contains)
+		        return true;
 
-			float p0, p1, p2, r;
+		    if (BoxContainsPoint(ref box, ref vertex2) == ContainmentType.Contains)
+		        return true;
 
-			//Compute box center and extents (if not already given in that format)
-			Vector3 center = (box.Minimum + box.Maximum) * 0.5f;
-			float e0 = (box.Maximum.X - box.Minimum.X) * 0.5f;
-			float e1 = (box.Maximum.Y - box.Minimum.Y) * 0.5f;
-			float e2 = (box.Maximum.Z - box.Minimum.Z) * 0.5f;
+		    if (BoxContainsPoint(ref box, ref vertex3) == ContainmentType.Contains)
+		        return true;
 
-			//Translate triangle as conceptually moving AABB to origin
-			vertex1 = vertex1 - center;
-			vertex2 = vertex2 - center;
-			vertex3 = vertex3 - center;
-
-			//Compute edge vectors for triangle
-			Vector3 f0 = vertex2 - vertex1;
-			Vector3 f1 = vertex3 - vertex2;
-			Vector3 f2 = vertex1 - vertex3;
-
-			//Test axes a00..a22 (category 3)
-			//Test axis a00
-			p0 = vertex1.Z * vertex2.Y - vertex1.Y * vertex2.Z;
-			p2 = vertex3.Z * (vertex2.Y - vertex1.Y) - vertex3.Z * (vertex2.Z - vertex1.Z);
-			r = e1 * Math.Abs(f0.Z) + e2 * Math.Abs(f0.Y);
-
-			if (Math.Max(-Math.Max(p0, p2), Math.Min(p0, p2)) > r)
-				return false; //Axis is a separating axis
-
-			//Repeat similar tests for remaining axes a01..a22
-			//...
-
-			//Test the three axes corresponding to the face normals of AABB b (category 1).
-			//Exit if...
-			// ... [-e0, e0] and [Math.Min(vertex1.X,vertex2.X,vertex3.X), Math.Max(vertex1.X,vertex2.X,vertex3.X)] do not overlap
-			if (Math.Max(Math.Max(vertex1.X, vertex2.X), vertex3.X) < -e0 ||
-			    Math.Min(Math.Min(vertex1.X, vertex2.X), vertex3.X) > e0)
-				return false;
-
-			// ... [-e1, e1] and [Math.Min(vertex1.Y,vertex2.Y,vertex3.Y), Math.Max(vertex1.Y,vertex2.Y,vertex3.Y)] do not overlap
-			if (Math.Max(Math.Max(vertex1.Y, vertex2.Y), vertex3.Y) < -e1 ||
-			    Math.Min(Math.Min(vertex1.Y, vertex2.Y), vertex3.Y) > e1)
-				return false;
-
-			// ... [-e2, e2] and [Math.Min(vertex1.Z,vertex2.Z,vertex3.Z), Math.Max(vertex1.Z,vertex2.Z,vertex3.Z)] do not overlap
-			if (Math.Max(Math.Max(vertex1.Z, vertex2.Z), vertex3.Z) < -e2 ||
-			    Math.Min(Math.Min(vertex1.Z, vertex2.Z), vertex3.Z) > e2)
-				return false;
-
-			//Test separating axis corresponding to triangle face normal (category 2)
-			Plane plane;
-			plane.Normal = Vector3.Cross(f0, f1);
-			plane.D = Vector3.Dot(plane.Normal, vertex1);
-
-			return PlaneIntersectsBox(ref plane, ref box) == PlaneIntersectionType.Intersecting;
+		    return false;
 		}
+		*/
 
 		/// <summary>
 		/// Determines whether there is an intersection between a <see cref="BoundingBox"/> and a <see cref="BoundingBox"/>.
@@ -1409,7 +1137,7 @@ namespace SlimTK
 		/// </summary>
 		/// <param name="sphere">The sphere to test.</param>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
 		public static bool SphereIntersectsTriangle(ref BoundingSphere sphere, ref Vector3 vertex1, ref Vector3 vertex2,
@@ -1419,7 +1147,7 @@ namespace SlimTK
 			//Reference: Page 167
 
 			Vector3 point;
-			ClosestPointOnTriangleToPoint(ref sphere.Center, ref vertex1, ref vertex2, ref vertex3, out point);
+			ClosestPointPointTriangle(ref sphere.Center, ref vertex1, ref vertex2, ref vertex3, out point);
 			Vector3 v = point - sphere.Center;
 
 			float dot;
@@ -1458,29 +1186,30 @@ namespace SlimTK
 			return ContainmentType.Disjoint;
 		}
 
+		/* This implementation is wrong
 		/// <summary>
-		/// Determines whether a <see cref="BoundingBox"/> contains a triangle.
+		/// Determines whether a <see cref="OpenTK.BoundingBox"/> contains a triangle.
 		/// </summary>
 		/// <param name="box">The box to test.</param>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>The type of containment the two objects have.</returns>
-		public static ContainmentType BoxContainsTriangle(ref BoundingBox box, ref Vector3 vertex1, ref Vector3 vertex2,
-			ref Vector3 vertex3)
+		public static ContainmentType BoxContainsTriangle(ref BoundingBox box, ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3)
 		{
-			ContainmentType test1 = BoxContainsPoint(ref box, ref vertex1);
-			ContainmentType test2 = BoxContainsPoint(ref box, ref vertex2);
-			ContainmentType test3 = BoxContainsPoint(ref box, ref vertex3);
+		    ContainmentType test1 = BoxContainsPoint(ref box, ref vertex1);
+		    ContainmentType test2 = BoxContainsPoint(ref box, ref vertex2);
+		    ContainmentType test3 = BoxContainsPoint(ref box, ref vertex3);
 
-			if (test1 == ContainmentType.Contains && test2 == ContainmentType.Contains && test3 == ContainmentType.Contains)
-				return ContainmentType.Contains;
+		    if (test1 == ContainmentType.Contains && test2 == ContainmentType.Contains && test3 == ContainmentType.Contains)
+		        return ContainmentType.Contains;
 
-			if (BoxIntersectsTriangle(ref box, ref vertex1, ref vertex2, ref vertex3))
-				return ContainmentType.Intersects;
+		    if (test1 == ContainmentType.Contains || test2 == ContainmentType.Contains || test3 == ContainmentType.Contains)
+		        return ContainmentType.Intersects;
 
-			return ContainmentType.Disjoint;
+		    return ContainmentType.Disjoint;
 		}
+		*/
 
 		/// <summary>
 		/// Determines whether a <see cref="BoundingBox"/> contains a <see cref="BoundingBox"/>.
@@ -1529,7 +1258,7 @@ namespace SlimTK
 			      (box.Minimum.Y + sphere.Radius <= sphere.Center.Y))) &&
 			    (((sphere.Center.Y <= box.Maximum.Y - sphere.Radius) && (box.Maximum.Y - box.Minimum.Y > sphere.Radius)) &&
 			     (((box.Minimum.Z + sphere.Radius <= sphere.Center.Z) && (sphere.Center.Z <= box.Maximum.Z - sphere.Radius)) &&
-			      (box.Maximum.X - box.Minimum.X > sphere.Radius))))
+			      (box.Maximum.Z - box.Minimum.Z > sphere.Radius))))
 			{
 				return ContainmentType.Contains;
 			}
@@ -1556,7 +1285,7 @@ namespace SlimTK
 		/// </summary>
 		/// <param name="sphere">The sphere to test.</param>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>The type of containment the two objects have.</returns>
 		public static ContainmentType SphereContainsTriangle(ref BoundingSphere sphere, ref Vector3 vertex1,
@@ -1668,76 +1397,6 @@ namespace SlimTK
 				return ContainmentType.Intersects;
 
 			return ContainmentType.Contains;
-		}
-
-		/// <summary>
-		/// Generates a supporting point from a specific triangle.
-		/// </summary>
-		/// <param name="vertex1">The first vertex of the triangle.</param>
-		/// <param name="vertex2">The second vertex of the triangle.</param>
-		/// <param name="vertex3">The third vertex of the triangle</param>
-		/// <param name="direction">The direction for which to build the supporting point.</param>
-		/// <param name="result">When the method completes, contains the supporting point.</param>
-		public static void SupportPoint(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3, ref Vector3 direction,
-			out Vector3 result)
-		{
-			float dot1 = Vector3.Dot(vertex1, direction);
-			float dot2 = Vector3.Dot(vertex2, direction);
-			float dot3 = Vector3.Dot(vertex3, direction);
-
-			if (dot1 > dot2 && dot1 > dot3)
-				result = vertex1;
-			else if (dot2 > dot1 && dot2 > dot3)
-				result = vertex2;
-			else
-				result = vertex3;
-		}
-
-		/// <summary>
-		/// Generates a supporting point from a specific <see cref="BoundingBox"/>.
-		/// </summary>
-		/// <param name="box">The box to generate the supporting point for.</param>
-		/// <param name="direction">The direction for which to build the supporting point.</param>
-		/// <param name="result">When the method completes, contains the supporting point.</param>
-		public static void SupportPoint(ref BoundingBox box, ref Vector3 direction, out Vector3 result)
-		{
-			result.X = direction.X >= 0.0f ? box.Maximum.X : box.Minimum.X;
-			result.Y = direction.Y >= 0.0f ? box.Maximum.Y : box.Minimum.Y;
-			result.Z = direction.Z >= 0.0f ? box.Maximum.Z : box.Minimum.Z;
-		}
-
-		/// <summary>
-		/// Generates a supporting point from a specific <see cref="BoundingSphere"/>.
-		/// </summary>
-		/// <param name="sphere">The sphere to generate the supporting point for.</param>
-		/// <param name="direction">The direction for which to build the supporting point.</param>
-		/// <param name="result">When the method completes, contains the supporting point.</param>
-		public static void SupportPoint(ref BoundingSphere sphere, ref Vector3 direction, out Vector3 result)
-		{
-			result = (sphere.Radius / direction.Length) * direction + sphere.Center;
-		}
-
-		/// <summary>
-		/// Generates a supporting point from a polyhedra.
-		/// </summary>
-		/// <param name="points">The points that make up the polyhedra.</param>
-		/// <param name="direction">The direction for which to build the supporting point.</param>
-		/// <param name="result">When the method completes, contains the supporting point.</param>
-		public static void SupportPoint(IEnumerable<Vector3> points, ref Vector3 direction, out Vector3 result)
-		{
-			float maxdot = float.MinValue;
-			result = Vector3.Zero;
-
-			foreach (Vector3 point in points)
-			{
-				float tempdot = Vector3.Dot(direction, point);
-
-				if (tempdot > maxdot)
-				{
-					maxdot = tempdot;
-					result = point;
-				}
-			}
 		}
 	}
 }

@@ -29,6 +29,52 @@ namespace SlimTK
 	public static class VectorMath
 	{
 		/// <summary>
+		/// Projects a 3D vector from screen space into object space.
+		/// </summary>
+		/// <param name="vector">The vector to project.</param>
+		/// <param name="x">The X position of the viewport.</param>
+		/// <param name="y">The Y position of the viewport.</param>
+		/// <param name="width">The width of the viewport.</param>
+		/// <param name="height">The height of the viewport.</param>
+		/// <param name="minZ">The minimum depth of the viewport.</param>
+		/// <param name="maxZ">The maximum depth of the viewport.</param>
+		/// <param name="worldViewProjection">The combined world-view-projection matrix.</param>
+		/// <param name="result">When the method completes, contains the vector in object space.</param>
+		public static void Unproject(ref Vector3 vector, float x, float y, float width, float height, float minZ, float maxZ,
+			ref Matrix4 worldViewProjection, out Vector3 result)
+		{
+			Vector3 v = new Vector3();
+			Matrix4 matrix = new Matrix4();
+			Matrix4.Invert(ref worldViewProjection, out matrix);
+
+			v.X = (((vector.X - x) / width) * 2.0f) - 1.0f;
+			v.Y = -((((vector.Y - y) / height) * 2.0f) - 1.0f);
+			v.Z = (vector.Z - minZ) / (maxZ - minZ);
+
+			Vector3.TransformVector(ref v, ref matrix, out result);
+		}
+
+		/// <summary>
+		/// Projects a 3D vector from screen space into object space.
+		/// </summary>
+		/// <param name="vector">The vector to project.</param>
+		/// <param name="x">The X position of the viewport.</param>
+		/// <param name="y">The Y position of the viewport.</param>
+		/// <param name="width">The width of the viewport.</param>
+		/// <param name="height">The height of the viewport.</param>
+		/// <param name="minZ">The minimum depth of the viewport.</param>
+		/// <param name="maxZ">The maximum depth of the viewport.</param>
+		/// <param name="worldViewProjection">The combined world-view-projection matrix.</param>
+		/// <returns>The vector in object space.</returns>
+		public static Vector3 Unproject(Vector3 vector, float x, float y, float width, float height, float minZ, float maxZ,
+			Matrix4 worldViewProjection)
+		{
+			Vector3 result;
+			Unproject(ref vector, x, y, width, height, minZ, maxZ, ref worldViewProjection, out result);
+			return result;
+		}
+
+		/// <summary>
 		/// Calculates the distance between two vectors.
 		/// </summary>
 		/// <param name="value1">The first vector.</param>

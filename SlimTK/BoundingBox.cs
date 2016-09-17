@@ -1,5 +1,28 @@
-﻿/*
-* Copyright (c) 2007-2010 SlimDX Group
+﻿// Copyright (c) 2010-2014 OpenTK - Alexandre Mutel
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// -----------------------------------------------------------------------------
+// Original code from SlimMath project. http://code.google.com/p/slimmath/
+// Greetings to SlimDX Group. Original code published with the following license:
+// -----------------------------------------------------------------------------
+/*
+* Copyright (c) 2007-2011 SlimDX Group
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -22,17 +45,15 @@
 
 using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.ComponentModel;
 using OpenTK;
-using SlimTK;
 
 namespace SlimTK
 {
 	/// <summary>
 	/// Represents an axis-aligned bounding box in three dimensional space.
 	/// </summary>
-	[Serializable]
 	[StructLayout(LayoutKind.Sequential, Pack = 4)]
 	public struct BoundingBox : IEquatable<BoundingBox>, IFormattable
 	{
@@ -47,7 +68,7 @@ namespace SlimTK
 		public Vector3 Maximum;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.BoundingBox"/> struct.
+		/// Initializes a new instance of the <see cref="BoundingBox"/> struct.
 		/// </summary>
 		/// <param name="minimum">The minimum vertex of the bounding box.</param>
 		/// <param name="maximum">The maximum vertex of the bounding box.</param>
@@ -58,40 +79,34 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.BoundingBox"/> struct.
-		/// </summary>
-		/// <param name="minimumX">The minimum x-coordinate of the bounding box.</param>
-		/// <param name="minimumY">The minimum y-coordinate of the bounding box.</param>
-		/// <param name="minimumZ">The minimum z-coordinate of the bounding box.</param>
-		/// <param name="maximumX">The maximum x-coordinate of the bounding box.</param>
-		/// <param name="maximumY">The maximum y-coordinate of the bounding box.</param>
-		/// <param name="maximumZ">The maximum z-coordinate of the bounding box.</param>
-		public BoundingBox(float minimumX, float minimumY, float minimumZ, float maximumX, float maximumY, float maximumZ)
-		{
-			this.Minimum = new Vector3(minimumX, minimumY, minimumZ);
-			this.Maximum = new Vector3(maximumX, maximumY, maximumZ);
-		}
-
-		/// <summary>
 		/// Retrieves the eight corners of the bounding box.
 		/// </summary>
 		/// <returns>An array of points representing the eight corners of the bounding box.</returns>
 		public Vector3[] GetCorners()
 		{
 			Vector3[] results = new Vector3[8];
-			results[0] = new Vector3(Minimum.X, Maximum.Y, Maximum.Z);
-			results[1] = new Vector3(Maximum.X, Maximum.Y, Maximum.Z);
-			results[2] = new Vector3(Maximum.X, Minimum.Y, Maximum.Z);
-			results[3] = new Vector3(Minimum.X, Minimum.Y, Maximum.Z);
-			results[4] = new Vector3(Minimum.X, Maximum.Y, Minimum.Z);
-			results[5] = new Vector3(Maximum.X, Maximum.Y, Minimum.Z);
-			results[6] = new Vector3(Maximum.X, Minimum.Y, Minimum.Z);
-			results[7] = new Vector3(Minimum.X, Minimum.Y, Minimum.Z);
+			GetCorners(results);
 			return results;
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Retrieves the eight corners of the bounding box.
+		/// </summary>
+		/// <returns>An array of points representing the eight corners of the bounding box.</returns>
+		public void GetCorners(Vector3[] corners)
+		{
+			corners[0] = new Vector3(Minimum.X, Maximum.Y, Maximum.Z);
+			corners[1] = new Vector3(Maximum.X, Maximum.Y, Maximum.Z);
+			corners[2] = new Vector3(Maximum.X, Minimum.Y, Maximum.Z);
+			corners[3] = new Vector3(Minimum.X, Minimum.Y, Maximum.Z);
+			corners[4] = new Vector3(Minimum.X, Maximum.Y, Minimum.Z);
+			corners[5] = new Vector3(Maximum.X, Maximum.Y, Minimum.Z);
+			corners[6] = new Vector3(Maximum.X, Minimum.Y, Minimum.Z);
+			corners[7] = new Vector3(Minimum.X, Minimum.Y, Minimum.Z);
+		}
+
+		/// <summary>
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
@@ -102,7 +117,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="distance">When the method completes, contains the distance of the intersection,
@@ -114,7 +129,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="point">When the method completes, contains the point of intersection,
@@ -135,20 +150,22 @@ namespace SlimTK
 			return Collision.PlaneIntersectsBox(ref plane, ref this);
 		}
 
+		/* This implementation is wrong
 		/// <summary>
 		/// Determines if there is an intersection between the current object and a triangle.
 		/// </summary>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
 		public bool Intersects(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3)
 		{
-			return Collision.BoxIntersectsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3);
+		    return Collision.BoxIntersectsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3);
 		}
+		*/
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.BoundingBox"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingBox"/>.
 		/// </summary>
 		/// <param name="box">The box to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
@@ -158,13 +175,33 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.BoundingSphere"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingBox"/>.
+		/// </summary>
+		/// <param name="box">The box to test.</param>
+		/// <returns>Whether the two objects intersected.</returns>
+		public bool Intersects(BoundingBox box)
+		{
+			return Intersects(ref box);
+		}
+
+		/// <summary>
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingSphere"/>.
 		/// </summary>
 		/// <param name="sphere">The sphere to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
 		public bool Intersects(ref BoundingSphere sphere)
 		{
 			return Collision.BoxIntersectsSphere(ref this, ref sphere);
+		}
+
+		/// <summary>
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingSphere"/>.
+		/// </summary>
+		/// <param name="sphere">The sphere to test.</param>
+		/// <returns>Whether the two objects intersected.</returns>
+		public bool Intersects(BoundingSphere sphere)
+		{
+			return Intersects(ref sphere);
 		}
 
 		/// <summary>
@@ -178,19 +215,31 @@ namespace SlimTK
 		}
 
 		/// <summary>
+		/// Determines whether the current objects contains a point.
+		/// </summary>
+		/// <param name="point">The point to test.</param>
+		/// <returns>The type of containment the two objects have.</returns>
+		public ContainmentType Contains(Vector3 point)
+		{
+			return Contains(ref point);
+		}
+
+		/* This implementation is wrong
+		/// <summary>
 		/// Determines whether the current objects contains a triangle.
 		/// </summary>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>The type of containment the two objects have.</returns>
 		public ContainmentType Contains(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3)
 		{
-			return Collision.BoxContainsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3);
+		    return Collision.BoxContainsTriangle(ref this, ref vertex1, ref vertex2, ref vertex3);
 		}
+		*/
 
 		/// <summary>
-		/// Determines whether the current objects contains a <see cref="SlimMath.BoundingBox"/>.
+		/// Determines whether the current objects contains a <see cref="BoundingBox"/>.
 		/// </summary>
 		/// <param name="box">The box to test.</param>
 		/// <returns>The type of containment the two objects have.</returns>
@@ -200,7 +249,17 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines whether the current objects contains a <see cref="SlimMath.BoundingSphere"/>.
+		/// Determines whether the current objects contains a <see cref="BoundingBox"/>.
+		/// </summary>
+		/// <param name="box">The box to test.</param>
+		/// <returns>The type of containment the two objects have.</returns>
+		public ContainmentType Contains(BoundingBox box)
+		{
+			return Contains(ref box);
+		}
+
+		/// <summary>
+		/// Determines whether the current objects contains a <see cref="BoundingSphere"/>.
 		/// </summary>
 		/// <param name="sphere">The sphere to test.</param>
 		/// <returns>The type of containment the two objects have.</returns>
@@ -210,29 +269,17 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Generates a supporting point for this instance.
+		/// Determines whether the current objects contains a <see cref="BoundingSphere"/>.
 		/// </summary>
-		/// <param name="direction">The direction for which to build the supporting point.</param>
-		/// <param name="result">When the method completes, contains the supporting point.</param>
-		public void SupportMapping(ref Vector3 direction, out Vector3 result)
+		/// <param name="sphere">The sphere to test.</param>
+		/// <returns>The type of containment the two objects have.</returns>
+		public ContainmentType Contains(BoundingSphere sphere)
 		{
-			Collision.SupportPoint(ref this, ref direction, out result);
+			return Contains(ref sphere);
 		}
 
 		/// <summary>
-		/// Generates a support mapping for this instance.
-		/// </summary>
-		/// <param name="direction">The direction for which to build the support mapping.</param>
-		/// <returns>The resulting support mapping.</returns>
-		public Vector3 SupportMapping(Vector3 direction)
-		{
-			Vector3 result;
-			SupportMapping(ref direction, out result);
-			return result;
-		}
-
-		/// <summary>
-		/// Constructs a <see cref="SlimMath.BoundingBox"/> that fully contains the given points.
+		/// Constructs a <see cref="BoundingBox"/> that fully contains the given points.
 		/// </summary>
 		/// <param name="points">The points that will be contained by the box.</param>
 		/// <param name="result">When the method completes, contains the newly constructed bounding box.</param>
@@ -240,7 +287,7 @@ namespace SlimTK
 		public static void FromPoints(Vector3[] points, out BoundingBox result)
 		{
 			if (points == null)
-				throw new ArgumentNullException(nameof(points));
+				throw new ArgumentNullException("points");
 
 			Vector3 min = new Vector3(float.MaxValue);
 			Vector3 max = new Vector3(float.MinValue);
@@ -255,7 +302,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Constructs a <see cref="SlimMath.BoundingBox"/> that fully contains the given points.
+		/// Constructs a <see cref="BoundingBox"/> that fully contains the given points.
 		/// </summary>
 		/// <param name="points">The points that will be contained by the box.</param>
 		/// <returns>The newly constructed bounding box.</returns>
@@ -263,7 +310,7 @@ namespace SlimTK
 		public static BoundingBox FromPoints(Vector3[] points)
 		{
 			if (points == null)
-				throw new ArgumentNullException(nameof(points));
+				throw new ArgumentNullException("points");
 
 			Vector3 min = new Vector3(float.MaxValue);
 			Vector3 max = new Vector3(float.MinValue);
@@ -278,7 +325,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Constructs a <see cref="SlimMath.BoundingBox"/> from a given sphere.
+		/// Constructs a <see cref="BoundingBox"/> from a given sphere.
 		/// </summary>
 		/// <param name="sphere">The sphere that will designate the extents of the box.</param>
 		/// <param name="result">When the method completes, contains the newly constructed bounding box.</param>
@@ -291,7 +338,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Constructs a <see cref="SlimMath.BoundingBox"/> from a given sphere.
+		/// Constructs a <see cref="BoundingBox"/> from a given sphere.
 		/// </summary>
 		/// <param name="sphere">The sphere that will designate the extents of the box.</param>
 		/// <returns>The newly constructed bounding box.</returns>
@@ -306,7 +353,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Constructs a <see cref="SlimMath.BoundingBox"/> that is as large as the total combined area of the two specified boxes.
+		/// Constructs a <see cref="BoundingBox"/> that is as large as the total combined area of the two specified boxes.
 		/// </summary>
 		/// <param name="value1">The first box to merge.</param>
 		/// <param name="value2">The second box to merge.</param>
@@ -318,7 +365,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Constructs a <see cref="SlimMath.BoundingBox"/> that is as large as the total combined area of the two specified boxes.
+		/// Constructs a <see cref="BoundingBox"/> that is as large as the total combined area of the two specified boxes.
 		/// </summary>
 		/// <param name="value1">The first box to merge.</param>
 		/// <param name="value2">The second box to merge.</param>
@@ -328,6 +375,7 @@ namespace SlimTK
 			BoundingBox box;
 			box.Minimum = Vector3.Min(value1.Minimum, value2.Minimum);
 			box.Maximum = Vector3.Max(value1.Maximum, value2.Maximum);
+
 			return box;
 		}
 
@@ -337,9 +385,10 @@ namespace SlimTK
 		/// <param name="left">The first value to compare.</param>
 		/// <param name="right">The second value to compare.</param>
 		/// <returns><c>true</c> if <paramref name="left"/> has the same value as <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool operator ==(BoundingBox left, BoundingBox right)
 		{
-			return left.Equals(right);
+			return left.Equals(ref right);
 		}
 
 		/// <summary>
@@ -348,9 +397,10 @@ namespace SlimTK
 		/// <param name="left">The first value to compare.</param>
 		/// <param name="right">The second value to compare.</param>
 		/// <returns><c>true</c> if <paramref name="left"/> has a different value than <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool operator !=(BoundingBox left, BoundingBox right)
 		{
-			return !left.Equals(right);
+			return !left.Equals(ref right);
 		}
 
 		/// <summary>
@@ -418,7 +468,10 @@ namespace SlimTK
 		/// </returns>
 		public override int GetHashCode()
 		{
-			return Minimum.GetHashCode() + Maximum.GetHashCode();
+			unchecked
+			{
+				return (Minimum.GetHashCode() * 397) ^ Maximum.GetHashCode();
+			}
 		}
 
 		/// <summary>
@@ -428,71 +481,39 @@ namespace SlimTK
 		/// <returns>
 		/// <c>true</c> if the specified <see cref="Vector4"/> is equal to this instance; otherwise, <c>false</c>.
 		/// </returns>
-		public bool Equals(BoundingBox value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool Equals(ref BoundingBox value)
 		{
 			return Minimum == value.Minimum && Maximum == value.Maximum;
 		}
 
 		/// <summary>
+		/// Determines whether the specified <see cref="Vector4"/> is equal to this instance.
+		/// </summary>
+		/// <param name="value">The <see cref="Vector4"/> to compare with this instance.</param>
+		/// <returns>
+		/// <c>true</c> if the specified <see cref="Vector4"/> is equal to this instance; otherwise, <c>false</c>.
+		/// </returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool Equals(BoundingBox value)
+		{
+			return Equals(ref value);
+		}
+
+		/// <summary>
 		/// Determines whether the specified <see cref="System.Object"/> is equal to this instance.
 		/// </summary>
-		/// <param name="obj">The <see cref="System.Object"/> to compare with this instance.</param>
+		/// <param name="value">The <see cref="System.Object"/> to compare with this instance.</param>
 		/// <returns>
 		/// <c>true</c> if the specified <see cref="System.Object"/> is equal to this instance; otherwise, <c>false</c>.
 		/// </returns>
-		public override bool Equals(object obj)
+		public override bool Equals(object value)
 		{
-			if (obj == null)
+			if (!(value is BoundingBox))
 				return false;
 
-			if (obj.GetType() != GetType())
-				return false;
-
-			return Equals((BoundingBox) obj);
+			var strongValue = (BoundingBox) value;
+			return Equals(ref strongValue);
 		}
-
-#if SlimDX1xInterop
-/// <summary>
-/// Performs an implicit conversion from <see cref="SlimMath.BoundingBox"/> to <see cref="SlimDX.BoundingBox"/>.
-/// </summary>
-/// <param name="value">The value.</param>
-/// <returns>The result of the conversion.</returns>
-        public static implicit operator SlimDX.BoundingBox(BoundingBox value)
-        {
-            return new SlimDX.BoundingBox(value.Minimum, value.Maximum);
-        }
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="SlimDX.BoundingBox"/> to <see cref="SlimMath.BoundingBox"/>.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>The result of the conversion.</returns>
-        public static implicit operator BoundingBox(SlimDX.BoundingBox value)
-        {
-            return new BoundingBox(value.Minimum, value.Maximum);
-        }
-#endif
-
-#if XnaInterop
-/// <summary>
-/// Performs an implicit conversion from <see cref="SlimMath.BoundingBox"/> to <see cref="Microsoft.Xna.Framework.BoundingBox"/>.
-/// </summary>
-/// <param name="value">The value.</param>
-/// <returns>The result of the conversion.</returns>
-        public static implicit operator Microsoft.Xna.Framework.BoundingBox(BoundingBox value)
-        {
-            return new Microsoft.Xna.Framework.BoundingBox(value.Minimum, value.Maximum);
-        }
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="Microsoft.Xna.Framework.BoundingBox"/> to <see cref="SlimMath.BoundingBox"/>.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>The result of the conversion.</returns>
-        public static implicit operator BoundingBox(Microsoft.Xna.Framework.BoundingBox value)
-        {
-            return new BoundingBox(value.Min, value.Max);
-        }
-#endif
 	}
 }

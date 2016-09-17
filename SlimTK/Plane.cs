@@ -1,5 +1,28 @@
-﻿/*
-* Copyright (c) 2007-2010 SlimDX Group
+﻿// Copyright (c) 2010-2014 OpenTK - Alexandre Mutel
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// -----------------------------------------------------------------------------
+// Original code from SlimMath project. http://code.google.com/p/slimmath/
+// Greetings to SlimDX Group. Original code published with the following license:
+// -----------------------------------------------------------------------------
+/*
+* Copyright (c) 2007-2011 SlimDX Group
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -22,8 +45,8 @@
 
 using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.ComponentModel;
 using OpenTK;
 
 namespace SlimTK
@@ -31,7 +54,6 @@ namespace SlimTK
 	/// <summary>
 	/// Represents a plane in three dimensional space.
 	/// </summary>
-	[Serializable]
 	[StructLayout(LayoutKind.Sequential, Pack = 4)]
 	public struct Plane : IEquatable<Plane>, IFormattable
 	{
@@ -46,7 +68,7 @@ namespace SlimTK
 		public float D;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.Plane"/> struct.
+		/// Initializes a new instance of the <see cref="Plane"/> struct.
 		/// </summary>
 		/// <param name="value">The value that will be assigned to all components.</param>
 		public Plane(float value)
@@ -55,7 +77,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.Plane"/> struct.
+		/// Initializes a new instance of the <see cref="Plane"/> struct.
 		/// </summary>
 		/// <param name="a">The X component of the normal.</param>
 		/// <param name="b">The Y component of the normal.</param>
@@ -70,7 +92,18 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.Plane"/> struct.
+		/// Initializes a new instance of the <see cref="T:OpenTK.Plane" /> class.
+		/// </summary>
+		/// <param name="point">Any point that lies along the plane.</param>
+		/// <param name="normal">The normal vector to the plane.</param>
+		public Plane(Vector3 point, Vector3 normal)
+		{
+			this.Normal = normal;
+			this.D = -Vector3.Dot(normal, point);
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="Plane"/> struct.
 		/// </summary>
 		/// <param name="value">The normal of the plane.</param>
 		/// <param name="d">The distance of the plane along its normal from the origin</param>
@@ -81,18 +114,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.Plane"/> struct.
-		/// </summary>
-		/// <param name="point">Any point that lies along the plane.</param>
-		/// <param name="normal">The normal of the plane.</param>
-		public Plane(Vector3 point, Vector3 normal)
-		{
-			Normal = normal;
-			D = -Vector3.Dot(normal, point);
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.Plane"/> struct.
+		/// Initializes a new instance of the <see cref="Plane"/> struct.
 		/// </summary>
 		/// <param name="point1">First point of a triangle defining the plane.</param>
 		/// <param name="point2">Second point of a triangle defining the plane.</param>
@@ -117,7 +139,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="SlimMath.Plane"/> struct.
+		/// Initializes a new instance of the <see cref="Plane"/> struct.
 		/// </summary>
 		/// <param name="values">The values to assign to the A, B, C, and D components of the plane. This must be an array with four elements.</param>
 		/// <exception cref="ArgumentNullException">Thrown when <paramref name="values"/> is <c>null</c>.</exception>
@@ -216,7 +238,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
@@ -227,7 +249,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="distance">When the method completes, contains the distance of the intersection,
@@ -239,7 +261,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Ray"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Ray"/>.
 		/// </summary>
 		/// <param name="ray">The ray to test.</param>
 		/// <param name="point">When the method completes, contains the point of intersection,
@@ -251,7 +273,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Plane"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Plane"/>.
 		/// </summary>
 		/// <param name="plane">The plane to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
@@ -261,11 +283,11 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.Plane"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="Plane"/>.
 		/// </summary>
 		/// <param name="plane">The plane to test.</param>
 		/// <param name="line">When the method completes, contains the line of intersection
-		/// as a <see cref="SlimMath.Ray"/>, or a zero ray if there was no intersection.</param>
+		/// as a <see cref="Ray"/>, or a zero ray if there was no intersection.</param>
 		/// <returns>Whether the two objects intersected.</returns>
 		public bool Intersects(ref Plane plane, out Ray line)
 		{
@@ -276,7 +298,7 @@ namespace SlimTK
 		/// Determines if there is an intersection between the current object and a triangle.
 		/// </summary>
 		/// <param name="vertex1">The first vertex of the triangle to test.</param>
-		/// <param name="vertex2">The second vertex of the triagnle to test.</param>
+		/// <param name="vertex2">The second vertex of the triangle to test.</param>
 		/// <param name="vertex3">The third vertex of the triangle to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
 		public PlaneIntersectionType Intersects(ref Vector3 vertex1, ref Vector3 vertex2, ref Vector3 vertex3)
@@ -285,7 +307,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.BoundingBox"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingBox"/>.
 		/// </summary>
 		/// <param name="box">The box to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
@@ -295,7 +317,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Determines if there is an intersection between the current object and a <see cref="SlimMath.BoundingSphere"/>.
+		/// Determines if there is an intersection between the current object and a <see cref="BoundingSphere"/>.
 		/// </summary>
 		/// <param name="sphere">The sphere to test.</param>
 		/// <returns>Whether the two objects intersected.</returns>
@@ -305,7 +327,184 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Scales each component of the plane by the given scaling factor.
+		/// Builds a matrix that can be used to reflect vectors about a plane.
+		/// </summary>
+		/// <param name="plane">The plane for which the reflection occurs. This parameter is assumed to be normalized.</param>
+		/// <param name="result">When the method completes, contains the reflection matrix.</param>
+		public void Reflection(out Matrix4 result)
+		{
+			result = Matrix4.Identity;
+
+			float x = this.Normal.X;
+			float y = this.Normal.Y;
+			float z = this.Normal.Z;
+			float x2 = -2.0f * x;
+			float y2 = -2.0f * y;
+			float z2 = -2.0f * z;
+
+			result.M11 = (x2 * x) + 1.0f;
+			result.M12 = y2 * x;
+			result.M13 = z2 * x;
+			result.M14 = 0.0f;
+			result.M21 = x2 * y;
+			result.M22 = (y2 * y) + 1.0f;
+			result.M23 = z2 * y;
+			result.M24 = 0.0f;
+			result.M31 = x2 * z;
+			result.M32 = y2 * z;
+			result.M33 = (z2 * z) + 1.0f;
+			result.M34 = 0.0f;
+			result.M41 = x2 * this.D;
+			result.M42 = y2 * this.D;
+			result.M43 = z2 * this.D;
+			result.M44 = 1.0f;
+		}
+
+		/// <summary>
+		/// Builds a matrix that can be used to reflect vectors about a plane.
+		/// </summary>
+		/// <returns>The reflection matrix.</returns>
+		public Matrix4 Reflection()
+		{
+			Matrix4 result;
+			Reflection(out result);
+			return result;
+		}
+
+		/// <summary>
+		/// Creates a matrix that flattens geometry into a shadow from this the plane onto which to project the geometry as a shadow.
+		/// This plane  is assumed to be normalized
+		/// </summary>
+		/// <param name="light">The light direction. If the W component is 0, the light is directional light; if the
+		/// W component is 1, the light is a point light.</param>
+		/// <param name="result">When the method completes, contains the shadow matrix.</param>
+		public void Shadow(ref Vector4 light, out Matrix4 result)
+		{
+			result = Matrix4.Identity;
+
+			float dot = (this.Normal.X * light.X) + (this.Normal.Y * light.Y) + (this.Normal.Z * light.Z) + (this.D * light.W);
+			float x = -this.Normal.X;
+			float y = -this.Normal.Y;
+			float z = -this.Normal.Z;
+			float d = -this.D;
+
+			result.M11 = (x * light.X) + dot;
+			result.M21 = y * light.X;
+			result.M31 = z * light.X;
+			result.M41 = d * light.X;
+			result.M12 = x * light.Y;
+			result.M22 = (y * light.Y) + dot;
+			result.M32 = z * light.Y;
+			result.M42 = d * light.Y;
+			result.M13 = x * light.Z;
+			result.M23 = y * light.Z;
+			result.M33 = (z * light.Z) + dot;
+			result.M43 = d * light.Z;
+			result.M14 = x * light.W;
+			result.M24 = y * light.W;
+			result.M34 = z * light.W;
+			result.M44 = (d * light.W) + dot;
+		}
+
+		/// <summary>
+		/// Creates a matrix that flattens geometry into a shadow from this the plane onto which to project the geometry as a shadow.
+		/// This plane  is assumed to be normalized
+		/// </summary>
+		/// <param name="light">The light direction. If the W component is 0, the light is directional light; if the
+		/// W component is 1, the light is a point light.</param>
+		/// <returns>The shadow matrix.</returns>
+		public Matrix4 Shadow(Vector4 light)
+		{
+			Matrix4 result;
+			Shadow(ref light, out result);
+			return result;
+		}
+
+		/// <summary>
+		/// Builds a Matrix3x3 that can be used to reflect vectors about a plane for which the reflection occurs.
+		/// This plane is assumed to be normalized
+		/// </summary>
+		/// <param name="result">When the method completes, contains the reflection Matrix3x3.</param>
+		public void Reflection(out Matrix3 result)
+		{
+			result = Matrix3.Identity;
+
+			float x = this.Normal.X;
+			float y = this.Normal.Y;
+			float z = this.Normal.Z;
+			float x2 = -2.0f * x;
+			float y2 = -2.0f * y;
+			float z2 = -2.0f * z;
+
+			result.M11 = (x2 * x) + 1.0f;
+			result.M12 = y2 * x;
+			result.M13 = z2 * x;
+			result.M21 = x2 * y;
+			result.M22 = (y2 * y) + 1.0f;
+			result.M23 = z2 * y;
+			result.M31 = x2 * z;
+			result.M32 = y2 * z;
+			result.M33 = (z2 * z) + 1.0f;
+		}
+
+		/// <summary>
+		/// Builds a Matrix3x3 that can be used to reflect vectors about a plane for which the reflection occurs.
+		/// This plane is assumed to be normalized
+		/// </summary>
+		/// <returns>The reflection Matrix3x3.</returns>
+		public Matrix3 Reflection3x3()
+		{
+			Matrix3 result;
+			Reflection(out result);
+			return result;
+		}
+
+		/// <summary>
+		/// Creates a Matrix3x3 that flattens geometry into a shadow.
+		/// </summary>
+		/// <param name="light">The light direction. If the W component is 0, the light is directional light; if the
+		/// W component is 1, the light is a point light.</param>
+		/// <param name="plane">The plane onto which to project the geometry as a shadow. This parameter is assumed to be normalized.</param>
+		/// <param name="result">When the method completes, contains the shadow Matrix3x3.</param>
+		public static void Shadow(ref Vector4 light, ref Plane plane, out Matrix3 result)
+		{
+			result = Matrix3.Identity;
+
+			float dot = (plane.Normal.X * light.X) + (plane.Normal.Y * light.Y) + (plane.Normal.Z * light.Z) +
+			            (plane.D * light.W);
+			float x = -plane.Normal.X;
+			float y = -plane.Normal.Y;
+			float z = -plane.Normal.Z;
+			float d = -plane.D;
+
+			result.M11 = (x * light.X) + dot;
+			result.M21 = y * light.X;
+			result.M31 = z * light.X;
+			result.M12 = x * light.Y;
+			result.M22 = (y * light.Y) + dot;
+			result.M32 = z * light.Y;
+			result.M13 = x * light.Z;
+			result.M23 = y * light.Z;
+			result.M33 = (z * light.Z) + dot;
+		}
+
+		/// <summary>
+		/// Creates a Matrix3x3 that flattens geometry into a shadow.
+		/// </summary>
+		/// <param name="light">The light direction. If the W component is 0, the light is directional light; if the
+		/// W component is 1, the light is a point light.</param>
+		/// <param name="plane">The plane onto which to project the geometry as a shadow. This parameter is assumed to be normalized.</param>
+		/// <returns>The shadow Matrix3x3.</returns>
+		public static Matrix3 Shadow(Vector4 light, Plane plane)
+		{
+			Matrix3 result;
+			Shadow(ref light, ref plane, out result);
+			return result;
+		}
+
+
+		/// <summary>
+		/// Scales the plane by the given scaling factor.
 		/// </summary>
 		/// <param name="value">The plane to scale.</param>
 		/// <param name="scale">The amount by which to scale the plane.</param>
@@ -319,7 +518,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Scales each component of the plane by the given scaling factor.
+		/// Scales the plane by the given scaling factor.
 		/// </summary>
 		/// <param name="value">The plane to scale.</param>
 		/// <param name="scale">The amount by which to scale the plane.</param>
@@ -327,31 +526,6 @@ namespace SlimTK
 		public static Plane Multiply(Plane value, float scale)
 		{
 			return new Plane(value.Normal.X * scale, value.Normal.Y * scale, value.Normal.Z * scale, value.D * scale);
-		}
-
-		/// <summary>
-		/// Scales the distance component of the plane by the given scaling factor.
-		/// </summary>
-		/// <param name="value">The plane to scale.</param>
-		/// <param name="scale">The amount by which to scale the plane.</param>
-		/// <param name="result">When the method completes, contains the scaled plane.</param>
-		public static void Scale(ref Plane value, float scale, out Plane result)
-		{
-			result.Normal = value.Normal;
-			result.D = value.D * scale;
-		}
-
-		/// <summary>
-		/// Scales the distance component of the plane by the given scaling factor.
-		/// </summary>
-		/// <param name="value">The plane to scale.</param>
-		/// <param name="scale">The amount by which to scale the plane.</param>
-		/// <returns>The scaled plane.</returns>
-		public static Plane Scale(Plane value, float scale)
-		{
-			Plane result;
-			Scale(ref value, scale, out result);
-			return result;
 		}
 
 		/// <summary>
@@ -478,10 +652,6 @@ namespace SlimTK
 			float y = plane.Normal.Y;
 			float z = plane.Normal.Z;
 
-			/*
-			 * Note:
-			 * Factor common arithmetic out of loop.
-			*/
 			result.Normal.X = ((x * ((1.0f - yy) - zz)) + (y * (xy - wz))) + (z * (xz + wy));
 			result.Normal.Y = ((x * (xy + wz)) + (y * ((1.0f - xx) - zz))) + (z * (yz - wx));
 			result.Normal.Z = ((x * (xz - wy)) + (y * (yz + wx))) + (z * ((1.0f - xx) - yy));
@@ -514,10 +684,6 @@ namespace SlimTK
 			float y = plane.Normal.Y;
 			float z = plane.Normal.Z;
 
-			/*
-			 * Note:
-			 * Factor common arithmetic out of loop.
-			*/
 			result.Normal.X = ((x * ((1.0f - yy) - zz)) + (y * (xy - wz))) + (z * (xz + wy));
 			result.Normal.Y = ((x * (xy + wz)) + (y * ((1.0f - xx) - zz))) + (z * (yz - wx));
 			result.Normal.Z = ((x * (xz - wy)) + (y * (yz + wx))) + (z * ((1.0f - xx) - yy));
@@ -636,7 +802,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Scales each component of the plane by the given value.
+		/// Scales a plane by the given value.
 		/// </summary>
 		/// <param name="scale">The amount by which to scale the plane.</param>
 		/// <param name="plane">The plane to scale.</param>
@@ -647,7 +813,7 @@ namespace SlimTK
 		}
 
 		/// <summary>
-		/// Scales each component of the plane by the given value.
+		/// Scales a plane by the given value.
 		/// </summary>
 		/// <param name="plane">The plane to scale.</param>
 		/// <param name="scale">The amount by which to scale the plane.</param>
@@ -663,9 +829,10 @@ namespace SlimTK
 		/// <param name="left">The first value to compare.</param>
 		/// <param name="right">The second value to compare.</param>
 		/// <returns><c>true</c> if <paramref name="left"/> has the same value as <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool operator ==(Plane left, Plane right)
 		{
-			return left.Equals(right);
+			return left.Equals(ref right);
 		}
 
 		/// <summary>
@@ -674,9 +841,10 @@ namespace SlimTK
 		/// <param name="left">The first value to compare.</param>
 		/// <param name="right">The second value to compare.</param>
 		/// <returns><c>true</c> if <paramref name="left"/> has a different value than <paramref name="right"/>; otherwise, <c>false</c>.</returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool operator !=(Plane left, Plane right)
 		{
-			return !left.Equals(right);
+			return !left.Equals(ref right);
 		}
 
 		/// <summary>
@@ -740,7 +908,10 @@ namespace SlimTK
 		/// </returns>
 		public override int GetHashCode()
 		{
-			return Normal.GetHashCode() + D.GetHashCode();
+			unchecked
+			{
+				return (Normal.GetHashCode() * 397) ^ D.GetHashCode();
+			}
 		}
 
 		/// <summary>
@@ -750,71 +921,39 @@ namespace SlimTK
 		/// <returns>
 		/// <c>true</c> if the specified <see cref="Vector4"/> is equal to this instance; otherwise, <c>false</c>.
 		/// </returns>
-		public bool Equals(Plane value)
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool Equals(ref Plane value)
 		{
 			return Normal == value.Normal && D == value.D;
 		}
 
 		/// <summary>
+		/// Determines whether the specified <see cref="Vector4"/> is equal to this instance.
+		/// </summary>
+		/// <param name="value">The <see cref="Vector4"/> to compare with this instance.</param>
+		/// <returns>
+		/// <c>true</c> if the specified <see cref="Vector4"/> is equal to this instance; otherwise, <c>false</c>.
+		/// </returns>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
+		public bool Equals(Plane value)
+		{
+			return Equals(ref value);
+		}
+
+		/// <summary>
 		/// Determines whether the specified <see cref="System.Object"/> is equal to this instance.
 		/// </summary>
-		/// <param name="obj">The <see cref="System.Object"/> to compare with this instance.</param>
+		/// <param name="value">The <see cref="System.Object"/> to compare with this instance.</param>
 		/// <returns>
 		/// <c>true</c> if the specified <see cref="System.Object"/> is equal to this instance; otherwise, <c>false</c>.
 		/// </returns>
-		public override bool Equals(object obj)
+		public override bool Equals(object value)
 		{
-			if (obj == null)
+			if (!(value is Plane))
 				return false;
 
-			if (obj.GetType() != GetType())
-				return false;
-
-			return Equals((Plane) obj);
+			var strongValue = (Plane) value;
+			return Equals(ref strongValue);
 		}
-
-#if SlimDX1xInterop
-/// <summary>
-/// Performs an implicit conversion from <see cref="SlimMath.Plane"/> to <see cref="SlimDX.Plane"/>.
-/// </summary>
-/// <param name="value">The value.</param>
-/// <returns>The result of the conversion.</returns>
-        public static implicit operator SlimDX.Plane(Plane value)
-        {
-            return new SlimDX.Plane(value.Normal, value.D);
-        }
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="SlimDX.Plane"/> to <see cref="SlimMath.Plane"/>.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>The result of the conversion.</returns>
-        public static implicit operator Plane(SlimDX.Plane value)
-        {
-            return new Plane(value.Normal, value.D);
-        }
-#endif
-
-#if XnaInterop
-/// <summary>
-/// Performs an implicit conversion from <see cref="SlimMath.Plane"/> to <see cref="Microsoft.Xna.Framework.Plane"/>.
-/// </summary>
-/// <param name="value">The value.</param>
-/// <returns>The result of the conversion.</returns>
-        public static implicit operator Microsoft.Xna.Framework.Plane(Plane value)
-        {
-            return new Microsoft.Xna.Framework.Plane(value.Normal, value.D);
-        }
-
-        /// <summary>
-        /// Performs an implicit conversion from <see cref="Microsoft.Xna.Framework.Plane"/> to <see cref="SlimMath.Plane"/>.
-        /// </summary>
-        /// <param name="value">The value.</param>
-        /// <returns>The result of the conversion.</returns>
-        public static implicit operator Plane(Microsoft.Xna.Framework.Plane value)
-        {
-            return new Plane(value.Normal, value.D);
-        }
-#endif
 	}
 }

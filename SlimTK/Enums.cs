@@ -1,5 +1,28 @@
-﻿/*
-* Copyright (c) 2007-2010 SlimDX Group
+﻿// Copyright (c) 2010-2014 OpenTK - Alexandre Mutel
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+// -----------------------------------------------------------------------------
+// Original code from SlimMath project. http://code.google.com/p/slimmath/
+// Greetings to SlimDX Group. Original code published with the following license:
+// -----------------------------------------------------------------------------
+/*
+* Copyright (c) 2007-2011 SlimDX Group
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -20,10 +43,6 @@
 * THE SOFTWARE.
 */
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace SlimTK
 {
 	/*
@@ -31,6 +50,32 @@ namespace SlimTK
 	 * adding new enumerations or renaming existing ones, please make sure
 	 * the ordering is maintained.
 	*/
+
+	/// <summary>
+	/// Describes the type of angle.
+	/// </summary>
+	public enum AngleType
+	{
+		/// <summary>
+		/// Specifies an angle measurement in revolutions.
+		/// </summary>
+		Revolution,
+
+		/// <summary>
+		/// Specifies an angle measurement in degrees.
+		/// </summary>
+		Degree,
+
+		/// <summary>
+		/// Specifies an angle measurement in radians.
+		/// </summary>
+		Radian,
+
+		/// <summary>
+		/// Specifies an angle measurement in gradians.
+		/// </summary>
+		Gradian
+	}
 
 	/// <summary>
 	/// Describes how one bounding volume contains another.
