@@ -147,9 +147,9 @@ namespace SlimTK
 		public Plane(float[] values)
 		{
 			if (values == null)
-				throw new ArgumentNullException("values");
+				throw new ArgumentNullException(nameof(values));
 			if (values.Length != 4)
-				throw new ArgumentOutOfRangeException("values", "There must be four and only four input values for Plane.");
+				throw new ArgumentOutOfRangeException(nameof(values), "There must be four and only four input values for Plane.");
 
 			Normal.X = values[0];
 			Normal.Y = values[1];
@@ -180,7 +180,7 @@ namespace SlimTK
 						return D;
 				}
 
-				throw new ArgumentOutOfRangeException("index", "Indices for Plane run from 0 to 3, inclusive.");
+				throw new ArgumentOutOfRangeException(nameof(index), "Indices for Plane run from 0 to 3, inclusive.");
 			}
 
 			set
@@ -200,7 +200,7 @@ namespace SlimTK
 						D = value;
 						break;
 					default:
-						throw new ArgumentOutOfRangeException("index", "Indices for Plane run from 0 to 3, inclusive.");
+						throw new ArgumentOutOfRangeException(nameof(index), "Indices for Plane run from 0 to 3, inclusive.");
 				}
 			}
 		}
@@ -329,7 +329,6 @@ namespace SlimTK
 		/// <summary>
 		/// Builds a matrix that can be used to reflect vectors about a plane.
 		/// </summary>
-		/// <param name="plane">The plane for which the reflection occurs. This parameter is assumed to be normalized.</param>
 		/// <param name="result">When the method completes, contains the reflection matrix.</param>
 		public void Reflection(out Matrix4 result)
 		{
@@ -452,7 +451,7 @@ namespace SlimTK
 		/// This plane is assumed to be normalized
 		/// </summary>
 		/// <returns>The reflection Matrix3x3.</returns>
-		public Matrix3 Reflection3x3()
+		public Matrix3 Reflection3()
 		{
 			Matrix3 result;
 			Reflection(out result);

@@ -607,10 +607,9 @@ namespace SlimTK
 			directioncrossedge2.Z = (ray.Direction.X * edge2.Y) - (ray.Direction.Y * edge2.X);
 
 			//Compute the determinant.
-			float determinant;
 			//Dot product of edge1 and the first part of determinant.
-			determinant = (edge1.X * directioncrossedge2.X) + (edge1.Y * directioncrossedge2.Y) +
-			              (edge1.Z * directioncrossedge2.Z);
+			var determinant = (edge1.X * directioncrossedge2.X) + (edge1.Y * directioncrossedge2.Y) +
+			                    (edge1.Z * directioncrossedge2.Z);
 
 			//If the ray is parallel to the triangle plane, there is no collision.
 			//This also means that we are not culling, the ray may hit both the

@@ -44,7 +44,7 @@ namespace SlimTK
 			ref Matrix4 worldViewProjection, out Vector3 result)
 		{
 			Vector3 v = new Vector3();
-			Matrix4 matrix = new Matrix4();
+			Matrix4 matrix;
 			Matrix4.Invert(ref worldViewProjection, out matrix);
 
 			v.X = (((vector.X - x) / width) * 2.0f) - 1.0f;
@@ -81,7 +81,7 @@ namespace SlimTK
 		/// <param name="value2">The second vector.</param>
 		/// <returns>The distance between the two vectors.</returns>
 		/// <remarks>
-		/// <see cref="Vector3.DistanceSquared(Vector3, Vector3)"/> may be preferred when only the relative distance is needed
+		/// <see cref="VectorMath.DistanceSquared(Vector3, Vector3)"/> may be preferred when only the relative distance is needed
 		/// and speed is of the essence.
 		/// </remarks>
 		public static float Distance(Vector3 value1, Vector3 value2)

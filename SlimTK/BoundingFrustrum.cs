@@ -307,13 +307,15 @@ namespace SlimTK
 			Vector3 far3 = farCenter + farHalfHeight * upDir - farHalfWidth * rightDir;
 			Vector3 far4 = farCenter - farHalfHeight * upDir - farHalfWidth * rightDir;
 
-			var result = new BoundingFrustum();
-			result.pNear = new Plane(near1, near2, near3);
-			result.pFar = new Plane(far3, far2, far1);
-			result.pLeft = new Plane(near4, near3, far3);
-			result.pRight = new Plane(far1, far2, near2);
-			result.pTop = new Plane(near2, far2, far3);
-			result.pBottom = new Plane(far4, far1, near1);
+			var result = new BoundingFrustum
+			{
+				pNear = new Plane(near1, near2, near3),
+				pFar = new Plane(far3, far2, far1),
+				pLeft = new Plane(near4, near3, far3),
+				pRight = new Plane(far1, far2, near2),
+				pTop = new Plane(near2, far2, far3),
+				pBottom = new Plane(far4, far1, near1)
+			};
 
 			result.pNear.Normalize();
 			result.pFar.Normalize();
