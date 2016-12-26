@@ -333,8 +333,7 @@ namespace SlimTK
 		/// </returns>
 		public override string ToString()
 		{
-			return string.Format(CultureInfo.CurrentCulture, "Position:{0} Direction:{1}", Position.ToString(),
-				Direction.ToString());
+			return string.Format(CultureInfo.CurrentCulture, "Position:{0} Direction:{1}", this.Position.ToString(), this.Direction.ToString());
 		}
 
 		/// <summary>
@@ -346,9 +345,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(string format)
 		{
-			return string.Format(CultureInfo.CurrentCulture, "Position:{0} Direction:{1}",
-				Position.ToString(format, CultureInfo.CurrentCulture),
-				Direction.ToString(format, CultureInfo.CurrentCulture));
+			return string.Format(CultureInfo.CurrentCulture, "Position:{0} Direction:{1}", this.Position.ToString(format, CultureInfo.CurrentCulture), this.Direction.ToString(format, CultureInfo.CurrentCulture));
 		}
 
 		/// <summary>
@@ -360,7 +357,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(IFormatProvider formatProvider)
 		{
-			return string.Format(formatProvider, "Position:{0} Direction:{1}", Position.ToString(), Direction.ToString());
+			return string.Format(formatProvider, "Position:{0} Direction:{1}", this.Position.ToString(), this.Direction.ToString());
 		}
 
 		/// <summary>
@@ -373,8 +370,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(string format, IFormatProvider formatProvider)
 		{
-			return string.Format(formatProvider, "Position:{0} Direction:{1}", Position.ToString(format, formatProvider),
-				Direction.ToString(format, formatProvider));
+			return string.Format(formatProvider, "Position:{0} Direction:{1}", this.Position.ToString(format, formatProvider), this.Direction.ToString(format, formatProvider));
 		}
 
 		/// <summary>
@@ -387,7 +383,7 @@ namespace SlimTK
 		{
 			unchecked
 			{
-				return (Position.GetHashCode() * 397) ^ Direction.GetHashCode();
+				return (this.Position.GetHashCode() * 397) ^ this.Direction.GetHashCode();
 			}
 		}
 
@@ -401,7 +397,7 @@ namespace SlimTK
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public bool Equals(ref Ray value)
 		{
-			return Position == value.Position && Direction == value.Direction;
+			return this.Position == value.Position && this.Direction == value.Direction;
 		}
 
 		/// <summary>

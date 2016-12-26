@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ea94de-4977-40f3-a22c-5655a2d4f722" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/BoundingBox.cs" afterPath="$PROJECT_DIR$/SlimTK/BoundingBox.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/BoundingFrustrum.cs" afterPath="$PROJECT_DIR$/SlimTK/BoundingFrustrum.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/BoundingSphere.cs" afterPath="$PROJECT_DIR$/SlimTK/BoundingSphere.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/Collision.cs" afterPath="$PROJECT_DIR$/SlimTK/Collision.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/MathUtil.cs" afterPath="$PROJECT_DIR$/SlimTK/MathUtil.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/Plane.cs" afterPath="$PROJECT_DIR$/SlimTK/Plane.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/Ray.cs" afterPath="$PROJECT_DIR$/SlimTK/Ray.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/Rectangle.cs" afterPath="$PROJECT_DIR$/SlimTK/Rectangle.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/RectangleF.cs" afterPath="$PROJECT_DIR$/SlimTK/RectangleF.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/VectorExtensions.cs" afterPath="$PROJECT_DIR$/SlimTK/VectorExtensions.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/Viewport.cs" afterPath="$PROJECT_DIR$/SlimTK/Viewport.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/ViewportF.cs" afterPath="$PROJECT_DIR$/SlimTK/ViewportF.cs" />
     </list>
     <ignored path="SlimTK.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,81 +27,81 @@
       <file leaf-file-name="Rectangle.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SlimTK/Rectangle.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="393" column="12" lean-forward="false" selection-start-line="393" selection-start-column="12" selection-end-line="393" selection-end-column="12" />
+            <state relative-caret-position="389">
+              <caret line="389" column="100" lean-forward="true" selection-start-line="389" selection-start-column="100" selection-end-line="389" selection-end-column="100" />
               <folding>
-                <marker date="1482772429786" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-                <marker date="1482772429786" expanded="true" signature="1134:1246" ph="..." />
-                <marker date="1482772429786" expanded="true" signature="1264:17498" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="1268:1478" ph="/// Define a Rectangle. This structure is slightly different from System.Drawing.Rectangle as it is ... " />
-                <marker date="1482772429786" expanded="true" signature="1566:17496" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="1572:1618" ph="/// The left. ... " />
-                <marker date="1482772429786" expanded="true" signature="1641:1686" ph="/// The top. ... " />
-                <marker date="1482772429786" expanded="true" signature="1708:1755" ph="/// The right. ... " />
-                <marker date="1482772429786" expanded="true" signature="1779:1827" ph="/// The bottom. ... " />
-                <marker date="1482772429786" expanded="true" signature="1852:1908" ph="/// An empty rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="1972:2008" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="2012:2285" ph="/// Initializes a new instance of the &lt;see cref=&quot;Rectangle&quot;/&gt; struct. ... " />
-                <marker date="1482772429786" expanded="true" signature="2341:2420" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="2424:2526" ph="/// Gets or sets the X position. ... " />
-                <marker date="1482772429786" expanded="true" signature="2541:2635" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="2576:2631" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="2639:2741" ph="/// Gets or sets the Y position. ... " />
-                <marker date="1482772429786" expanded="true" signature="2756:2850" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="2790:2846" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="2854:2946" ph="/// Gets or sets the width. ... " />
-                <marker date="1482772429786" expanded="true" signature="2965:3038" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="3042:3136" ph="/// Gets or sets the height. ... " />
-                <marker date="1482772429786" expanded="true" signature="3156:3229" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="3234:3419" ph="/// Gets a value that indicates whether the rectangle is empty. ... " />
-                <marker date="1482772429786" expanded="true" signature="3441:3522" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="3526:4129" ph="/* Gets or sets the location. ... */" />
-                <marker date="1482772429786" expanded="true" signature="4134:5689" ph="/* Gets or sets the size of the rectangle. ... */" />
-                <marker date="1482772429786" expanded="true" signature="5693:5878" ph="///Changes the position of the rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="5925:5967" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="5971:6241" ph="///Pushes the edges of the rectangle out by the horizontal and vertical values specified. ... " />
-                <marker date="1482772429786" expanded="true" signature="6305:6430" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="6434:6700" ph="///Determines whether this rectangle contains a specified point represented by its x- and y-coordinates. ... " />
-                <marker date="1482772429786" expanded="true" signature="6737:6808" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="6812:7539" ph="/*Determines whether this rectangle contains a specified Point. ... */" />
-                <marker date="1482772429786" expanded="true" signature="7543:7701" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="7741:7819" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="7823:8126" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="8187:8295" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="8299:8602" ph="/// Checks, if specified point is inside &lt;see cref=&quot;Rectangle&quot;/&gt;. ... " />
-                <marker date="1482772429786" expanded="true" signature="8643:8715" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="8719:9174" ph="/* Checks, if specified &lt;see cref=&quot;OpenTK.Vector2&quot;/&gt; is inside &lt;see cref=&quot;OpenTK.Rectangle&quot;/&gt;. ... */" />
-                <marker date="1482772429786" expanded="true" signature="9178:9334" ph="///Determines whether a specified rectangle intersects with this rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="9376:9456" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="9460:9754" ph="/// Determines whether a specified rectangle intersects with this rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="9817:9921" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="9925:10240" ph="/// Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="10312:10409" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="10413:10760" ph="///Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
-                <marker date="1482772429786" expanded="true" signature="10857:11337" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="11200:11295" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="11303:11333" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="11341:11626" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
-                <marker date="1482772429786" expanded="true" signature="11694:11787" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="11791:12146" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
-                <marker date="1482772429786" expanded="true" signature="12239:12519" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="12523:12890" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482772429786" expanded="true" signature="12932:13070" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="12964:12992" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="13074:13431" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482772429786" expanded="true" signature="13526:13634" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="13638:13995" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482772429786" expanded="true" signature="14086:14123" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="14127:14350" ph="/// Returns a hash code for this instance. ... " />
-                <marker date="1482772429786" expanded="true" signature="14386:14569" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="14573:14778" ph="/// Implements the operator ==. ... " />
-                <marker date="1482772429786" expanded="true" signature="14897:14939" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="14943:15148" ph="/// Implements the operator !=. ... " />
-                <marker date="1482772429786" expanded="true" signature="15267:15310" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="15314:15787" ph="/* Performs an implicit conversion to the &lt;see cref=&quot;RectangleF&quot;/&gt; structure. ... */" />
-                <marker date="1482772429786" expanded="true" signature="15824:15944" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="15984:16047" ph="{...}" />
-                <marker date="1482772429786" expanded="true" signature="16051:17493" ph="/* Performs an implicit conversion from &lt;see cref=&quot;Rectangle&quot;/&gt; to &lt;see cref=&quot;RawRectangle&quot;/&gt;. ... */" />
+                <marker date="1482772474390" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+                <marker date="1482772474390" expanded="true" signature="1134:1246" ph="..." />
+                <marker date="1482772474390" expanded="true" signature="1264:17818" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="1268:1478" ph="/// Define a Rectangle. This structure is slightly different from System.Drawing.Rectangle as it is ... " />
+                <marker date="1482772474390" expanded="true" signature="1566:17816" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="1572:1618" ph="/// The left. ... " />
+                <marker date="1482772474390" expanded="true" signature="1641:1686" ph="/// The top. ... " />
+                <marker date="1482772474390" expanded="true" signature="1708:1755" ph="/// The right. ... " />
+                <marker date="1482772474390" expanded="true" signature="1779:1827" ph="/// The bottom. ... " />
+                <marker date="1482772474390" expanded="true" signature="1852:1908" ph="/// An empty rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="1972:2008" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="2012:2285" ph="/// Initializes a new instance of the &lt;see cref=&quot;Rectangle&quot;/&gt; struct. ... " />
+                <marker date="1482772474390" expanded="true" signature="2341:2440" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="2444:2546" ph="/// Gets or sets the X position. ... " />
+                <marker date="1482772474390" expanded="true" signature="2561:2675" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="2601:2671" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="2679:2781" ph="/// Gets or sets the Y position. ... " />
+                <marker date="1482772474390" expanded="true" signature="2796:2910" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="2835:2906" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="2914:3006" ph="/// Gets or sets the width. ... " />
+                <marker date="1482772474390" expanded="true" signature="3025:3118" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="3122:3216" ph="/// Gets or sets the height. ... " />
+                <marker date="1482772474390" expanded="true" signature="3236:3329" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="3334:3519" ph="/// Gets a value that indicates whether the rectangle is empty. ... " />
+                <marker date="1482772474390" expanded="true" signature="3541:3642" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="3646:4249" ph="/* Gets or sets the location. ... */" />
+                <marker date="1482772474390" expanded="true" signature="4254:5809" ph="/* Gets or sets the size of the rectangle. ... */" />
+                <marker date="1482772474390" expanded="true" signature="5813:5998" ph="///Changes the position of the rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="6045:6097" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="6101:6371" ph="///Pushes the edges of the rectangle out by the horizontal and vertical values specified. ... " />
+                <marker date="1482772474390" expanded="true" signature="6435:6580" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="6584:6850" ph="///Determines whether this rectangle contains a specified point represented by its x- and y-coordinates. ... " />
+                <marker date="1482772474390" expanded="true" signature="6887:6978" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="6982:7709" ph="/*Determines whether this rectangle contains a specified Point. ... */" />
+                <marker date="1482772474390" expanded="true" signature="7713:7871" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="7911:7989" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="7993:8296" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="8357:8485" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="8489:8792" ph="/// Checks, if specified point is inside &lt;see cref=&quot;Rectangle&quot;/&gt;. ... " />
+                <marker date="1482772474390" expanded="true" signature="8833:8925" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="8929:9384" ph="/* Checks, if specified &lt;see cref=&quot;OpenTK.Vector2&quot;/&gt; is inside &lt;see cref=&quot;OpenTK.Rectangle&quot;/&gt;. ... */" />
+                <marker date="1482772474390" expanded="true" signature="9388:9544" ph="///Determines whether a specified rectangle intersects with this rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="9586:9666" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="9670:9964" ph="/// Determines whether a specified rectangle intersects with this rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="10027:10151" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="10155:10470" ph="/// Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="10542:10639" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="10643:10990" ph="///Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
+                <marker date="1482772474390" expanded="true" signature="11087:11567" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="11430:11525" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="11533:11563" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="11571:11856" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
+                <marker date="1482772474390" expanded="true" signature="11924:12017" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="12021:12376" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
+                <marker date="1482772474390" expanded="true" signature="12469:12749" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="12753:13120" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1482772474390" expanded="true" signature="13162:13300" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="13194:13222" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="13304:13661" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1482772474390" expanded="true" signature="13756:13884" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="13888:14245" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1482772474390" expanded="true" signature="14336:14373" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="14377:14600" ph="/// Returns a hash code for this instance. ... " />
+                <marker date="1482772474390" expanded="true" signature="14636:14839" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="14843:15048" ph="/// Implements the operator ==. ... " />
+                <marker date="1482772474390" expanded="true" signature="15167:15209" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="15213:15418" ph="/// Implements the operator !=. ... " />
+                <marker date="1482772474390" expanded="true" signature="15537:15580" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="15584:16057" ph="/* Performs an implicit conversion to the &lt;see cref=&quot;RectangleF&quot;/&gt; structure. ... */" />
+                <marker date="1482772474390" expanded="true" signature="16094:16234" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="16274:16367" ph="{...}" />
+                <marker date="1482772474390" expanded="true" signature="16371:17813" ph="/* Performs an implicit conversion from &lt;see cref=&quot;Rectangle&quot;/&gt; to &lt;see cref=&quot;RawRectangle&quot;/&gt;. ... */" />
               </folding>
             </state>
           </provider>
@@ -236,12 +224,12 @@
       <workItem from="1474041983752" duration="1386000" />
       <workItem from="1474046829017" duration="785000" />
       <workItem from="1474124502301" duration="1959000" />
-      <workItem from="1482772343285" duration="86000" />
+      <workItem from="1482772343285" duration="131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6265000" />
+    <option name="totallyTimeSpent" value="6310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -346,81 +334,81 @@
     <entry file="file://$USER_HOME$/SlimTK/VectorExtensions.cs" />
     <entry file="file://$PROJECT_DIR$/SlimTK/Rectangle.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="393" column="12" lean-forward="false" selection-start-line="393" selection-start-column="12" selection-end-line="393" selection-end-column="12" />
+        <state relative-caret-position="389">
+          <caret line="389" column="100" lean-forward="true" selection-start-line="389" selection-start-column="100" selection-end-line="389" selection-end-column="100" />
           <folding>
-            <marker date="1482772429786" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-            <marker date="1482772429786" expanded="true" signature="1134:1246" ph="..." />
-            <marker date="1482772429786" expanded="true" signature="1264:17498" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="1268:1478" ph="/// Define a Rectangle. This structure is slightly different from System.Drawing.Rectangle as it is ... " />
-            <marker date="1482772429786" expanded="true" signature="1566:17496" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="1572:1618" ph="/// The left. ... " />
-            <marker date="1482772429786" expanded="true" signature="1641:1686" ph="/// The top. ... " />
-            <marker date="1482772429786" expanded="true" signature="1708:1755" ph="/// The right. ... " />
-            <marker date="1482772429786" expanded="true" signature="1779:1827" ph="/// The bottom. ... " />
-            <marker date="1482772429786" expanded="true" signature="1852:1908" ph="/// An empty rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="1972:2008" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="2012:2285" ph="/// Initializes a new instance of the &lt;see cref=&quot;Rectangle&quot;/&gt; struct. ... " />
-            <marker date="1482772429786" expanded="true" signature="2341:2420" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="2424:2526" ph="/// Gets or sets the X position. ... " />
-            <marker date="1482772429786" expanded="true" signature="2541:2635" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="2576:2631" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="2639:2741" ph="/// Gets or sets the Y position. ... " />
-            <marker date="1482772429786" expanded="true" signature="2756:2850" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="2790:2846" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="2854:2946" ph="/// Gets or sets the width. ... " />
-            <marker date="1482772429786" expanded="true" signature="2965:3038" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="3042:3136" ph="/// Gets or sets the height. ... " />
-            <marker date="1482772429786" expanded="true" signature="3156:3229" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="3234:3419" ph="/// Gets a value that indicates whether the rectangle is empty. ... " />
-            <marker date="1482772429786" expanded="true" signature="3441:3522" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="3526:4129" ph="/* Gets or sets the location. ... */" />
-            <marker date="1482772429786" expanded="true" signature="4134:5689" ph="/* Gets or sets the size of the rectangle. ... */" />
-            <marker date="1482772429786" expanded="true" signature="5693:5878" ph="///Changes the position of the rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="5925:5967" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="5971:6241" ph="///Pushes the edges of the rectangle out by the horizontal and vertical values specified. ... " />
-            <marker date="1482772429786" expanded="true" signature="6305:6430" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="6434:6700" ph="///Determines whether this rectangle contains a specified point represented by its x- and y-coordinates. ... " />
-            <marker date="1482772429786" expanded="true" signature="6737:6808" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="6812:7539" ph="/*Determines whether this rectangle contains a specified Point. ... */" />
-            <marker date="1482772429786" expanded="true" signature="7543:7701" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="7741:7819" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="7823:8126" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="8187:8295" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="8299:8602" ph="/// Checks, if specified point is inside &lt;see cref=&quot;Rectangle&quot;/&gt;. ... " />
-            <marker date="1482772429786" expanded="true" signature="8643:8715" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="8719:9174" ph="/* Checks, if specified &lt;see cref=&quot;OpenTK.Vector2&quot;/&gt; is inside &lt;see cref=&quot;OpenTK.Rectangle&quot;/&gt;. ... */" />
-            <marker date="1482772429786" expanded="true" signature="9178:9334" ph="///Determines whether a specified rectangle intersects with this rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="9376:9456" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="9460:9754" ph="/// Determines whether a specified rectangle intersects with this rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="9817:9921" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="9925:10240" ph="/// Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="10312:10409" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="10413:10760" ph="///Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
-            <marker date="1482772429786" expanded="true" signature="10857:11337" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="11200:11295" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="11303:11333" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="11341:11626" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
-            <marker date="1482772429786" expanded="true" signature="11694:11787" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="11791:12146" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
-            <marker date="1482772429786" expanded="true" signature="12239:12519" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="12523:12890" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482772429786" expanded="true" signature="12932:13070" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="12964:12992" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="13074:13431" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482772429786" expanded="true" signature="13526:13634" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="13638:13995" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482772429786" expanded="true" signature="14086:14123" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="14127:14350" ph="/// Returns a hash code for this instance. ... " />
-            <marker date="1482772429786" expanded="true" signature="14386:14569" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="14573:14778" ph="/// Implements the operator ==. ... " />
-            <marker date="1482772429786" expanded="true" signature="14897:14939" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="14943:15148" ph="/// Implements the operator !=. ... " />
-            <marker date="1482772429786" expanded="true" signature="15267:15310" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="15314:15787" ph="/* Performs an implicit conversion to the &lt;see cref=&quot;RectangleF&quot;/&gt; structure. ... */" />
-            <marker date="1482772429786" expanded="true" signature="15824:15944" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="15984:16047" ph="{...}" />
-            <marker date="1482772429786" expanded="true" signature="16051:17493" ph="/* Performs an implicit conversion from &lt;see cref=&quot;Rectangle&quot;/&gt; to &lt;see cref=&quot;RawRectangle&quot;/&gt;. ... */" />
+            <marker date="1482772474390" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+            <marker date="1482772474390" expanded="true" signature="1134:1246" ph="..." />
+            <marker date="1482772474390" expanded="true" signature="1264:17818" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="1268:1478" ph="/// Define a Rectangle. This structure is slightly different from System.Drawing.Rectangle as it is ... " />
+            <marker date="1482772474390" expanded="true" signature="1566:17816" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="1572:1618" ph="/// The left. ... " />
+            <marker date="1482772474390" expanded="true" signature="1641:1686" ph="/// The top. ... " />
+            <marker date="1482772474390" expanded="true" signature="1708:1755" ph="/// The right. ... " />
+            <marker date="1482772474390" expanded="true" signature="1779:1827" ph="/// The bottom. ... " />
+            <marker date="1482772474390" expanded="true" signature="1852:1908" ph="/// An empty rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="1972:2008" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="2012:2285" ph="/// Initializes a new instance of the &lt;see cref=&quot;Rectangle&quot;/&gt; struct. ... " />
+            <marker date="1482772474390" expanded="true" signature="2341:2440" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="2444:2546" ph="/// Gets or sets the X position. ... " />
+            <marker date="1482772474390" expanded="true" signature="2561:2675" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="2601:2671" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="2679:2781" ph="/// Gets or sets the Y position. ... " />
+            <marker date="1482772474390" expanded="true" signature="2796:2910" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="2835:2906" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="2914:3006" ph="/// Gets or sets the width. ... " />
+            <marker date="1482772474390" expanded="true" signature="3025:3118" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="3122:3216" ph="/// Gets or sets the height. ... " />
+            <marker date="1482772474390" expanded="true" signature="3236:3329" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="3334:3519" ph="/// Gets a value that indicates whether the rectangle is empty. ... " />
+            <marker date="1482772474390" expanded="true" signature="3541:3642" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="3646:4249" ph="/* Gets or sets the location. ... */" />
+            <marker date="1482772474390" expanded="true" signature="4254:5809" ph="/* Gets or sets the size of the rectangle. ... */" />
+            <marker date="1482772474390" expanded="true" signature="5813:5998" ph="///Changes the position of the rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="6045:6097" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="6101:6371" ph="///Pushes the edges of the rectangle out by the horizontal and vertical values specified. ... " />
+            <marker date="1482772474390" expanded="true" signature="6435:6580" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="6584:6850" ph="///Determines whether this rectangle contains a specified point represented by its x- and y-coordinates. ... " />
+            <marker date="1482772474390" expanded="true" signature="6887:6978" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="6982:7709" ph="/*Determines whether this rectangle contains a specified Point. ... */" />
+            <marker date="1482772474390" expanded="true" signature="7713:7871" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="7911:7989" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="7993:8296" ph="///Determines whether this rectangle entirely contains a specified rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="8357:8485" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="8489:8792" ph="/// Checks, if specified point is inside &lt;see cref=&quot;Rectangle&quot;/&gt;. ... " />
+            <marker date="1482772474390" expanded="true" signature="8833:8925" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="8929:9384" ph="/* Checks, if specified &lt;see cref=&quot;OpenTK.Vector2&quot;/&gt; is inside &lt;see cref=&quot;OpenTK.Rectangle&quot;/&gt;. ... */" />
+            <marker date="1482772474390" expanded="true" signature="9388:9544" ph="///Determines whether a specified rectangle intersects with this rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="9586:9666" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="9670:9964" ph="/// Determines whether a specified rectangle intersects with this rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="10027:10151" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="10155:10470" ph="/// Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="10542:10639" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="10643:10990" ph="///Creates a rectangle defining the area where one rectangle overlaps with another rectangle. ... " />
+            <marker date="1482772474390" expanded="true" signature="11087:11567" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="11430:11525" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="11533:11563" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="11571:11856" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
+            <marker date="1482772474390" expanded="true" signature="11924:12017" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="12021:12376" ph="/// Creates a new rectangle that exactly contains two other rectangles. ... " />
+            <marker date="1482772474390" expanded="true" signature="12469:12749" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="12753:13120" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1482772474390" expanded="true" signature="13162:13300" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="13194:13222" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="13304:13661" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1482772474390" expanded="true" signature="13756:13884" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="13888:14245" ph="/// Determines whether the specified &lt;see cref=&quot;Rectangle&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1482772474390" expanded="true" signature="14336:14373" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="14377:14600" ph="/// Returns a hash code for this instance. ... " />
+            <marker date="1482772474390" expanded="true" signature="14636:14839" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="14843:15048" ph="/// Implements the operator ==. ... " />
+            <marker date="1482772474390" expanded="true" signature="15167:15209" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="15213:15418" ph="/// Implements the operator !=. ... " />
+            <marker date="1482772474390" expanded="true" signature="15537:15580" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="15584:16057" ph="/* Performs an implicit conversion to the &lt;see cref=&quot;RectangleF&quot;/&gt; structure. ... */" />
+            <marker date="1482772474390" expanded="true" signature="16094:16234" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="16274:16367" ph="{...}" />
+            <marker date="1482772474390" expanded="true" signature="16371:17813" ph="/* Performs an implicit conversion from &lt;see cref=&quot;Rectangle&quot;/&gt; to &lt;see cref=&quot;RawRectangle&quot;/&gt;. ... */" />
           </folding>
         </state>
       </provider>

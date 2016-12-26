@@ -95,14 +95,14 @@ namespace SlimTK
 		/// <returns>An array of points representing the eight corners of the bounding box.</returns>
 		public void GetCorners(Vector3[] corners)
 		{
-			corners[0] = new Vector3(Minimum.X, Maximum.Y, Maximum.Z);
-			corners[1] = new Vector3(Maximum.X, Maximum.Y, Maximum.Z);
-			corners[2] = new Vector3(Maximum.X, Minimum.Y, Maximum.Z);
-			corners[3] = new Vector3(Minimum.X, Minimum.Y, Maximum.Z);
-			corners[4] = new Vector3(Minimum.X, Maximum.Y, Minimum.Z);
-			corners[5] = new Vector3(Maximum.X, Maximum.Y, Minimum.Z);
-			corners[6] = new Vector3(Maximum.X, Minimum.Y, Minimum.Z);
-			corners[7] = new Vector3(Minimum.X, Minimum.Y, Minimum.Z);
+			corners[0] = new Vector3(this.Minimum.X, this.Maximum.Y, this.Maximum.Z);
+			corners[1] = new Vector3(this.Maximum.X, this.Maximum.Y, this.Maximum.Z);
+			corners[2] = new Vector3(this.Maximum.X, this.Minimum.Y, this.Maximum.Z);
+			corners[3] = new Vector3(this.Minimum.X, this.Minimum.Y, this.Maximum.Z);
+			corners[4] = new Vector3(this.Minimum.X, this.Maximum.Y, this.Minimum.Z);
+			corners[5] = new Vector3(this.Maximum.X, this.Maximum.Y, this.Minimum.Z);
+			corners[6] = new Vector3(this.Maximum.X, this.Minimum.Y, this.Minimum.Z);
+			corners[7] = new Vector3(this.Minimum.X, this.Minimum.Y, this.Minimum.Z);
 		}
 
 		/// <summary>
@@ -415,7 +415,7 @@ namespace SlimTK
 		/// </returns>
 		public override string ToString()
 		{
-			return string.Format(CultureInfo.CurrentCulture, "Minimum:{0} Maximum:{1}", Minimum.ToString(), Maximum.ToString());
+			return string.Format(CultureInfo.CurrentCulture, "Minimum:{0} Maximum:{1}", this.Minimum.ToString(), this.Maximum.ToString());
 		}
 
 		/// <summary>
@@ -432,9 +432,7 @@ namespace SlimTK
 				return ToString();
 			}
 
-			return string.Format(CultureInfo.CurrentCulture, "Minimum:{0} Maximum:{1}",
-				Minimum.ToString(format, CultureInfo.CurrentCulture),
-				Maximum.ToString(format, CultureInfo.CurrentCulture));
+			return string.Format(CultureInfo.CurrentCulture, "Minimum:{0} Maximum:{1}", this.Minimum.ToString(format, CultureInfo.CurrentCulture), this.Maximum.ToString(format, CultureInfo.CurrentCulture));
 		}
 
 		/// <summary>
@@ -446,7 +444,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(IFormatProvider formatProvider)
 		{
-			return string.Format(formatProvider, "Minimum:{0} Maximum:{1}", Minimum.ToString(), Maximum.ToString());
+			return string.Format(formatProvider, "Minimum:{0} Maximum:{1}", this.Minimum.ToString(), this.Maximum.ToString());
 		}
 
 		/// <summary>
@@ -464,8 +462,7 @@ namespace SlimTK
 				return ToString(formatProvider);
 			}
 
-			return string.Format(formatProvider, "Minimum:{0} Maximum:{1}", Minimum.ToString(format, formatProvider),
-				Maximum.ToString(format, formatProvider));
+			return string.Format(formatProvider, "Minimum:{0} Maximum:{1}", this.Minimum.ToString(format, formatProvider), this.Maximum.ToString(format, formatProvider));
 		}
 
 		/// <summary>
@@ -478,7 +475,7 @@ namespace SlimTK
 		{
 			unchecked
 			{
-				return (Minimum.GetHashCode() * 397) ^ Maximum.GetHashCode();
+				return (this.Minimum.GetHashCode() * 397) ^ this.Maximum.GetHashCode();
 			}
 		}
 
@@ -492,7 +489,7 @@ namespace SlimTK
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public bool Equals(ref BoundingBox value)
 		{
-			return Minimum == value.Minimum && Maximum == value.Maximum;
+			return this.Minimum == value.Minimum && this.Maximum == value.Maximum;
 		}
 
 		/// <summary>

@@ -45,11 +45,11 @@ namespace SlimTK
 		/// </summary>
 		public Matrix4 Matrix
 		{
-			get { return pMatrix; }
+			get { return this.pMatrix; }
 			set
 			{
-				pMatrix = value;
-				GetPlanesFromMatrix(ref pMatrix, out pNear, out pFar, out pLeft, out pRight, out pTop, out pBottom);
+				this.pMatrix = value;
+				GetPlanesFromMatrix(ref this.pMatrix, out this.pNear, out this.pFar, out this.pLeft, out this.pRight, out this.pTop, out this.pBottom);
 			}
 		}
 
@@ -58,7 +58,7 @@ namespace SlimTK
 		/// </summary>
 		public Plane Near
 		{
-			get { return pNear; }
+			get { return this.pNear; }
 		}
 
 		/// <summary>
@@ -66,7 +66,7 @@ namespace SlimTK
 		/// </summary>
 		public Plane Far
 		{
-			get { return pFar; }
+			get { return this.pFar; }
 		}
 
 		/// <summary>
@@ -74,7 +74,7 @@ namespace SlimTK
 		/// </summary>
 		public Plane Left
 		{
-			get { return pLeft; }
+			get { return this.pLeft; }
 		}
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace SlimTK
 		/// </summary>
 		public Plane Right
 		{
-			get { return pRight; }
+			get { return this.pRight; }
 		}
 
 		/// <summary>
@@ -90,7 +90,7 @@ namespace SlimTK
 		/// </summary>
 		public Plane Top
 		{
-			get { return pTop; }
+			get { return this.pTop; }
 		}
 
 		/// <summary>
@@ -98,7 +98,7 @@ namespace SlimTK
 		/// </summary>
 		public Plane Bottom
 		{
-			get { return pBottom; }
+			get { return this.pBottom; }
 		}
 
 		/// <summary>
@@ -107,13 +107,13 @@ namespace SlimTK
 		/// <param name="matrix">Combined matrix that usually takes view × projection matrix.</param>
 		public BoundingFrustum(Matrix4 matrix)
 		{
-			pMatrix = matrix;
-			GetPlanesFromMatrix(ref pMatrix, out pNear, out pFar, out pLeft, out pRight, out pTop, out pBottom);
+			this.pMatrix = matrix;
+			GetPlanesFromMatrix(ref this.pMatrix, out this.pNear, out this.pFar, out this.pLeft, out this.pRight, out this.pTop, out this.pBottom);
 		}
 
 		public override int GetHashCode()
 		{
-			return pMatrix.GetHashCode();
+			return this.pMatrix.GetHashCode();
 		}
 
 		/// <summary>
@@ -198,17 +198,17 @@ namespace SlimTK
 			switch (index)
 			{
 				case 0:
-					return pLeft;
+					return this.pLeft;
 				case 1:
-					return pRight;
+					return this.pRight;
 				case 2:
-					return pTop;
+					return this.pTop;
 				case 3:
-					return pBottom;
+					return this.pBottom;
 				case 4:
-					return pNear;
+					return this.pNear;
 				case 5:
-					return pFar;
+					return this.pFar;
 				default:
 					return new Plane();
 			}
@@ -374,14 +374,14 @@ namespace SlimTK
 		/// <returns>The 8 corners of the frustum</returns>
 		public void GetCorners(Vector3[] corners)
 		{
-			corners[0] = Get3PlanesInterPoint(ref pNear, ref pBottom, ref pRight); //Near1
-			corners[1] = Get3PlanesInterPoint(ref pNear, ref pTop, ref pRight); //Near2
-			corners[2] = Get3PlanesInterPoint(ref pNear, ref pTop, ref pLeft); //Near3
-			corners[3] = Get3PlanesInterPoint(ref pNear, ref pBottom, ref pLeft); //Near3
-			corners[4] = Get3PlanesInterPoint(ref pFar, ref pBottom, ref pRight); //Far1
-			corners[5] = Get3PlanesInterPoint(ref pFar, ref pTop, ref pRight); //Far2
-			corners[6] = Get3PlanesInterPoint(ref pFar, ref pTop, ref pLeft); //Far3
-			corners[7] = Get3PlanesInterPoint(ref pFar, ref pBottom, ref pLeft); //Far3
+			corners[0] = Get3PlanesInterPoint(ref this.pNear, ref this.pBottom, ref this.pRight); //Near1
+			corners[1] = Get3PlanesInterPoint(ref this.pNear, ref this.pTop, ref this.pRight); //Near2
+			corners[2] = Get3PlanesInterPoint(ref this.pNear, ref this.pTop, ref this.pLeft); //Near3
+			corners[3] = Get3PlanesInterPoint(ref this.pNear, ref this.pBottom, ref this.pLeft); //Near3
+			corners[4] = Get3PlanesInterPoint(ref this.pFar, ref this.pBottom, ref this.pRight); //Far1
+			corners[5] = Get3PlanesInterPoint(ref this.pFar, ref this.pTop, ref this.pRight); //Far2
+			corners[6] = Get3PlanesInterPoint(ref this.pFar, ref this.pTop, ref this.pLeft); //Far3
+			corners[7] = Get3PlanesInterPoint(ref this.pFar, ref this.pBottom, ref this.pLeft); //Far3
 		}
 
 		/// <summary>
@@ -392,13 +392,13 @@ namespace SlimTK
 		{
 			var corners = GetCorners();
 			var cameraParam = new FrustumCameraParams();
-			cameraParam.Position = Get3PlanesInterPoint(ref pRight, ref pTop, ref pLeft);
-			cameraParam.LookAtDir = pNear.Normal;
-			cameraParam.UpDir = Vector3.Normalize(Vector3.Cross(pRight.Normal, pNear.Normal));
-			cameraParam.FOV = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(pNear.Normal, pTop.Normal))) * 2);
+			cameraParam.Position = Get3PlanesInterPoint(ref this.pRight, ref this.pTop, ref this.pLeft);
+			cameraParam.LookAtDir = this.pNear.Normal;
+			cameraParam.UpDir = Vector3.Normalize(Vector3.Cross(this.pRight.Normal, this.pNear.Normal));
+			cameraParam.FOV = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(this.pNear.Normal, this.pTop.Normal))) * 2);
 			cameraParam.AspectRatio = (corners[6] - corners[5]).Length / (corners[4] - corners[5]).Length;
-			cameraParam.ZNear = (cameraParam.Position + (pNear.Normal * pNear.D)).Length;
-			cameraParam.ZFar = (cameraParam.Position + (pFar.Normal * pFar.D)).Length;
+			cameraParam.ZNear = (cameraParam.Position + (this.pNear.Normal * this.pNear.D)).Length;
+			cameraParam.ZFar = (cameraParam.Position + (this.pFar.Normal * this.pFar.D)).Length;
 			return cameraParam;
 		}
 
@@ -416,22 +416,22 @@ namespace SlimTK
 				switch (i)
 				{
 					case 0:
-						planeResult = pNear.Intersects(ref point);
+						planeResult = this.pNear.Intersects(ref point);
 						break;
 					case 1:
-						planeResult = pFar.Intersects(ref point);
+						planeResult = this.pFar.Intersects(ref point);
 						break;
 					case 2:
-						planeResult = pLeft.Intersects(ref point);
+						planeResult = this.pLeft.Intersects(ref point);
 						break;
 					case 3:
-						planeResult = pRight.Intersects(ref point);
+						planeResult = this.pRight.Intersects(ref point);
 						break;
 					case 4:
-						planeResult = pTop.Intersects(ref point);
+						planeResult = this.pTop.Intersects(ref point);
 						break;
 					case 5:
-						planeResult = pBottom.Intersects(ref point);
+						planeResult = this.pBottom.Intersects(ref point);
 						break;
 				}
 				switch (planeResult)
@@ -599,22 +599,22 @@ namespace SlimTK
 				switch (i)
 				{
 					case 0:
-						planeResult = pNear.Intersects(ref sphere);
+						planeResult = this.pNear.Intersects(ref sphere);
 						break;
 					case 1:
-						planeResult = pFar.Intersects(ref sphere);
+						planeResult = this.pFar.Intersects(ref sphere);
 						break;
 					case 2:
-						planeResult = pLeft.Intersects(ref sphere);
+						planeResult = this.pLeft.Intersects(ref sphere);
 						break;
 					case 3:
-						planeResult = pRight.Intersects(ref sphere);
+						planeResult = this.pRight.Intersects(ref sphere);
 						break;
 					case 4:
-						planeResult = pTop.Intersects(ref sphere);
+						planeResult = this.pTop.Intersects(ref sphere);
 						break;
 					case 5:
-						planeResult = pBottom.Intersects(ref sphere);
+						planeResult = this.pBottom.Intersects(ref sphere);
 						break;
 				}
 				switch (planeResult)
@@ -765,7 +765,7 @@ namespace SlimTK
 		/// <returns>With of the frustum at the specified depth</returns>
 		public float GetWidthAtDepth(float depth)
 		{
-			float hAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(pNear.Normal, pLeft.Normal))));
+			float hAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(this.pNear.Normal, this.pLeft.Normal))));
 			return (float) (Math.Tan(hAngle) * depth * 2);
 		}
 
@@ -776,7 +776,7 @@ namespace SlimTK
 		/// <returns>Height of the frustum at the specified depth</returns>
 		public float GetHeightAtDepth(float depth)
 		{
-			float vAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(pNear.Normal, pTop.Normal))));
+			float vAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(this.pNear.Normal, this.pTop.Normal))));
 			return (float) (Math.Tan(vAngle) * depth * 2);
 		}
 
@@ -875,9 +875,9 @@ namespace SlimTK
 		/// <returns>The zoom to fit distance</returns>
 		public float GetZoomToExtentsShiftDistance(Vector3[] points)
 		{
-			float vAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(pNear.Normal, pTop.Normal))));
+			float vAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(this.pNear.Normal, this.pTop.Normal))));
 			float vSin = (float) Math.Sin(vAngle);
-			float hAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(pNear.Normal, pLeft.Normal))));
+			float hAngle = (float) ((Math.PI / 2.0 - Math.Acos(Vector3.Dot(this.pNear.Normal, this.pLeft.Normal))));
 			float hSin = (float) Math.Sin(hAngle);
 			float horizontalToVerticalMapping = vSin / hSin;
 
@@ -919,7 +919,7 @@ namespace SlimTK
 		/// <returns>The zoom to fit vector</returns>
 		public Vector3 GetZoomToExtentsShiftVector(Vector3[] points)
 		{
-			return GetZoomToExtentsShiftDistance(points) * pNear.Normal;
+			return GetZoomToExtentsShiftDistance(points) * this.pNear.Normal;
 		}
 
 		/// <summary>
@@ -930,7 +930,7 @@ namespace SlimTK
 		/// <returns>The zoom to fit vector</returns>
 		public Vector3 GetZoomToExtentsShiftVector(ref BoundingBox boundingBox)
 		{
-			return GetZoomToExtentsShiftDistance(boundingBox.GetCorners()) * pNear.Normal;
+			return GetZoomToExtentsShiftDistance(boundingBox.GetCorners()) * this.pNear.Normal;
 		}
 
 		/// <summary>
@@ -941,7 +941,7 @@ namespace SlimTK
 		/// </value>
 		public bool IsOrthographic
 		{
-			get { return (pLeft.Normal == -pRight.Normal) && (pTop.Normal == -pBottom.Normal); }
+			get { return (this.pLeft.Normal == -this.pRight.Normal) && (this.pTop.Normal == -this.pBottom.Normal); }
 		}
 	}
 }

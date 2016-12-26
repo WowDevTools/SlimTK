@@ -71,12 +71,12 @@ namespace SlimTK
 		/// <param name="height">The height of the viewport in pixels.</param>
 		public Viewport(int x, int y, int width, int height)
 		{
-			X = x;
-			Y = y;
-			Width = width;
-			Height = height;
-			MinDepth = 0f;
-			MaxDepth = 1f;
+			this.X = x;
+			this.Y = y;
+			this.Width = width;
+			this.Height = height;
+			this.MinDepth = 0f;
+			this.MaxDepth = 1f;
 		}
 
 		/// <summary>
@@ -90,12 +90,12 @@ namespace SlimTK
 		/// <param name="maxDepth">The maximum depth of the clip volume.</param>
 		public Viewport(int x, int y, int width, int height, float minDepth, float maxDepth)
 		{
-			X = x;
-			Y = y;
-			Width = width;
-			Height = height;
-			MinDepth = minDepth;
-			MaxDepth = maxDepth;
+			this.X = x;
+			this.Y = y;
+			this.Width = width;
+			this.Height = height;
+			this.MinDepth = minDepth;
+			this.MaxDepth = maxDepth;
 		}
 
 		/// <summary>
@@ -104,12 +104,12 @@ namespace SlimTK
 		/// <param name="bounds">A bounding box that defines the location and size of the viewport in a render target.</param>
 		public Viewport(Rectangle bounds)
 		{
-			X = bounds.X;
-			Y = bounds.Y;
-			Width = bounds.Width;
-			Height = bounds.Height;
-			MinDepth = 0f;
-			MaxDepth = 1f;
+			this.X = bounds.X;
+			this.Y = bounds.Y;
+			this.Width = bounds.Width;
+			this.Height = bounds.Height;
+			this.MinDepth = 0f;
+			this.MaxDepth = 1f;
 		}
 
 		/// <summary>
@@ -118,14 +118,14 @@ namespace SlimTK
 		/// <value>The bounds.</value>
 		public Rectangle Bounds
 		{
-			get { return new Rectangle(X, Y, Width, Height); }
+			get { return new Rectangle(this.X, this.Y, this.Width, this.Height); }
 
 			set
 			{
-				X = value.X;
-				Y = value.Y;
-				Width = value.Width;
-				Height = value.Height;
+				this.X = value.X;
+				this.Y = value.Y;
+				this.Width = value.Width;
+				this.Height = value.Height;
 			}
 		}
 
@@ -139,8 +139,8 @@ namespace SlimTK
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public bool Equals(ref Viewport other)
 		{
-			return X == other.X && Y == other.Y && Width == other.Width && Height == other.Height &&
-			       MathUtil.NearEqual(MinDepth, other.MinDepth) && MathUtil.NearEqual(MaxDepth, other.MaxDepth);
+			return this.X == other.X && this.Y == other.Y && this.Width == other.Width && this.Height == other.Height &&
+			       MathUtil.NearEqual(this.MinDepth, other.MinDepth) && MathUtil.NearEqual(this.MaxDepth, other.MaxDepth);
 		}
 
 		/// <summary>
@@ -184,12 +184,12 @@ namespace SlimTK
 		{
 			unchecked
 			{
-				int hashCode = X;
-				hashCode = (hashCode * 397) ^ Y;
-				hashCode = (hashCode * 397) ^ Width;
-				hashCode = (hashCode * 397) ^ Height;
-				hashCode = (hashCode * 397) ^ MinDepth.GetHashCode();
-				hashCode = (hashCode * 397) ^ MaxDepth.GetHashCode();
+				int hashCode = this.X;
+				hashCode = (hashCode * 397) ^ this.Y;
+				hashCode = (hashCode * 397) ^ this.Width;
+				hashCode = (hashCode * 397) ^ this.Height;
+				hashCode = (hashCode * 397) ^ this.MinDepth.GetHashCode();
+				hashCode = (hashCode * 397) ^ this.MaxDepth.GetHashCode();
 				return hashCode;
 			}
 		}
@@ -224,8 +224,7 @@ namespace SlimTK
 		/// <returns>A <see cref="System.String" /> that represents this instance.</returns>
 		public override string ToString()
 		{
-			return string.Format(CultureInfo.CurrentCulture, "{{X:{0} Y:{1} Width:{2} Height:{3} MinDepth:{4} MaxDepth:{5}}}", X,
-				Y, Width, Height, MinDepth, MaxDepth);
+			return string.Format(CultureInfo.CurrentCulture, "{{X:{0} Y:{1} Width:{2} Height:{3} MinDepth:{4} MaxDepth:{5}}}", this.X, this.Y, this.Width, this.Height, this.MinDepth, this.MaxDepth);
 		}
 
 		/// <summary>
@@ -261,9 +260,9 @@ namespace SlimTK
 				vector = (vector / a);
 			}
 
-			vector.X = (((vector.X + 1f) * 0.5f) * Width) + X;
-			vector.Y = (((-vector.Y + 1f) * 0.5f) * Height) + Y;
-			vector.Z = (vector.Z * (MaxDepth - MinDepth)) + MinDepth;
+			vector.X = (((vector.X + 1f) * 0.5f) * this.Width) + this.X;
+			vector.Y = (((-vector.Y + 1f) * 0.5f) * this.Height) + this.Y;
+			vector.Z = (vector.Z * (this.MaxDepth - this.MinDepth)) + this.MinDepth;
 		}
 
 		/// <summary>
@@ -292,9 +291,9 @@ namespace SlimTK
 		/// <param name="vector">The unprojected vector.</param>
 		public void Unproject(ref Vector3 source, ref Matrix4 matrix, out Vector3 vector)
 		{
-			vector.X = (((source.X - X) / (Width)) * 2f) - 1f;
-			vector.Y = -((((source.Y - Y) / (Height)) * 2f) - 1f);
-			vector.Z = (source.Z - MinDepth) / (MaxDepth - MinDepth);
+			vector.X = (((source.X - this.X) / (this.Width)) * 2f) - 1f;
+			vector.Y = -((((source.Y - this.Y) / (this.Height)) * 2f) - 1f);
+			vector.Z = (source.Z - this.MinDepth) / (this.MaxDepth - this.MinDepth);
 
 			float a = (((vector.X * matrix.M14) + (vector.Y * matrix.M24)) + (vector.Z * matrix.M34)) + matrix.M44;
 			Vector3.Transform(ref vector, ref matrix, out vector);
@@ -313,9 +312,9 @@ namespace SlimTK
 		{
 			get
 			{
-				if (Height != 0)
+				if (this.Height != 0)
 				{
-					return Width / (float) Height;
+					return this.Width / (float) this.Height;
 				}
 				return 0f;
 			}

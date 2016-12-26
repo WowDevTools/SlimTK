@@ -422,7 +422,7 @@ namespace SlimTK
 		/// </returns>
 		public override string ToString()
 		{
-			return string.Format(CultureInfo.CurrentCulture, "Center:{0} Radius:{1}", Center.ToString(), Radius.ToString());
+			return string.Format(CultureInfo.CurrentCulture, "Center:{0} Radius:{1}", this.Center.ToString(), this.Radius.ToString());
 		}
 
 		/// <summary>
@@ -439,9 +439,7 @@ namespace SlimTK
 				return ToString();
 			}
 
-			return string.Format(CultureInfo.CurrentCulture, "Center:{0} Radius:{1}",
-				Center.ToString(format, CultureInfo.CurrentCulture),
-				Radius.ToString(format, CultureInfo.CurrentCulture));
+			return string.Format(CultureInfo.CurrentCulture, "Center:{0} Radius:{1}", this.Center.ToString(format, CultureInfo.CurrentCulture), this.Radius.ToString(format, CultureInfo.CurrentCulture));
 		}
 
 		/// <summary>
@@ -453,7 +451,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(IFormatProvider formatProvider)
 		{
-			return string.Format(formatProvider, "Center:{0} Radius:{1}", Center.ToString(), Radius.ToString());
+			return string.Format(formatProvider, "Center:{0} Radius:{1}", this.Center.ToString(), this.Radius.ToString());
 		}
 
 		/// <summary>
@@ -471,8 +469,7 @@ namespace SlimTK
 				return ToString(formatProvider);
 			}
 
-			return string.Format(formatProvider, "Center:{0} Radius:{1}", Center.ToString(format, formatProvider),
-				Radius.ToString(format, formatProvider));
+			return string.Format(formatProvider, "Center:{0} Radius:{1}", this.Center.ToString(format, formatProvider), this.Radius.ToString(format, formatProvider));
 		}
 
 		/// <summary>
@@ -485,7 +482,7 @@ namespace SlimTK
 		{
 			unchecked
 			{
-				return (Center.GetHashCode() * 397) ^ Radius.GetHashCode();
+				return (this.Center.GetHashCode() * 397) ^ this.Radius.GetHashCode();
 			}
 		}
 
@@ -499,7 +496,7 @@ namespace SlimTK
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public bool Equals(ref BoundingSphere value)
 		{
-			return Center == value.Center && Radius == value.Radius;
+			return this.Center == value.Center && this.Radius == value.Radius;
 		}
 
 		/// <summary>

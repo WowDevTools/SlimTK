@@ -73,7 +73,7 @@ namespace SlimTK
 		/// <param name="value">The value that will be assigned to all components.</param>
 		public Plane(float value)
 		{
-			Normal.X = Normal.Y = Normal.Z = D = value;
+			this.Normal.X = this.Normal.Y = this.Normal.Z = this.D = value;
 		}
 
 		/// <summary>
@@ -85,10 +85,10 @@ namespace SlimTK
 		/// <param name="d">The distance of the plane along its normal from the origin.</param>
 		public Plane(float a, float b, float c, float d)
 		{
-			Normal.X = a;
-			Normal.Y = b;
-			Normal.Z = c;
-			D = d;
+			this.Normal.X = a;
+			this.Normal.Y = b;
+			this.Normal.Z = c;
+			this.D = d;
 		}
 
 		/// <summary>
@@ -109,8 +109,8 @@ namespace SlimTK
 		/// <param name="d">The distance of the plane along its normal from the origin</param>
 		public Plane(Vector3 value, float d)
 		{
-			Normal = value;
-			D = d;
+			this.Normal = value;
+			this.D = d;
 		}
 
 		/// <summary>
@@ -132,10 +132,10 @@ namespace SlimTK
 			float xy = (x1 * y2) - (y1 * x2);
 			float invPyth = 1.0f / (float) (Math.Sqrt((yz * yz) + (xz * xz) + (xy * xy)));
 
-			Normal.X = yz * invPyth;
-			Normal.Y = xz * invPyth;
-			Normal.Z = xy * invPyth;
-			D = -((Normal.X * point1.X) + (Normal.Y * point1.Y) + (Normal.Z * point1.Z));
+			this.Normal.X = yz * invPyth;
+			this.Normal.Y = xz * invPyth;
+			this.Normal.Z = xy * invPyth;
+			this.D = -((this.Normal.X * point1.X) + (this.Normal.Y * point1.Y) + (this.Normal.Z * point1.Z));
 		}
 
 		/// <summary>
@@ -155,10 +155,10 @@ namespace SlimTK
 				throw new ArgumentOutOfRangeException(nameof(values), "There must be four and only four input values for Plane.");
 			}
 
-			Normal.X = values[0];
-			Normal.Y = values[1];
-			Normal.Z = values[2];
-			D = values[3];
+			this.Normal.X = values[0];
+			this.Normal.Y = values[1];
+			this.Normal.Z = values[2];
+			this.D = values[3];
 		}
 
 		/// <summary>
@@ -175,13 +175,13 @@ namespace SlimTK
 				switch (index)
 				{
 					case 0:
-						return Normal.X;
+						return this.Normal.X;
 					case 1:
-						return Normal.Y;
+						return this.Normal.Y;
 					case 2:
-						return Normal.Z;
+						return this.Normal.Z;
 					case 3:
-						return D;
+						return this.D;
 				}
 
 				throw new ArgumentOutOfRangeException(nameof(index), "Indices for Plane run from 0 to 3, inclusive.");
@@ -192,16 +192,16 @@ namespace SlimTK
 				switch (index)
 				{
 					case 0:
-						Normal.X = value;
+						this.Normal.X = value;
 						break;
 					case 1:
-						Normal.Y = value;
+						this.Normal.Y = value;
 						break;
 					case 2:
-						Normal.Z = value;
+						this.Normal.Z = value;
 						break;
 					case 3:
-						D = value;
+						this.D = value;
 						break;
 					default:
 						throw new ArgumentOutOfRangeException(nameof(index), "Indices for Plane run from 0 to 3, inclusive.");
@@ -214,12 +214,12 @@ namespace SlimTK
 		/// </summary>
 		public void Normalize()
 		{
-			float magnitude = 1.0f / (float) (Math.Sqrt((Normal.X * Normal.X) + (Normal.Y * Normal.Y) + (Normal.Z * Normal.Z)));
+			float magnitude = 1.0f / (float) (Math.Sqrt((this.Normal.X * this.Normal.X) + (this.Normal.Y * this.Normal.Y) + (this.Normal.Z * this.Normal.Z)));
 
-			Normal.X *= magnitude;
-			Normal.Y *= magnitude;
-			Normal.Z *= magnitude;
-			D *= magnitude;
+			this.Normal.X *= magnitude;
+			this.Normal.Y *= magnitude;
+			this.Normal.Z *= magnitude;
+			this.D *= magnitude;
 		}
 
 		/// <summary>
@@ -228,7 +228,7 @@ namespace SlimTK
 		/// <returns>A four-element array containing the components of the plane.</returns>
 		public float[] ToArray()
 		{
-			return new float[] {Normal.X, Normal.Y, Normal.Z, D};
+			return new float[] {this.Normal.X, this.Normal.Y, this.Normal.Z, this.D};
 		}
 
 		/// <summary>
@@ -862,7 +862,7 @@ namespace SlimTK
 		/// </returns>
 		public override string ToString()
 		{
-			return string.Format(CultureInfo.CurrentCulture, "A:{0} B:{1} C:{2} D:{3}", Normal.X, Normal.Y, Normal.Z, D);
+			return string.Format(CultureInfo.CurrentCulture, "A:{0} B:{1} C:{2} D:{3}", this.Normal.X, this.Normal.Y, this.Normal.Z, this.D);
 		}
 
 		/// <summary>
@@ -874,10 +874,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(string format)
 		{
-			return string.Format(CultureInfo.CurrentCulture, "A:{0} B:{1} C:{2} D:{3}",
-				Normal.X.ToString(format, CultureInfo.CurrentCulture),
-				Normal.Y.ToString(format, CultureInfo.CurrentCulture), Normal.Z.ToString(format, CultureInfo.CurrentCulture),
-				D.ToString(format, CultureInfo.CurrentCulture));
+			return string.Format(CultureInfo.CurrentCulture, "A:{0} B:{1} C:{2} D:{3}", this.Normal.X.ToString(format, CultureInfo.CurrentCulture), this.Normal.Y.ToString(format, CultureInfo.CurrentCulture), this.Normal.Z.ToString(format, CultureInfo.CurrentCulture), this.D.ToString(format, CultureInfo.CurrentCulture));
 		}
 
 		/// <summary>
@@ -889,7 +886,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(IFormatProvider formatProvider)
 		{
-			return string.Format(formatProvider, "A:{0} B:{1} C:{2} D:{3}", Normal.X, Normal.Y, Normal.Z, D);
+			return string.Format(formatProvider, "A:{0} B:{1} C:{2} D:{3}", this.Normal.X, this.Normal.Y, this.Normal.Z, this.D);
 		}
 
 		/// <summary>
@@ -902,9 +899,7 @@ namespace SlimTK
 		/// </returns>
 		public string ToString(string format, IFormatProvider formatProvider)
 		{
-			return string.Format(formatProvider, "A:{0} B:{1} C:{2} D:{3}", Normal.X.ToString(format, formatProvider),
-				Normal.Y.ToString(format, formatProvider), Normal.Z.ToString(format, formatProvider),
-				D.ToString(format, formatProvider));
+			return string.Format(formatProvider, "A:{0} B:{1} C:{2} D:{3}", this.Normal.X.ToString(format, formatProvider), this.Normal.Y.ToString(format, formatProvider), this.Normal.Z.ToString(format, formatProvider), this.D.ToString(format, formatProvider));
 		}
 
 		/// <summary>
@@ -917,7 +912,7 @@ namespace SlimTK
 		{
 			unchecked
 			{
-				return (Normal.GetHashCode() * 397) ^ D.GetHashCode();
+				return (this.Normal.GetHashCode() * 397) ^ this.D.GetHashCode();
 			}
 		}
 
@@ -931,7 +926,7 @@ namespace SlimTK
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public bool Equals(ref Plane value)
 		{
-			return Normal == value.Normal && D == value.D;
+			return this.Normal == value.Normal && this.D == value.D;
 		}
 
 		/// <summary>

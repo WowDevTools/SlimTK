@@ -90,10 +90,10 @@ namespace SlimTK
 		/// <param name="height">The height.</param>
 		public RectangleF(float x, float y, float width, float height)
 		{
-			Left = x;
-			Top = y;
-			Right = x + width;
-			Bottom = y + height;
+			this.Left = x;
+			this.Top = y;
+			this.Right = x + width;
+			this.Bottom = y + height;
 		}
 
 		/// <summary>
@@ -102,11 +102,11 @@ namespace SlimTK
 		/// <value>The X position.</value>
 		public float X
 		{
-			get { return Left; }
+			get { return this.Left; }
 			set
 			{
-				Right = value + Width;
-				Left = value;
+				this.Right = value + this.Width;
+				this.Left = value;
 			}
 		}
 
@@ -116,11 +116,11 @@ namespace SlimTK
 		/// <value>The Y position.</value>
 		public float Y
 		{
-			get { return Top; }
+			get { return this.Top; }
 			set
 			{
-				Bottom = value + Height;
-				Top = value;
+				this.Bottom = value + this.Height;
+				this.Top = value;
 			}
 		}
 
@@ -130,8 +130,8 @@ namespace SlimTK
 		/// <value>The width.</value>
 		public float Width
 		{
-			get { return Right - Left; }
-			set { Right = Left + value; }
+			get { return this.Right - this.Left; }
+			set { this.Right = this.Left + value; }
 		}
 
 		/// <summary>
@@ -140,8 +140,8 @@ namespace SlimTK
 		/// <value>The height.</value>
 		public float Height
 		{
-			get { return Bottom - Top; }
-			set { Bottom = Top + value; }
+			get { return this.Bottom - this.Top; }
+			set { this.Bottom = this.Top + value; }
 		}
 
 		/// <summary>
@@ -152,11 +152,11 @@ namespace SlimTK
 		/// </value>
 		public Vector2 Location
 		{
-			get { return new Vector2(X, Y); }
+			get { return new Vector2(this.X, this.Y); }
 			set
 			{
-				X = value.X;
-				Y = value.Y;
+				this.X = value.X;
+				this.Y = value.Y;
 			}
 		}
 
@@ -168,7 +168,7 @@ namespace SlimTK
 		/// </value>
 		public Vector2 Center
 		{
-			get { return new Vector2(X + (Width / 2), Y + (Height / 2)); }
+			get { return new Vector2(this.X + (this.Width / 2), this.Y + (this.Height / 2)); }
 		}
 
 		/// <summary>
@@ -179,7 +179,7 @@ namespace SlimTK
 		/// </value>
 		public bool IsEmpty
 		{
-			get { return (Width == 0.0f) && (Height == 0.0f) && (X == 0.0f) && (Y == 0.0f); }
+			get { return (this.Width == 0.0f) && (this.Height == 0.0f) && (this.X == 0.0f) && (this.Y == 0.0f); }
 		}
 
 		/// <summary>
@@ -188,11 +188,11 @@ namespace SlimTK
 		/// <value>The size of the rectangle.</value>
 		public SizeF Size
 		{
-			get { return new SizeF(Width, Height); }
+			get { return new SizeF(this.Width, this.Height); }
 			set
 			{
-				Width = value.Width;
-				Height = value.Height;
+				this.Width = value.Width;
+				this.Height = value.Height;
 			}
 		}
 
@@ -202,7 +202,7 @@ namespace SlimTK
 		/// <value>The top-left corner of the rectangle.</value>
 		public Vector2 TopLeft
 		{
-			get { return new Vector2(Left, Top); }
+			get { return new Vector2(this.Left, this.Top); }
 		}
 
 		/// <summary>
@@ -211,7 +211,7 @@ namespace SlimTK
 		/// <value>The top-right corner of the rectangle.</value>
 		public Vector2 TopRight
 		{
-			get { return new Vector2(Right, Top); }
+			get { return new Vector2(this.Right, this.Top); }
 		}
 
 		/// <summary>
@@ -220,7 +220,7 @@ namespace SlimTK
 		/// <value>The bottom-left corner of the rectangle.</value>
 		public Vector2 BottomLeft
 		{
-			get { return new Vector2(Left, Bottom); }
+			get { return new Vector2(this.Left, this.Bottom); }
 		}
 
 		/// <summary>
@@ -229,7 +229,7 @@ namespace SlimTK
 		/// <value>The bottom-right corner of the rectangle.</value>
 		public Vector2 BottomRight
 		{
-			get { return new Vector2(Right, Bottom); }
+			get { return new Vector2(this.Right, this.Bottom); }
 		}
 
 		/// <summary>Changes the position of the rectangle.</summary>
@@ -251,8 +251,8 @@ namespace SlimTK
 		/// <param name="offsetY">Change in the y-position.</param>
 		public void Offset(float offsetX, float offsetY)
 		{
-			X += offsetX;
-			Y += offsetY;
+			this.X += offsetX;
+			this.Y += offsetY;
 		}
 
 		/// <summary>Pushes the edges of the rectangle out by the horizontal and vertical values specified.</summary>
@@ -260,10 +260,10 @@ namespace SlimTK
 		/// <param name="verticalAmount">Value to push the top and bottom out by.</param>
 		public void Inflate(float horizontalAmount, float verticalAmount)
 		{
-			X -= horizontalAmount;
-			Y -= verticalAmount;
-			Width += horizontalAmount * 2;
-			Height += verticalAmount * 2;
+			this.X -= horizontalAmount;
+			this.Y -= verticalAmount;
+			this.Width += horizontalAmount * 2;
+			this.Height += verticalAmount * 2;
 		}
 
 		/// <summary>Determines whether this rectangle contains a specified Point.</summary>
@@ -271,14 +271,14 @@ namespace SlimTK
 		/// <param name="result">[OutAttribute] true if the specified Point is contained within this rectangle; false otherwise.</param>
 		public void Contains(ref Vector2 value, out bool result)
 		{
-			result = (X <= value.X) && (value.X < Right) && (Y <= value.Y) && (value.Y < Bottom);
+			result = (this.X <= value.X) && (value.X < this.Right) && (this.Y <= value.Y) && (value.Y < this.Bottom);
 		}
 
 		/// <summary>Determines whether this rectangle entirely contains a specified rectangle.</summary>
 		/// <param name="value">The rectangle to evaluate.</param>
 		public bool Contains(Rectangle value)
 		{
-			return (X <= value.X) && (value.Right <= Right) && (Y <= value.Y) && (value.Bottom <= Bottom);
+			return (this.X <= value.X) && (value.Right <= this.Right) && (this.Y <= value.Y) && (value.Bottom <= this.Bottom);
 		}
 
 		/// <summary>Determines whether this rectangle entirely contains a specified rectangle.</summary>
@@ -286,7 +286,7 @@ namespace SlimTK
 		/// <param name="result">[OutAttribute] On exit, is true if this rectangle entirely contains the specified rectangle, or false if not.</param>
 		public void Contains(ref RectangleF value, out bool result)
 		{
-			result = (X <= value.X) && (value.Right <= Right) && (Y <= value.Y) && (value.Bottom <= Bottom);
+			result = (this.X <= value.X) && (value.Right <= this.Right) && (this.Y <= value.Y) && (value.Bottom <= this.Bottom);
 		}
 
 		/// <summary>
@@ -297,7 +297,7 @@ namespace SlimTK
 		/// <returns><c>true</c> if point is inside <see cref="RectangleF"/>, otherwise <c>false</c>.</returns>
 		public bool Contains(float x, float y)
 		{
-			return (x >= Left && x <= Right && y >= Top && y <= Bottom);
+			return (x >= this.Left && x <= this.Right && y >= this.Top && y <= this.Bottom);
 		}
 
 		/// <summary>
@@ -336,7 +336,7 @@ namespace SlimTK
 		/// <param name="result">[OutAttribute] true if the specified rectangle intersects with this one; false otherwise.</param>
 		public void Intersects(ref RectangleF value, out bool result)
 		{
-			result = (value.X < Right) && (X < value.Right) && (value.Y < Bottom) && (Y < value.Bottom);
+			result = (value.X < this.Right) && (this.X < value.Right) && (value.Y < this.Bottom) && (this.Y < value.Bottom);
 		}
 
 		/// <summary>
@@ -427,10 +427,10 @@ namespace SlimTK
 		/// </returns>
 		public bool Equals(ref RectangleF other)
 		{
-			return MathUtil.NearEqual(other.Left, Left) &&
-			       MathUtil.NearEqual(other.Right, Right) &&
-			       MathUtil.NearEqual(other.Top, Top) &&
-			       MathUtil.NearEqual(other.Bottom, Bottom);
+			return MathUtil.NearEqual(other.Left, this.Left) &&
+			       MathUtil.NearEqual(other.Right, this.Right) &&
+			       MathUtil.NearEqual(other.Top, this.Top) &&
+			       MathUtil.NearEqual(other.Bottom, this.Bottom);
 		}
 
 		/// <summary>
@@ -456,17 +456,17 @@ namespace SlimTK
 		{
 			unchecked
 			{
-				int result = Left.GetHashCode();
-				result = (result * 397) ^ Top.GetHashCode();
-				result = (result * 397) ^ Right.GetHashCode();
-				result = (result * 397) ^ Bottom.GetHashCode();
+				int result = this.Left.GetHashCode();
+				result = (result * 397) ^ this.Top.GetHashCode();
+				result = (result * 397) ^ this.Right.GetHashCode();
+				result = (result * 397) ^ this.Bottom.GetHashCode();
 				return result;
 			}
 		}
 
 		public override string ToString()
 		{
-			return string.Format(CultureInfo.InvariantCulture, "X:{0} Y:{1} Width:{2} Height:{3}", X, Y, Width, Height);
+			return string.Format(CultureInfo.InvariantCulture, "X:{0} Y:{1} Width:{2} Height:{3}", this.X, this.Y, this.Width, this.Height);
 		}
 
 		/// <summary>
