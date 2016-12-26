@@ -4,7 +4,6 @@
     <list default="true" id="a1ea94de-4977-40f3-a22c-5655a2d4f722" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/BoundingBox.cs" afterPath="$PROJECT_DIR$/SlimTK/BoundingBox.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/MathUtil.cs" afterPath="$PROJECT_DIR$/SlimTK/MathUtil.cs" />
     </list>
     <ignored path="SlimTK.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,99 +23,99 @@
     <favorites_list name="SlimTK" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="BoundingBox.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SlimTK/BoundingBox.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="390" column="43" lean-forward="false" selection-start-line="390" selection-start-column="43" selection-end-line="390" selection-end-column="43" />
+            <state relative-caret-position="512">
+              <caret line="393" column="26" lean-forward="false" selection-start-line="393" selection-start-column="26" selection-end-line="393" selection-end-column="26" />
               <folding>
-                <marker date="1482773607810" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-                <marker date="1482773607810" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
-                <marker date="1482773607810" expanded="true" signature="2555:2681" ph="..." />
-                <marker date="1482773607810" expanded="true" signature="2699:21058" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="2703:2805" ph="/// Represents an axis-aligned bounding box in three dimensional space. ... " />
-                <marker date="1482773607810" expanded="true" signature="2921:21056" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="2927:2993" ph="/// The minimum point of the box. ... " />
-                <marker date="1482773607810" expanded="true" signature="3023:3089" ph="/// The maximum point of the box. ... " />
-                <marker date="1482773607810" expanded="true" signature="3119:3375" ph="/// Initializes a new instance of the &lt;see cref=&quot;BoundingBox&quot;/&gt; struct. ... " />
-                <marker date="1482773607810" expanded="true" signature="3430:3492" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="3496:3677" ph="/// Retrieves the eight corners of the bounding box. ... " />
-                <marker date="1482773607810" expanded="true" signature="3709:3799" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="3803:3984" ph="/// Retrieves the eight corners of the bounding box. ... " />
-                <marker date="1482773607810" expanded="true" signature="4028:4652" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="4656:4894" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="4932:5030" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="5034:5420" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="5478:5557" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="5561:5962" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="6019:6095" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="6099:6343" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Plane&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="6402:6471" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="6475:7120" ph="/* Determines if there is an intersection between the current object and a triangle. ... */" />
-                <marker date="1482773607810" expanded="true" signature="7124:7370" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="7416:7481" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="7485:7731" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="7773:7812" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="7816:8071" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="8123:8194" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="8198:8453" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="8501:8543" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="8547:8764" ph="/// Determines whether the current objects contains a point. ... " />
-                <marker date="1482773607810" expanded="true" signature="8817:8884" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="8888:9105" ph="/// Determines whether the current objects contains a point. ... " />
-                <marker date="1482773607810" expanded="true" signature="9154:9193" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="9197:9836" ph="/* Determines whether the current objects contains a triangle. ... */" />
-                <marker date="1482773607810" expanded="true" signature="9840:10073" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="10128:10191" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="10195:10428" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="10479:10516" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="10520:10762" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="10823:10892" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="10896:11138" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482773607810" expanded="true" signature="11195:11235" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="11239:11652" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-                <marker date="1482773607810" expanded="true" signature="11726:12085" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="11753:11816" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="11953:12041" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="12089:12456" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-                <marker date="1482773607810" expanded="true" signature="12513:12870" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="12540:12603" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="12740:12828" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="12874:13167" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-                <marker date="1482773607810" expanded="true" signature="13250:13530" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="13534:13781" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-                <marker date="1482773607810" expanded="true" signature="13843:14152" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="14156:14529" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-                <marker date="1482773607810" expanded="true" signature="14628:14766" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="14770:15097" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-                <marker date="1482773607810" expanded="true" signature="15171:15339" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="15343:15589" ph="/// Transforms this box by the specified matrix. ... " />
-                <marker date="1482773607810" expanded="true" signature="15657:16050" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="15831:16002" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="16054:16391" ph="/// Tests for equality between two objects. ... " />
-                <marker date="1482773607810" expanded="true" signature="16514:16556" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="16560:16904" ph="/// Tests for inequality between two objects. ... " />
-                <marker date="1482773607810" expanded="true" signature="17027:17070" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="17074:17279" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="17315:17453" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="17457:17709" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="17749:18012" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="17776:17809" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="18016:18285" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="18342:18468" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="18472:18788" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="18860:19101" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="18887:18934" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="19105:19328" ph="/// Returns a hash code for this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="19364:19471" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="19475:19826" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="19923:20005" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="20009:20360" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="20453:20490" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="20494:20863" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482773607810" expanded="true" signature="20907:21053" ph="{...}" />
-                <marker date="1482773607810" expanded="true" signature="20943:20971" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+                <marker date="1482774154108" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
+                <marker date="1482774154108" expanded="true" signature="2555:2681" ph="..." />
+                <marker date="1482774154108" expanded="true" signature="2699:21037" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="2703:2805" ph="/// Represents an axis-aligned bounding box in three dimensional space. ... " />
+                <marker date="1482774154108" expanded="true" signature="2921:21035" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="2927:2993" ph="/// The minimum point of the box. ... " />
+                <marker date="1482774154108" expanded="true" signature="3023:3089" ph="/// The maximum point of the box. ... " />
+                <marker date="1482774154108" expanded="true" signature="3119:3375" ph="/// Initializes a new instance of the &lt;see cref=&quot;BoundingBox&quot;/&gt; struct. ... " />
+                <marker date="1482774154108" expanded="true" signature="3430:3492" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="3496:3677" ph="/// Retrieves the eight corners of the bounding box. ... " />
+                <marker date="1482774154108" expanded="true" signature="3709:3799" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="3803:3984" ph="/// Retrieves the eight corners of the bounding box. ... " />
+                <marker date="1482774154108" expanded="true" signature="4028:4652" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="4656:4894" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="4932:5030" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="5034:5420" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="5478:5557" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="5561:5962" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="6019:6095" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="6099:6343" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Plane&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="6402:6471" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="6475:7120" ph="/* Determines if there is an intersection between the current object and a triangle. ... */" />
+                <marker date="1482774154108" expanded="true" signature="7124:7370" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="7416:7481" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="7485:7731" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="7773:7812" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="7816:8071" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="8123:8194" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="8198:8453" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="8501:8543" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="8547:8764" ph="/// Determines whether the current objects contains a point. ... " />
+                <marker date="1482774154108" expanded="true" signature="8817:8884" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="8888:9105" ph="/// Determines whether the current objects contains a point. ... " />
+                <marker date="1482774154108" expanded="true" signature="9154:9193" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="9197:9836" ph="/* Determines whether the current objects contains a triangle. ... */" />
+                <marker date="1482774154108" expanded="true" signature="9840:10073" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="10128:10191" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="10195:10428" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="10479:10516" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="10520:10762" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="10823:10892" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="10896:11138" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+                <marker date="1482774154108" expanded="true" signature="11195:11235" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="11239:11652" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
+                <marker date="1482774154108" expanded="true" signature="11726:12085" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="11753:11816" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="11953:12041" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="12089:12456" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
+                <marker date="1482774154108" expanded="true" signature="12513:12870" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="12540:12603" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="12740:12828" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="12874:13167" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
+                <marker date="1482774154108" expanded="true" signature="13250:13530" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="13534:13781" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
+                <marker date="1482774154108" expanded="true" signature="13843:14152" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="14156:14529" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
+                <marker date="1482774154108" expanded="true" signature="14628:14766" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="14770:15097" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
+                <marker date="1482774154108" expanded="true" signature="15171:15339" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="15343:15589" ph="/// Transforms this box by the specified matrix. ... " />
+                <marker date="1482774154108" expanded="true" signature="15640:16029" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="15810:15981" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="16033:16370" ph="/// Tests for equality between two objects. ... " />
+                <marker date="1482774154108" expanded="true" signature="16493:16535" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="16539:16883" ph="/// Tests for inequality between two objects. ... " />
+                <marker date="1482774154108" expanded="true" signature="17006:17049" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="17053:17258" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="17294:17432" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="17436:17688" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="17728:17991" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="17755:17788" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="17995:18264" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="18321:18447" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="18451:18767" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="18839:19080" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="18866:18913" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="19084:19307" ph="/// Returns a hash code for this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="19343:19450" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="19454:19805" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="19902:19984" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="19988:20339" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="20432:20469" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="20473:20842" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1482774154108" expanded="true" signature="20886:21032" ph="{...}" />
+                <marker date="1482774154108" expanded="true" signature="20922:20950" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -125,13 +124,12 @@
       <file leaf-file-name="MathUtil.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SlimTK/MathUtil.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="7560">
               <caret line="504" column="13" lean-forward="false" selection-start-line="504" selection-start-column="13" selection-end-line="504" selection-end-column="13" />
               <folding>
                 <marker date="1482773561689" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
                 <marker date="1482773561689" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
                 <marker date="1482773561689" expanded="true" signature="2555:2576" ph="..." />
-                <marker date="1482773561689" expanded="true" signature="2594:18249" ph="{...}" />
                 <marker date="1482773561689" expanded="true" signature="2628:18247" ph="{...}" />
                 <marker date="1482773561689" expanded="true" signature="2634:2754" ph="/// The value for which all absolute numbers smaller than are considered equal to zero. ... " />
                 <marker date="1482773561689" expanded="true" signature="2844:2944" ph="/// A value specifying the approximation of π which is 180 degrees. ... " />
@@ -281,10 +279,6 @@
               <option name="myItemId" value="SlimTK (1 project)" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SlimTK" />
-              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
         <option name="show-file-system" value="false" />
@@ -339,12 +333,13 @@
       <workItem from="1474046829017" duration="785000" />
       <workItem from="1474124502301" duration="1959000" />
       <workItem from="1482772343285" duration="844000" />
-      <workItem from="1482773270663" duration="345000" />
+      <workItem from="1482773270663" duration="523000" />
+      <workItem from="1482774148077" duration="8000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7368000" />
+    <option name="totallyTimeSpent" value="7554000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -360,7 +355,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13233724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1339381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22411953" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -485,13 +480,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SlimTK/MathUtil.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="7560">
           <caret line="504" column="13" lean-forward="false" selection-start-line="504" selection-start-column="13" selection-end-line="504" selection-end-column="13" />
           <folding>
             <marker date="1482773561689" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
             <marker date="1482773561689" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
             <marker date="1482773561689" expanded="true" signature="2555:2576" ph="..." />
-            <marker date="1482773561689" expanded="true" signature="2594:18249" ph="{...}" />
             <marker date="1482773561689" expanded="true" signature="2628:18247" ph="{...}" />
             <marker date="1482773561689" expanded="true" signature="2634:2754" ph="/// The value for which all absolute numbers smaller than are considered equal to zero. ... " />
             <marker date="1482773561689" expanded="true" signature="2844:2944" ph="/// A value specifying the approximation of π which is 180 degrees. ... " />
@@ -579,95 +573,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SlimTK/BoundingBox.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="390" column="43" lean-forward="false" selection-start-line="390" selection-start-column="43" selection-end-line="390" selection-end-column="43" />
+        <state relative-caret-position="512">
+          <caret line="393" column="26" lean-forward="false" selection-start-line="393" selection-start-column="26" selection-end-line="393" selection-end-column="26" />
           <folding>
-            <marker date="1482773607810" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-            <marker date="1482773607810" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
-            <marker date="1482773607810" expanded="true" signature="2555:2681" ph="..." />
-            <marker date="1482773607810" expanded="true" signature="2699:21058" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="2703:2805" ph="/// Represents an axis-aligned bounding box in three dimensional space. ... " />
-            <marker date="1482773607810" expanded="true" signature="2921:21056" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="2927:2993" ph="/// The minimum point of the box. ... " />
-            <marker date="1482773607810" expanded="true" signature="3023:3089" ph="/// The maximum point of the box. ... " />
-            <marker date="1482773607810" expanded="true" signature="3119:3375" ph="/// Initializes a new instance of the &lt;see cref=&quot;BoundingBox&quot;/&gt; struct. ... " />
-            <marker date="1482773607810" expanded="true" signature="3430:3492" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="3496:3677" ph="/// Retrieves the eight corners of the bounding box. ... " />
-            <marker date="1482773607810" expanded="true" signature="3709:3799" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="3803:3984" ph="/// Retrieves the eight corners of the bounding box. ... " />
-            <marker date="1482773607810" expanded="true" signature="4028:4652" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="4656:4894" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="4932:5030" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="5034:5420" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="5478:5557" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="5561:5962" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="6019:6095" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="6099:6343" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Plane&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="6402:6471" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="6475:7120" ph="/* Determines if there is an intersection between the current object and a triangle. ... */" />
-            <marker date="1482773607810" expanded="true" signature="7124:7370" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="7416:7481" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="7485:7731" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="7773:7812" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="7816:8071" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="8123:8194" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="8198:8453" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="8501:8543" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="8547:8764" ph="/// Determines whether the current objects contains a point. ... " />
-            <marker date="1482773607810" expanded="true" signature="8817:8884" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="8888:9105" ph="/// Determines whether the current objects contains a point. ... " />
-            <marker date="1482773607810" expanded="true" signature="9154:9193" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="9197:9836" ph="/* Determines whether the current objects contains a triangle. ... */" />
-            <marker date="1482773607810" expanded="true" signature="9840:10073" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="10128:10191" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="10195:10428" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="10479:10516" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="10520:10762" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="10823:10892" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="10896:11138" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482773607810" expanded="true" signature="11195:11235" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="11239:11652" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-            <marker date="1482773607810" expanded="true" signature="11726:12085" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="11753:11816" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="11953:12041" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="12089:12456" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-            <marker date="1482773607810" expanded="true" signature="12513:12870" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="12540:12603" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="12740:12828" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="12874:13167" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-            <marker date="1482773607810" expanded="true" signature="13250:13530" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="13534:13781" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-            <marker date="1482773607810" expanded="true" signature="13843:14152" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="14156:14529" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-            <marker date="1482773607810" expanded="true" signature="14628:14766" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="14770:15097" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-            <marker date="1482773607810" expanded="true" signature="15171:15339" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="15343:15589" ph="/// Transforms this box by the specified matrix. ... " />
-            <marker date="1482773607810" expanded="true" signature="15657:16050" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="15831:16002" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="16054:16391" ph="/// Tests for equality between two objects. ... " />
-            <marker date="1482773607810" expanded="true" signature="16514:16556" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="16560:16904" ph="/// Tests for inequality between two objects. ... " />
-            <marker date="1482773607810" expanded="true" signature="17027:17070" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="17074:17279" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="17315:17453" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="17457:17709" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="17749:18012" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="17776:17809" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="18016:18285" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="18342:18468" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="18472:18788" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="18860:19101" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="18887:18934" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="19105:19328" ph="/// Returns a hash code for this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="19364:19471" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="19475:19826" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="19923:20005" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="20009:20360" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="20453:20490" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="20494:20863" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482773607810" expanded="true" signature="20907:21053" ph="{...}" />
-            <marker date="1482773607810" expanded="true" signature="20943:20971" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+            <marker date="1482774154108" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
+            <marker date="1482774154108" expanded="true" signature="2555:2681" ph="..." />
+            <marker date="1482774154108" expanded="true" signature="2699:21037" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="2703:2805" ph="/// Represents an axis-aligned bounding box in three dimensional space. ... " />
+            <marker date="1482774154108" expanded="true" signature="2921:21035" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="2927:2993" ph="/// The minimum point of the box. ... " />
+            <marker date="1482774154108" expanded="true" signature="3023:3089" ph="/// The maximum point of the box. ... " />
+            <marker date="1482774154108" expanded="true" signature="3119:3375" ph="/// Initializes a new instance of the &lt;see cref=&quot;BoundingBox&quot;/&gt; struct. ... " />
+            <marker date="1482774154108" expanded="true" signature="3430:3492" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="3496:3677" ph="/// Retrieves the eight corners of the bounding box. ... " />
+            <marker date="1482774154108" expanded="true" signature="3709:3799" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="3803:3984" ph="/// Retrieves the eight corners of the bounding box. ... " />
+            <marker date="1482774154108" expanded="true" signature="4028:4652" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="4656:4894" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="4932:5030" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="5034:5420" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="5478:5557" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="5561:5962" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="6019:6095" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="6099:6343" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Plane&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="6402:6471" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="6475:7120" ph="/* Determines if there is an intersection between the current object and a triangle. ... */" />
+            <marker date="1482774154108" expanded="true" signature="7124:7370" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="7416:7481" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="7485:7731" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="7773:7812" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="7816:8071" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="8123:8194" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="8198:8453" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="8501:8543" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="8547:8764" ph="/// Determines whether the current objects contains a point. ... " />
+            <marker date="1482774154108" expanded="true" signature="8817:8884" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="8888:9105" ph="/// Determines whether the current objects contains a point. ... " />
+            <marker date="1482774154108" expanded="true" signature="9154:9193" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="9197:9836" ph="/* Determines whether the current objects contains a triangle. ... */" />
+            <marker date="1482774154108" expanded="true" signature="9840:10073" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="10128:10191" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="10195:10428" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="10479:10516" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="10520:10762" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="10823:10892" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="10896:11138" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
+            <marker date="1482774154108" expanded="true" signature="11195:11235" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="11239:11652" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
+            <marker date="1482774154108" expanded="true" signature="11726:12085" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="11753:11816" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="11953:12041" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="12089:12456" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
+            <marker date="1482774154108" expanded="true" signature="12513:12870" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="12540:12603" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="12740:12828" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="12874:13167" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
+            <marker date="1482774154108" expanded="true" signature="13250:13530" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="13534:13781" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
+            <marker date="1482774154108" expanded="true" signature="13843:14152" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="14156:14529" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
+            <marker date="1482774154108" expanded="true" signature="14628:14766" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="14770:15097" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
+            <marker date="1482774154108" expanded="true" signature="15171:15339" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="15343:15589" ph="/// Transforms this box by the specified matrix. ... " />
+            <marker date="1482774154108" expanded="true" signature="15640:16029" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="15810:15981" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="16033:16370" ph="/// Tests for equality between two objects. ... " />
+            <marker date="1482774154108" expanded="true" signature="16493:16535" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="16539:16883" ph="/// Tests for inequality between two objects. ... " />
+            <marker date="1482774154108" expanded="true" signature="17006:17049" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="17053:17258" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="17294:17432" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="17436:17688" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="17728:17991" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="17755:17788" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="17995:18264" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="18321:18447" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="18451:18767" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="18839:19080" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="18866:18913" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="19084:19307" ph="/// Returns a hash code for this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="19343:19450" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="19454:19805" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="19902:19984" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="19988:20339" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="20432:20469" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="20473:20842" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1482774154108" expanded="true" signature="20886:21032" ph="{...}" />
+            <marker date="1482774154108" expanded="true" signature="20922:20950" ph="{...}" />
           </folding>
         </state>
       </provider>
