@@ -44,6 +44,7 @@
 */
 
 using System;
+using OpenTK;
 
 namespace SlimTK
 {
@@ -479,6 +480,52 @@ namespace SlimTK
 			var componentY = (cy * cy) / (2 * sigmaY * sigmaY);
 
 			return amplitude * Math.Exp(-(componentX + componentY));
+		}
+
+		/// <summary>
+		/// Creates a new vector by taking the smallest of each component from two vectors, that is,
+		/// it examines the components of both vectors, takes the smallest value on a component-by-component
+		/// basis, and assigns it to the first vector.
+		/// </summary>
+		/// <param name="v">The vector to be assigned to.</param>
+		/// <param name="other">The other vector to be examined.</param>
+		public static void TakeMin(ref Vector3 v , ref Vector3 other)
+		{
+			if (v.X > other.X)
+			{
+				v.X = other.X;
+			}
+			if (v.Y > other.Y)
+			{
+				v.Y = other.Y;
+			}
+			if (v.Z > other.Z)
+			{
+				v.Z = other.Z;
+			}
+		}
+
+		/// <summary>
+		/// Creates a new vector by taking the largest of each component from two vectors, that is,
+		/// it examines the components of both vectors, takes the largest value on a component-by-component
+		/// basis, and assigns it to the first vector.
+		/// </summary>
+		/// <param name="v">The vector to be assigned to.</param>
+		/// <param name="other">The other vector to be examined.</param>
+		public static void TakeMax(ref Vector3 v, ref Vector3 other)
+		{
+			if (v.X < other.X)
+			{
+				v.X = other.X;
+			}
+			if (v.Y < other.Y)
+			{
+				v.Y = other.Y;
+			}
+			if (v.Z < other.Z)
+			{
+				v.Z = other.Z;
+			}
 		}
 	}
 }

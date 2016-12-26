@@ -384,6 +384,30 @@ namespace SlimTK
 		}
 
 		/// <summary>
+		/// Transforms this box by the specified matrix.
+		/// </summary>
+		/// <param name="box">The box to transform.</param>
+		/// <param name="matrix">The matrix to transform by.</param>
+		/// <returns>A new transformed box.</returns>
+		public BoundingBox Transform(BoundingBox box, ref Matrix4 matrix)
+		{
+			var corners = box.GetCorners();
+
+			var newMin = new Vector3(float.MaxValue);
+			var newMax = new Vector3(float.MinValue);
+
+			for(var i = 0; i < corners.Length; ++i)
+			{
+				Vector3 v;
+				Vector3.TransformVector(ref corners[i], ref matrix, out v);
+				MathUtil.TakeMin(ref newMin, ref v);
+				MathUtil.TakeMax(ref newMax, ref v);
+			}
+
+			return new BoundingBox(newMin, newMax);
+		}
+
+		/// <summary>
 		/// Tests for equality between two objects.
 		/// </summary>
 		/// <param name="left">The first value to compare.</param>
