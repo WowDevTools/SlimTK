@@ -398,7 +398,7 @@ namespace SlimTK
 		{
 			if (min > max)
 			{
-				throw new ArgumentException(string.Format("min {0} should be less than or equal to max {1}", min, max), "min");
+				throw new ArgumentException(string.Format("min {0} should be less than or equal to max {1}", min, max), nameof(min));
 			}
 
 			// Code from http://stackoverflow.com/a/707426/1356325
@@ -433,7 +433,7 @@ namespace SlimTK
 
 			if (mind > maxd)
 			{
-				throw new ArgumentException(string.Format("min {0} should be less than or equal to max {1}", min, max), "min");
+				throw new ArgumentException(string.Format("min {0} should be less than or equal to max {1}", min, max), nameof(min));
 			}
 
 			var range_size = maxd - mind;

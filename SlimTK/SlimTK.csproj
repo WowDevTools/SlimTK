@@ -34,16 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="mscorlib" />
     <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4">
       <HintPath>..\packages\OpenTK.1.1.2349.61993\lib\NET40\OpenTK.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\..\..\..\..\usr\lib\mono\4.5-api\System.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoundingBox.cs" />

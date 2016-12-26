@@ -234,20 +234,20 @@ namespace SlimTK
 		{
 			if (points == null)
 			{
-				throw new ArgumentNullException("points");
+				throw new ArgumentNullException(nameof(points));
 			}
 
 			// Check that start is in the correct range
 			if (start < 0 || start >= points.Length)
 			{
-				throw new ArgumentOutOfRangeException("start", start,
+				throw new ArgumentOutOfRangeException(nameof(start), start,
 					string.Format("Must be in the range [0, {0}]", points.Length - 1));
 			}
 
 			// Check that count is in the correct range
 			if (count < 0 || (start + count) > points.Length)
 			{
-				throw new ArgumentOutOfRangeException("count", count, string.Format("Must be in the range <= {0}", points.Length));
+				throw new ArgumentOutOfRangeException(nameof(count), count, string.Format("Must be in the range <= {0}", points.Length));
 			}
 
 			var upperEnd = start + count;
@@ -293,7 +293,7 @@ namespace SlimTK
 		{
 			if (points == null)
 			{
-				throw new ArgumentNullException("points");
+				throw new ArgumentNullException(nameof(points));
 			}
 
 			FromPoints(points, 0, points.Length, out result);

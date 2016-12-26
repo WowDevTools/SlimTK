@@ -288,7 +288,7 @@ namespace SlimTK
 		{
 			if (points == null)
 			{
-				throw new ArgumentNullException("points");
+				throw new ArgumentNullException(nameof(points));
 			}
 
 			Vector3 min = new Vector3(float.MaxValue);
@@ -313,7 +313,7 @@ namespace SlimTK
 		{
 			if (points == null)
 			{
-				throw new ArgumentNullException("points");
+				throw new ArgumentNullException(nameof(points));
 			}
 
 			Vector3 min = new Vector3(float.MaxValue);
