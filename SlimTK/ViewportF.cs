@@ -169,7 +169,9 @@ namespace SlimTK
 		public override bool Equals(object obj)
 		{
 			if (!(obj is ViewportF))
+			{
 				return false;
+			}
 
 			var strongValue = (ViewportF) obj;
 			return Equals(ref strongValue);

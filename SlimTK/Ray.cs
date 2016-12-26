@@ -427,7 +427,9 @@ namespace SlimTK
 		public override bool Equals(object value)
 		{
 			if (!(value is Ray))
+			{
 				return false;
+			}
 
 			var strongValue = (Ray) value;
 			return Equals(ref strongValue);

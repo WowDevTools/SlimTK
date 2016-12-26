@@ -287,7 +287,9 @@ namespace SlimTK
 		public static void FromPoints(Vector3[] points, out BoundingBox result)
 		{
 			if (points == null)
+			{
 				throw new ArgumentNullException("points");
+			}
 
 			Vector3 min = new Vector3(float.MaxValue);
 			Vector3 max = new Vector3(float.MinValue);
@@ -310,7 +312,9 @@ namespace SlimTK
 		public static BoundingBox FromPoints(Vector3[] points)
 		{
 			if (points == null)
+			{
 				throw new ArgumentNullException("points");
+			}
 
 			Vector3 min = new Vector3(float.MaxValue);
 			Vector3 max = new Vector3(float.MinValue);
@@ -424,7 +428,9 @@ namespace SlimTK
 		public string ToString(string format)
 		{
 			if (format == null)
+			{
 				return ToString();
+			}
 
 			return string.Format(CultureInfo.CurrentCulture, "Minimum:{0} Maximum:{1}",
 				Minimum.ToString(format, CultureInfo.CurrentCulture),
@@ -454,7 +460,9 @@ namespace SlimTK
 		public string ToString(string format, IFormatProvider formatProvider)
 		{
 			if (format == null)
+			{
 				return ToString(formatProvider);
+			}
 
 			return string.Format(formatProvider, "Minimum:{0} Maximum:{1}", Minimum.ToString(format, formatProvider),
 				Maximum.ToString(format, formatProvider));
@@ -510,7 +518,9 @@ namespace SlimTK
 		public override bool Equals(object value)
 		{
 			if (!(value is BoundingBox))
+			{
 				return false;
+			}
 
 			var strongValue = (BoundingBox) value;
 			return Equals(ref strongValue);

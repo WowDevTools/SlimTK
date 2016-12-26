@@ -410,7 +410,9 @@ namespace SlimTK
 		public override bool Equals(object obj)
 		{
 			if (!(obj is RectangleF))
+			{
 				return false;
+			}
 
 			var strongValue = (RectangleF) obj;
 			return Equals(ref strongValue);

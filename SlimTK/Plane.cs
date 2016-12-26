@@ -147,9 +147,13 @@ namespace SlimTK
 		public Plane(float[] values)
 		{
 			if (values == null)
+			{
 				throw new ArgumentNullException(nameof(values));
+			}
 			if (values.Length != 4)
+			{
 				throw new ArgumentOutOfRangeException(nameof(values), "There must be four and only four input values for Plane.");
+			}
 
 			Normal.X = values[0];
 			Normal.Y = values[1];
@@ -700,7 +704,9 @@ namespace SlimTK
 		public static void Transform(Plane[] planes, ref Quaternion rotation)
 		{
 			if (planes == null)
+			{
 				throw new ArgumentNullException("planes");
+			}
 
 			float x2 = rotation.X + rotation.X;
 			float y2 = rotation.Y + rotation.Y;
@@ -789,7 +795,9 @@ namespace SlimTK
 		public static void Transform(Plane[] planes, ref Matrix4 transformation)
 		{
 			if (planes == null)
+			{
 				throw new ArgumentNullException("planes");
+			}
 
 			Matrix4 inverse;
 			Matrix4.Invert(ref transformation, out inverse);
@@ -949,7 +957,9 @@ namespace SlimTK
 		public override bool Equals(object value)
 		{
 			if (!(value is Plane))
+			{
 				return false;
+			}
 
 			var strongValue = (Plane) value;
 			return Equals(ref strongValue);

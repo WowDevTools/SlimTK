@@ -152,7 +152,9 @@ namespace SlimTK
 		public override bool Equals(object obj)
 		{
 			if (!(obj is BoundingFrustum))
+			{
 				return false;
+			}
 
 			var strongValue = (BoundingFrustum) obj;
 			return Equals(ref strongValue);
@@ -509,19 +511,31 @@ namespace SlimTK
 		{
 			p = box.Minimum;
 			if (planeNormal.X >= 0)
+			{
 				p.X = box.Maximum.X;
+			}
 			if (planeNormal.Y >= 0)
+			{
 				p.Y = box.Maximum.Y;
+			}
 			if (planeNormal.Z >= 0)
+			{
 				p.Z = box.Maximum.Z;
+			}
 
 			n = box.Maximum;
 			if (planeNormal.X >= 0)
+			{
 				n.X = box.Minimum.X;
+			}
 			if (planeNormal.Y >= 0)
+			{
 				n.Y = box.Minimum.Y;
+			}
 			if (planeNormal.Z >= 0)
+			{
 				n.Z = box.Minimum.Z;
+			}
 		}
 
 		/// <summary>
@@ -539,10 +553,14 @@ namespace SlimTK
 				plane = GetPlane(i);
 				GetBoxToPlanePVertexNVertex(ref box, ref plane.Normal, out p, out n);
 				if (Collision.PlaneIntersectsPoint(ref plane, ref p) == PlaneIntersectionType.Back)
+				{
 					return ContainmentType.Disjoint;
+				}
 
 				if (Collision.PlaneIntersectsPoint(ref plane, ref n) == PlaneIntersectionType.Back)
+				{
 					result = ContainmentType.Intersects;
+				}
 			}
 			return result;
 		}
@@ -711,8 +729,12 @@ namespace SlimTK
 		{
 			var result = Collision.PlaneIntersectsPoint(ref plane, ref points[0]);
 			for (int i = 1; i < points.Length; i++)
+			{
 				if (Collision.PlaneIntersectsPoint(ref plane, ref points[i]) != result)
+				{
 					return PlaneIntersectionType.Intersecting;
+				}
+			}
 			return result;
 		}
 

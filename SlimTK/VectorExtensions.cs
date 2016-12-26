@@ -66,7 +66,9 @@ namespace SlimTK
 		public static string ToString(this Vector3 vector, string format)
 		{
 			if (format == null)
+			{
 				return vector.ToString();
+			}
 
 			return string.Format(CultureInfo.CurrentCulture, "X:{0} Y:{1} Z:{2}", vector.X.ToString(format, CultureInfo.CurrentCulture),
 				vector.Y.ToString(format, CultureInfo.CurrentCulture), vector.Z.ToString(format, CultureInfo.CurrentCulture));
@@ -95,7 +97,9 @@ namespace SlimTK
 		public static string ToString(this Vector3 vector, string format, IFormatProvider formatProvider)
 		{
 			if (format == null)
+			{
 				return vector.ToString(formatProvider);
+			}
 
 			return string.Format(formatProvider, "X:{0} Y:{1} Z:{2}", vector.X.ToString(format, formatProvider),
 				vector.Y.ToString(format, formatProvider), vector.Z.ToString(format, formatProvider));

@@ -90,7 +90,9 @@ namespace SlimTK
 			// Check if the numbers are really close -- needed
 			// when comparing numbers near zero.
 			if (IsZero(a - b))
+			{
 				return true;
+			}
 
 			// Original from Bruce Dawson: http://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/
 			int aInt = *(int*) &a;
@@ -98,7 +100,9 @@ namespace SlimTK
 
 			// Different signs means they do not match.
 			if ((aInt < 0) != (bInt < 0))
+			{
 				return false;
+			}
 
 			// Find the difference in ULPs.
 			int ulp = Math.Abs(aInt - bInt);
@@ -393,13 +397,17 @@ namespace SlimTK
 		public static int Wrap(int value, int min, int max)
 		{
 			if (min > max)
+			{
 				throw new ArgumentException(string.Format("min {0} should be less than or equal to max {1}", min, max), "min");
+			}
 
 			// Code from http://stackoverflow.com/a/707426/1356325
 			int range_size = max - min + 1;
 
 			if (value < min)
+			{
 				value += range_size * ((min - value) / range_size + 1);
+			}
 
 			return min + (value - min) % range_size;
 		}
@@ -414,14 +422,19 @@ namespace SlimTK
 		/// <exception cref="ArgumentException">Is thrown when <paramref name="min"/> is greater than <paramref name="max"/>.</exception>
 		public static float Wrap(float value, float min, float max)
 		{
-			if (NearEqual(min, max)) return min;
+			if (NearEqual(min, max))
+			{
+				return min;
+			}
 
 			double mind = min;
 			double maxd = max;
 			double valued = value;
 
 			if (mind > maxd)
+			{
 				throw new ArgumentException(string.Format("min {0} should be less than or equal to max {1}", min, max), "min");
+			}
 
 			var range_size = maxd - mind;
 			return (float) (mind + (valued - mind) - (range_size * Math.Floor((valued - mind) / range_size)));
