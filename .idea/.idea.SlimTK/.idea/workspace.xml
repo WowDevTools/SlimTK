@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ea94de-4977-40f3-a22c-5655a2d4f722" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlimTK/Properties/AssemblyInfo.cs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/SlimTK.csproj" afterPath="$PROJECT_DIR$/SlimTK/SlimTK.csproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/Viewport.cs" afterPath="$PROJECT_DIR$/SlimTK/Viewport.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/ViewportF.cs" afterPath="$PROJECT_DIR$/SlimTK/ViewportF.cs" />
     </list>
@@ -311,12 +309,20 @@
       <workItem from="1482772343285" duration="844000" />
       <workItem from="1482773270663" duration="523000" />
       <workItem from="1482774148077" duration="8000" />
-      <workItem from="1497992077015" duration="435000" />
+      <workItem from="1497992077015" duration="456000" />
     </task>
+    <task id="LOCAL-00001" summary="Ported to .NET Standard 2.0.">
+      <created>1497992529383</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1497992529383</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7989000" />
+    <option name="totallyTimeSpent" value="8010000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,6 +367,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ported to .NET Standard 2.0." />
+    <option name="LAST_COMMIT_MESSAGE" value="Ported to .NET Standard 2.0." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
