@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ea94de-4977-40f3-a22c-5655a2d4f722" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/SlimTK/packages.config" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/contentModel.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="SlimTK.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -308,7 +309,7 @@
       <workItem from="1482772343285" duration="844000" />
       <workItem from="1482773270663" duration="523000" />
       <workItem from="1482774148077" duration="8000" />
-      <workItem from="1497992077015" duration="485000" />
+      <workItem from="1497992077015" duration="518000" />
     </task>
     <task id="LOCAL-00001" summary="Ported to .NET Standard 2.0.">
       <created>1497992529383</created>
@@ -324,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497992548328</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Removed obsolete nuget file.">
+      <created>1497992570109</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1497992570109</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8039000" />
+    <option name="totallyTimeSpent" value="8072000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -377,7 +385,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ported to .NET Standard 2.0." />
     <MESSAGE value="Adapted to new Transform signature in OpenTK." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted to new Transform signature in OpenTK." />
+    <MESSAGE value="Removed obsolete nuget file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed obsolete nuget file." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
