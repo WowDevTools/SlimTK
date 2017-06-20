@@ -75,6 +75,17 @@ namespace SlimTK
 		}
 
 		/// <summary>
+		/// Transforms a 3D vector by the given <see cref="Matrix4"/>.
+		/// </summary>
+		/// <param name="vector">The source vector.</param>
+		/// <param name="transform">The transformation <see cref="Matrix4"/>.</param>
+		/// <param name="result">When the method completes, contains the transformed <see cref="Vector3"/>.</param>
+		public static void Transform(ref Vector3 vector, ref Matrix4 transform, out Vector3 result)
+		{
+			result = (transform * new Vector4(vector)).Xyz;
+		}
+
+		/// <summary>
 		/// Calculates the distance between two vectors.
 		/// </summary>
 		/// <param name="value1">The first vector.</param>

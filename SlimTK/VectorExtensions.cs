@@ -30,6 +30,28 @@ namespace SlimTK
 	public static class VectorExtensions
 	{
 		/// <summary>
+        /// Converts a <see cref="System.Numerics.Vector3"/> value to an equivalent
+        /// <see cref="OpenTK.Vector3"/> value.
+        /// </summary>
+        /// <param name="vector">A Vector3f value.</param>
+        /// <returns>The Vector3f as a Vector3.</returns>
+        public static Vector3 AsOpenTKVector(this System.Numerics.Vector3 vector)
+        {
+            return new Vector3(vector.X, vector.Y, vector.Z);
+        }
+
+        /// <summary>
+        /// Converts a <see cref="OpenTK.Vector3"/> value to an equivalent
+        /// <see cref="System.Numerics.Vector3"/> value.
+        /// </summary>
+        /// <param name="vector">A Vector3 value.</param>
+        /// <returns>The Vector3 as a Vector3f.</returns>
+        public static System.Numerics.Vector3 AsSIMDVector(this Vector3 vector)
+        {
+            return new System.Numerics.Vector3 (vector.X, vector.Y, vector.Z);
+        }
+
+		/// <summary>
 		/// Determines whether the specified <see cref="OpenTK.Vector3"/> is equal to this instance.
 		/// </summary>
 		/// <param name="other">The <see cref="OpenTK.Vector3"/> to compare with this instance.</param>
