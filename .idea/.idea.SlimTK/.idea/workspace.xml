@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1ea94de-4977-40f3-a22c-5655a2d4f722" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/SlimTK/Properties/AssemblyInfo.cs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SlimTK/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/BoundingBox.cs" afterPath="$PROJECT_DIR$/SlimTK/BoundingBox.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/SlimTK.csproj" afterPath="$PROJECT_DIR$/SlimTK/SlimTK.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/Viewport.cs" afterPath="$PROJECT_DIR$/SlimTK/Viewport.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SlimTK/ViewportF.cs" afterPath="$PROJECT_DIR$/SlimTK/ViewportF.cs" />
     </list>
     <ignored path="SlimTK.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,193 +27,135 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BoundingBox.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/SlimTK/BoundingBox.cs">
+      <file leaf-file-name="SlimTK.csproj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlimTK/SlimTK.csproj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="393" column="26" lean-forward="false" selection-start-line="393" selection-start-column="26" selection-end-line="393" selection-end-column="26" />
+            <state relative-caret-position="240">
+              <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Viewport.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SlimTK/Viewport.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="255" column="55" lean-forward="false" selection-start-line="255" selection-start-column="55" selection-end-line="255" selection-end-column="55" />
               <folding>
-                <marker date="1482774154108" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-                <marker date="1482774154108" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
-                <marker date="1482774154108" expanded="true" signature="2555:2681" ph="..." />
-                <marker date="1482774154108" expanded="true" signature="2699:21037" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="2703:2805" ph="/// Represents an axis-aligned bounding box in three dimensional space. ... " />
-                <marker date="1482774154108" expanded="true" signature="2921:21035" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="2927:2993" ph="/// The minimum point of the box. ... " />
-                <marker date="1482774154108" expanded="true" signature="3023:3089" ph="/// The maximum point of the box. ... " />
-                <marker date="1482774154108" expanded="true" signature="3119:3375" ph="/// Initializes a new instance of the &lt;see cref=&quot;BoundingBox&quot;/&gt; struct. ... " />
-                <marker date="1482774154108" expanded="true" signature="3430:3492" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="3496:3677" ph="/// Retrieves the eight corners of the bounding box. ... " />
-                <marker date="1482774154108" expanded="true" signature="3709:3799" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="3803:3984" ph="/// Retrieves the eight corners of the bounding box. ... " />
-                <marker date="1482774154108" expanded="true" signature="4028:4652" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="4656:4894" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="4932:5030" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="5034:5420" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="5478:5557" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="5561:5962" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="6019:6095" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="6099:6343" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Plane&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="6402:6471" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="6475:7120" ph="/* Determines if there is an intersection between the current object and a triangle. ... */" />
-                <marker date="1482774154108" expanded="true" signature="7124:7370" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="7416:7481" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="7485:7731" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="7773:7812" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="7816:8071" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="8123:8194" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="8198:8453" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="8501:8543" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="8547:8764" ph="/// Determines whether the current objects contains a point. ... " />
-                <marker date="1482774154108" expanded="true" signature="8817:8884" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="8888:9105" ph="/// Determines whether the current objects contains a point. ... " />
-                <marker date="1482774154108" expanded="true" signature="9154:9193" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="9197:9836" ph="/* Determines whether the current objects contains a triangle. ... */" />
-                <marker date="1482774154108" expanded="true" signature="9840:10073" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="10128:10191" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="10195:10428" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="10479:10516" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="10520:10762" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="10823:10892" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="10896:11138" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-                <marker date="1482774154108" expanded="true" signature="11195:11235" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="11239:11652" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-                <marker date="1482774154108" expanded="true" signature="11726:12085" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="11753:11816" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="11953:12041" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="12089:12456" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-                <marker date="1482774154108" expanded="true" signature="12513:12870" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="12540:12603" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="12740:12828" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="12874:13167" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-                <marker date="1482774154108" expanded="true" signature="13250:13530" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="13534:13781" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-                <marker date="1482774154108" expanded="true" signature="13843:14152" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="14156:14529" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-                <marker date="1482774154108" expanded="true" signature="14628:14766" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="14770:15097" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-                <marker date="1482774154108" expanded="true" signature="15171:15339" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="15343:15589" ph="/// Transforms this box by the specified matrix. ... " />
-                <marker date="1482774154108" expanded="true" signature="15640:16029" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="15810:15981" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="16033:16370" ph="/// Tests for equality between two objects. ... " />
-                <marker date="1482774154108" expanded="true" signature="16493:16535" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="16539:16883" ph="/// Tests for inequality between two objects. ... " />
-                <marker date="1482774154108" expanded="true" signature="17006:17049" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="17053:17258" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="17294:17432" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="17436:17688" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="17728:17991" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="17755:17788" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="17995:18264" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="18321:18447" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="18451:18767" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="18839:19080" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="18866:18913" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="19084:19307" ph="/// Returns a hash code for this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="19343:19450" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="19454:19805" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="19902:19984" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="19988:20339" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="20432:20469" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="20473:20842" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
-                <marker date="1482774154108" expanded="true" signature="20886:21032" ph="{...}" />
-                <marker date="1482774154108" expanded="true" signature="20922:20950" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+                <marker date="1497992483256" expanded="false" signature="1134:1260" ph="..." />
+                <marker date="1497992483256" expanded="true" signature="1278:12125" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="1282:1349" ph="/// Defines the viewport dimensions. ... " />
+                <marker date="1497992483256" expanded="true" signature="1445:12123" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="1451:1562" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+                <marker date="1497992483256" expanded="true" signature="1582:1693" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+                <marker date="1497992483256" expanded="true" signature="1713:1782" ph="/// Width dimension of the viewport. ... " />
+                <marker date="1497992483256" expanded="true" signature="1806:1876" ph="/// Height dimension of the viewport. ... " />
+                <marker date="1497992483256" expanded="true" signature="1901:1988" ph="/// Gets or sets the minimum depth of the clip volume. ... " />
+                <marker date="1497992483256" expanded="true" signature="2017:2104" ph="/// Gets or sets the maximum depth of the clip volume. ... " />
+                <marker date="1497992483256" expanded="true" signature="2133:2576" ph="/// Initializes a new instance of the &lt;see cref=&quot;Viewport&quot;/&gt; struct. ... " />
+                <marker date="1497992483256" expanded="true" signature="2631:2763" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="2767:3360" ph="/// Initializes a new instance of the &lt;see cref=&quot;Viewport&quot;/&gt; struct. ... " />
+                <marker date="1497992483256" expanded="true" signature="3447:3591" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="3595:3817" ph="/// Initializes a new instance of the &lt;see cref=&quot;Viewport&quot;/&gt; struct. ... " />
+                <marker date="1497992483256" expanded="true" signature="3853:4013" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="4017:4118" ph="/// Gets the size of this resource. ... " />
+                <marker date="1497992483256" expanded="true" signature="4144:4350" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="4230:4346" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="4354:4708" ph="/// Determines whether the specified &lt;see cref=&quot;Viewport&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1497992483256" expanded="true" signature="4802:5036" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="5040:5394" ph="/// Determines whether the specified &lt;see cref=&quot;Viewport&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1497992483256" expanded="true" signature="5484:5521" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="5525:5829" ph="/// Determines whether the specified object is equal to this instance. ... " />
+                <marker date="1497992483256" expanded="true" signature="5871:6007" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="5902:5930" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="6011:6234" ph="/// Returns a hash code for this instance. ... " />
+                <marker date="1497992483256" expanded="true" signature="6270:6610" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="6287:6606" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="6614:6819" ph="/// Implements the operator ==. ... " />
+                <marker date="1497992483256" expanded="true" signature="6936:6978" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="6982:7187" ph="/// Implements the operator !=. ... " />
+                <marker date="1497992483256" expanded="true" signature="7304:7347" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="7351:7524" ph="/// Retrieves a string representation of this object. ... " />
+                <marker date="1497992483256" expanded="true" signature="7560:7758" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="7762:8125" ph="/// Projects a 3D vector from object space into screen space. ... " />
+                <marker date="1497992483256" expanded="true" signature="8215:8356" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="8360:8643" ph="/// Projects a 3D vector from object space into screen space. ... " />
+                <marker date="1497992483256" expanded="true" signature="8725:9217" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="8969:9006" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="9221:9601" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+                <marker date="1497992483256" expanded="true" signature="9693:9879" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="9883:10193" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+                <marker date="1497992483256" expanded="true" signature="10277:10772" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="10731:10768" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="10776:10895" ph="/// Gets the aspect ratio used by the viewport. ... " />
+                <marker date="1497992483256" expanded="true" signature="10922:11046" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="10933:11042" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="10964:11022" ph="{...}" />
+                <marker date="1497992483256" expanded="true" signature="11050:12120" ph="/* Performs an implicit conversion from &lt;see cref=&quot;Viewport&quot;/&gt; to &lt;see cref=&quot;RawViewport&quot;/&gt;. ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MathUtil.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SlimTK/MathUtil.cs">
+      <file leaf-file-name="ViewportF.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SlimTK/ViewportF.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7560">
-              <caret line="504" column="13" lean-forward="false" selection-start-line="504" selection-start-column="13" selection-end-line="504" selection-end-column="13" />
+            <state relative-caret-position="271">
+              <caret line="304" column="55" lean-forward="false" selection-start-line="304" selection-start-column="55" selection-end-line="304" selection-end-column="55" />
               <folding>
-                <marker date="1482773561689" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-                <marker date="1482773561689" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
-                <marker date="1482773561689" expanded="true" signature="2555:2576" ph="..." />
-                <marker date="1482773561689" expanded="true" signature="2628:18247" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="2634:2754" ph="/// The value for which all absolute numbers smaller than are considered equal to zero. ... " />
-                <marker date="1482773561689" expanded="true" signature="2844:2944" ph="/// A value specifying the approximation of π which is 180 degrees. ... " />
-                <marker date="1482773561689" expanded="true" signature="2991:3092" ph="/// A value specifying the approximation of 2π which is 360 degrees. ... " />
-                <marker date="1482773561689" expanded="true" signature="3148:3249" ph="/// A value specifying the approximation of π/2 which is 90 degrees. ... " />
-                <marker date="1482773561689" expanded="true" signature="3309:3410" ph="/// A value specifying the approximation of π/4 which is 45 degrees. ... " />
-                <marker date="1482773561689" expanded="true" signature="3471:4138" ph="/// Checks if a and b are almost equals, taking into account the magnitude of floating point numbers (unlike &lt;see ... " />
-                <marker date="1482773561689" expanded="true" signature="4194:4899" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="4202:4292" ph="/* Check if the numbers are really close -- needed ... */" />
-                <marker date="1482773561689" expanded="true" signature="4314:4341" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="4600:4628" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="4705:4843" ph="/* Choose of maxUlp = 4 ... */" />
-                <marker date="1482773561689" expanded="true" signature="4903:5163" ph="/// Determines whether the specified value is close to zero (0.0f). ... " />
-                <marker date="1482773561689" expanded="true" signature="5200:5247" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="5251:5509" ph="/// Determines whether the specified value is close to one (1.0f). ... " />
-                <marker date="1482773561689" expanded="true" signature="5545:5581" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="5585:5951" ph="/// Checks if a - b are almost equals within a float epsilon. ... " />
-                <marker date="1482773561689" expanded="true" signature="6019:6100" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="6104:6280" ph="/// Converts revolutions to degrees. ... " />
-                <marker date="1482773561689" expanded="true" signature="6341:6380" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="6384:6560" ph="/// Converts revolutions to radians. ... " />
-                <marker date="1482773561689" expanded="true" signature="6621:6659" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="6663:6840" ph="/// Converts revolutions to gradians. ... " />
-                <marker date="1482773561689" expanded="true" signature="6902:6941" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="6945:7117" ph="/// Converts degrees to revolutions. ... " />
-                <marker date="1482773561689" expanded="true" signature="7174:7209" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="7213:7381" ph="/// Converts degrees to radians. ... " />
-                <marker date="1482773561689" expanded="true" signature="7434:7476" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="7480:7652" ph="/// Converts radians to revolutions. ... " />
-                <marker date="1482773561689" expanded="true" signature="7709:7743" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="7747:7916" ph="/// Converts radians to gradians. ... " />
-                <marker date="1482773561689" expanded="true" signature="7970:8012" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="8016:8190" ph="/// Converts gradians to revolutions. ... " />
-                <marker date="1482773561689" expanded="true" signature="8249:8285" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="8289:8459" ph="/// Converts gradians to degrees. ... " />
-                <marker date="1482773561689" expanded="true" signature="8514:8558" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="8562:8732" ph="/// Converts gradians to radians. ... " />
-                <marker date="1482773561689" expanded="true" signature="8787:8830" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="8834:9002" ph="/// Converts radians to degrees. ... " />
-                <marker date="1482773561689" expanded="true" signature="9055:9097" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="9101:9368" ph="/// Clamps the specified value. ... " />
-                <marker date="1482773561689" expanded="true" signature="9431:9496" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="9500:9767" ph="/// Clamps the specified value. ... " />
-                <marker date="1482773561689" expanded="true" signature="9822:9887" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="9891:10470" ph="/// Interpolates between two values using a linear function by a given amount. ... " />
-                <marker date="1482773561689" expanded="true" signature="10537:10590" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="10594:11173" ph="/// Interpolates between two values using a linear function by a given amount. ... " />
-                <marker date="1482773561689" expanded="true" signature="11236:11289" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="11293:11872" ph="/// Interpolates between two values using a linear function by a given amount. ... " />
-                <marker date="1482773561689" expanded="true" signature="11932:11997" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="12001:12274" ph="/// Performs smooth (cubic Hermite) interpolation between 0 and 1. ... " />
-                <marker date="1482773561689" expanded="true" signature="12321:12435" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="12439:12758" ph="/// Performs a smooth(er) interpolation between 0 and 1 with 1st and 2nd order derivatives of zero at endpoints. ... " />
-                <marker date="1482773561689" expanded="true" signature="12807:12947" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="12951:13192" ph="/// Calculates the modulo of the specified value. ... " />
-                <marker date="1482773561689" expanded="true" signature="13245:13331" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="13272:13300" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="13335:13534" ph="/// Calculates the modulo 2*PI of the specified value. ... " />
-                <marker date="1482773561689" expanded="true" signature="13576:13613" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="13617:14019" ph="/// Wraps the specified value into a range [min, max] ... " />
-                <marker date="1482773561689" expanded="true" signature="14073:14461" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="14095:14227" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="14342:14412" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="14465:14859" ph="/// Wraps the specified value into a range [min, max[ ... " />
-                <marker date="1482773561689" expanded="true" signature="14921:15343" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="14953:14979" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="15071:15203" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="15347:15874" ph="/// Gauss function. ... " />
-                <marker date="1482773561689" expanded="true" signature="15995:16088" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="16092:16619" ph="/// Gauss function. ... " />
-                <marker date="1482773561689" expanded="true" signature="16751:16981" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="16985:17389" ph="/// Creates a new vector by taking the smallest of each component from two vectors, that is, ... " />
-                <marker date="1482773561689" expanded="true" signature="17453:17614" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="17479:17508" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="17530:17559" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="17581:17610" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="17618:18020" ph="/// Creates a new vector by taking the largest of each component from two vectors, that is, ... " />
-                <marker date="1482773561689" expanded="true" signature="18083:18244" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="18109:18138" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="18160:18189" ph="{...}" />
-                <marker date="1482773561689" expanded="true" signature="18211:18240" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+                <marker date="1497992497932" expanded="false" signature="1134:1260" ph="..." />
+                <marker date="1497992497932" expanded="true" signature="1278:12363" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="1282:1396" ph="/// Defines the viewport dimensions using float coordinates for (X,Y,Width,Height). ... " />
+                <marker date="1497992497932" expanded="true" signature="1494:12361" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="1500:1611" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+                <marker date="1497992497932" expanded="true" signature="1633:1744" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+                <marker date="1497992497932" expanded="true" signature="1766:1835" ph="/// Width dimension of the viewport. ... " />
+                <marker date="1497992497932" expanded="true" signature="1861:1931" ph="/// Height dimension of the viewport. ... " />
+                <marker date="1497992497932" expanded="true" signature="1958:2045" ph="/// Gets or sets the minimum depth of the clip volume. ... " />
+                <marker date="1497992497932" expanded="true" signature="2074:2161" ph="/// Gets or sets the maximum depth of the clip volume. ... " />
+                <marker date="1497992497932" expanded="true" signature="2190:2634" ph="/// Initializes a new instance of the &lt;see cref=&quot;ViewportF&quot;/&gt; struct. ... " />
+                <marker date="1497992497932" expanded="true" signature="2698:2830" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="2834:3428" ph="/// Initializes a new instance of the &lt;see cref=&quot;ViewportF&quot;/&gt; struct. ... " />
+                <marker date="1497992497932" expanded="true" signature="3524:3668" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="3672:3895" ph="/// Initializes a new instance of the &lt;see cref=&quot;ViewportF&quot;/&gt; struct. ... " />
+                <marker date="1497992497932" expanded="true" signature="3933:4093" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="4097:4198" ph="/// Gets the size of this resource. ... " />
+                <marker date="1497992497932" expanded="true" signature="4225:4432" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="4312:4428" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="4436:4793" ph="/// Determines whether the specified &lt;see cref=&quot;ViewportF&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1497992497932" expanded="true" signature="4835:5181" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="5185:5542" ph="/// Determines whether the specified &lt;see cref=&quot;ViewportF&quot;/&gt; is equal to this instance. ... " />
+                <marker date="1497992497932" expanded="true" signature="5633:5670" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="5674:5978" ph="/// Determines whether the specified object is equal to this instance. ... " />
+                <marker date="1497992497932" expanded="true" signature="6020:6158" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="6052:6080" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="6162:6385" ph="/// Returns a hash code for this instance. ... " />
+                <marker date="1497992497932" expanded="true" signature="6421:6817" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="6438:6813" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="6821:7026" ph="/// Implements the operator ==. ... " />
+                <marker date="1497992497932" expanded="true" signature="7145:7187" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="7191:7396" ph="/// Implements the operator !=. ... " />
+                <marker date="1497992497932" expanded="true" signature="7515:7558" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="7562:7734" ph="/// Retrieves a string representation of this object. ... " />
+                <marker date="1497992497932" expanded="true" signature="7770:7968" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="7972:8334" ph="/// Projects a 3D vector from object space into screen space. ... " />
+                <marker date="1497992497932" expanded="true" signature="8424:8565" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="8569:8852" ph="/// Projects a 3D vector from object space into screen space. ... " />
+                <marker date="1497992497932" expanded="true" signature="8934:9426" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="9178:9215" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="9430:9810" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+                <marker date="1497992497932" expanded="true" signature="9902:10088" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="10092:10402" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+                <marker date="1497992497932" expanded="true" signature="10486:10981" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="10940:10977" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="10985:11104" ph="/// Gets the aspect ratio used by the viewport. ... " />
+                <marker date="1497992497932" expanded="true" signature="11131:11260" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="11142:11256" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="11186:11236" ph="{...}" />
+                <marker date="1497992497932" expanded="true" signature="11264:12358" ph="/* Performs an explicit conversion from &lt;see cref=&quot;Viewport&quot;/&gt; to &lt;see cref=&quot;ViewportF&quot;/&gt;. ... */" />
               </folding>
             </state>
           </provider>
@@ -246,12 +191,23 @@
         <option value="$PROJECT_DIR$/SlimTK/Plane.cs" />
         <option value="$PROJECT_DIR$/SlimTK/MathUtil.cs" />
         <option value="$PROJECT_DIR$/SlimTK/BoundingBox.cs" />
+        <option value="$PROJECT_DIR$/SlimTK/SlimTK.csproj" />
+        <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13EA682C-B9AE-4235-92AE-224FEF4E939E/9d/ffd3eb1d/Vector3.cs" />
+        <option value="$PROJECT_DIR$/SlimTK/Viewport.cs" />
+        <option value="$PROJECT_DIR$/SlimTK/ViewportF.cs" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1920" />
-    <option name="height" value="1050" />
+    <option name="y" value="-1" />
+    <option name="width" value="1888" />
+    <option name="height" value="1200" />
   </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
@@ -268,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <PATH>
@@ -279,11 +236,30 @@
               <option name="myItemId" value="SlimTK (1 project)" />
               <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlimTK" />
+              <option name="myItemType" value="com.jetbrains.resharper.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
         <option name="show-file-system" value="false" />
       </pane>
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected=".NET Project.Default">
     <configuration default="true" type="DotNetProject" factoryName=".NET Project">
@@ -335,11 +311,12 @@
       <workItem from="1482772343285" duration="844000" />
       <workItem from="1482773270663" duration="523000" />
       <workItem from="1482774148077" duration="8000" />
+      <workItem from="1497992077015" duration="435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7554000" />
+    <option name="totallyTimeSpent" value="7989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -351,31 +328,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="-1" width="1888" height="1200" extended-state="6" />
     <layout>
-      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1339381" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22411953" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963374" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="NuGet" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32921028" sideWeight="0.5043431" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20466883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921028" sideWeight="0.4956569" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Errors in solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22411953" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UnitTesting" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Change Signature" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -387,13 +369,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/SlimTK/Enums.cs" />
-    <entry file="file://$USER_HOME$/SlimTK/MathUtil.cs" />
-    <entry file="file://$USER_HOME$/SlimTK/Ray.cs" />
-    <entry file="file://$USER_HOME$/SlimTK/Gjk.cs" />
-    <entry file="file://$USER_HOME$/SlimTK/Plane.cs" />
-    <entry file="file://$USER_HOME$/SlimTK/BoundingBox.cs" />
-    <entry file="file://$USER_HOME$/SlimTK/VectorExtensions.cs" />
     <entry file="file://$USER_HOME$/SlimTK/BoundingSphere.cs" />
     <entry file="file://$USER_HOME$/SlimTK/Collision.cs" />
     <entry file="file://$USER_HOME$/SlimTK/VectorMath.cs" />
@@ -413,13 +388,7 @@
     <entry file="file://$USER_HOME$/SlimTK/BoundingFrustrum.cs" />
     <entry file="file://$USER_HOME$/SlimTK/BoundingSphere.cs" />
     <entry file="file://$USER_HOME$/SlimTK/Extensions.cs" />
-    <entry file="file://$USER_HOME$/.local/share/JetBrains/Shared/v07/DecompilerCache/decompiler/4BD38221-5A9A-4A26-B2E5-C43C475B6BE8/b6/fd9611ab/Object.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.local/share/JetBrains/Shared/v07/DecompilerCache/decompiler/4BD38221-5A9A-4A26-B2E5-C43C475B6BE8/b6/fd9611ab/Object.cs" />
     <entry file="file://$USER_HOME$/SlimTK/Gjk.cs" />
     <entry file="file://$USER_HOME$/SlimTK/BoundingBox.cs" />
     <entry file="file://$USER_HOME$/SlimTK/BoundingFrustrum.cs" />
@@ -482,92 +451,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7560">
           <caret line="504" column="13" lean-forward="false" selection-start-line="504" selection-start-column="13" selection-end-line="504" selection-end-column="13" />
-          <folding>
-            <marker date="1482773561689" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-            <marker date="1482773561689" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
-            <marker date="1482773561689" expanded="true" signature="2555:2576" ph="..." />
-            <marker date="1482773561689" expanded="true" signature="2628:18247" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="2634:2754" ph="/// The value for which all absolute numbers smaller than are considered equal to zero. ... " />
-            <marker date="1482773561689" expanded="true" signature="2844:2944" ph="/// A value specifying the approximation of π which is 180 degrees. ... " />
-            <marker date="1482773561689" expanded="true" signature="2991:3092" ph="/// A value specifying the approximation of 2π which is 360 degrees. ... " />
-            <marker date="1482773561689" expanded="true" signature="3148:3249" ph="/// A value specifying the approximation of π/2 which is 90 degrees. ... " />
-            <marker date="1482773561689" expanded="true" signature="3309:3410" ph="/// A value specifying the approximation of π/4 which is 45 degrees. ... " />
-            <marker date="1482773561689" expanded="true" signature="3471:4138" ph="/// Checks if a and b are almost equals, taking into account the magnitude of floating point numbers (unlike &lt;see ... " />
-            <marker date="1482773561689" expanded="true" signature="4194:4899" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="4202:4292" ph="/* Check if the numbers are really close -- needed ... */" />
-            <marker date="1482773561689" expanded="true" signature="4314:4341" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="4600:4628" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="4705:4843" ph="/* Choose of maxUlp = 4 ... */" />
-            <marker date="1482773561689" expanded="true" signature="4903:5163" ph="/// Determines whether the specified value is close to zero (0.0f). ... " />
-            <marker date="1482773561689" expanded="true" signature="5200:5247" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="5251:5509" ph="/// Determines whether the specified value is close to one (1.0f). ... " />
-            <marker date="1482773561689" expanded="true" signature="5545:5581" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="5585:5951" ph="/// Checks if a - b are almost equals within a float epsilon. ... " />
-            <marker date="1482773561689" expanded="true" signature="6019:6100" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="6104:6280" ph="/// Converts revolutions to degrees. ... " />
-            <marker date="1482773561689" expanded="true" signature="6341:6380" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="6384:6560" ph="/// Converts revolutions to radians. ... " />
-            <marker date="1482773561689" expanded="true" signature="6621:6659" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="6663:6840" ph="/// Converts revolutions to gradians. ... " />
-            <marker date="1482773561689" expanded="true" signature="6902:6941" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="6945:7117" ph="/// Converts degrees to revolutions. ... " />
-            <marker date="1482773561689" expanded="true" signature="7174:7209" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="7213:7381" ph="/// Converts degrees to radians. ... " />
-            <marker date="1482773561689" expanded="true" signature="7434:7476" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="7480:7652" ph="/// Converts radians to revolutions. ... " />
-            <marker date="1482773561689" expanded="true" signature="7709:7743" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="7747:7916" ph="/// Converts radians to gradians. ... " />
-            <marker date="1482773561689" expanded="true" signature="7970:8012" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="8016:8190" ph="/// Converts gradians to revolutions. ... " />
-            <marker date="1482773561689" expanded="true" signature="8249:8285" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="8289:8459" ph="/// Converts gradians to degrees. ... " />
-            <marker date="1482773561689" expanded="true" signature="8514:8558" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="8562:8732" ph="/// Converts gradians to radians. ... " />
-            <marker date="1482773561689" expanded="true" signature="8787:8830" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="8834:9002" ph="/// Converts radians to degrees. ... " />
-            <marker date="1482773561689" expanded="true" signature="9055:9097" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="9101:9368" ph="/// Clamps the specified value. ... " />
-            <marker date="1482773561689" expanded="true" signature="9431:9496" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="9500:9767" ph="/// Clamps the specified value. ... " />
-            <marker date="1482773561689" expanded="true" signature="9822:9887" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="9891:10470" ph="/// Interpolates between two values using a linear function by a given amount. ... " />
-            <marker date="1482773561689" expanded="true" signature="10537:10590" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="10594:11173" ph="/// Interpolates between two values using a linear function by a given amount. ... " />
-            <marker date="1482773561689" expanded="true" signature="11236:11289" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="11293:11872" ph="/// Interpolates between two values using a linear function by a given amount. ... " />
-            <marker date="1482773561689" expanded="true" signature="11932:11997" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="12001:12274" ph="/// Performs smooth (cubic Hermite) interpolation between 0 and 1. ... " />
-            <marker date="1482773561689" expanded="true" signature="12321:12435" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="12439:12758" ph="/// Performs a smooth(er) interpolation between 0 and 1 with 1st and 2nd order derivatives of zero at endpoints. ... " />
-            <marker date="1482773561689" expanded="true" signature="12807:12947" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="12951:13192" ph="/// Calculates the modulo of the specified value. ... " />
-            <marker date="1482773561689" expanded="true" signature="13245:13331" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="13272:13300" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="13335:13534" ph="/// Calculates the modulo 2*PI of the specified value. ... " />
-            <marker date="1482773561689" expanded="true" signature="13576:13613" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="13617:14019" ph="/// Wraps the specified value into a range [min, max] ... " />
-            <marker date="1482773561689" expanded="true" signature="14073:14461" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="14095:14227" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="14342:14412" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="14465:14859" ph="/// Wraps the specified value into a range [min, max[ ... " />
-            <marker date="1482773561689" expanded="true" signature="14921:15343" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="14953:14979" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="15071:15203" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="15347:15874" ph="/// Gauss function. ... " />
-            <marker date="1482773561689" expanded="true" signature="15995:16088" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="16092:16619" ph="/// Gauss function. ... " />
-            <marker date="1482773561689" expanded="true" signature="16751:16981" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="16985:17389" ph="/// Creates a new vector by taking the smallest of each component from two vectors, that is, ... " />
-            <marker date="1482773561689" expanded="true" signature="17453:17614" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="17479:17508" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="17530:17559" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="17581:17610" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="17618:18020" ph="/// Creates a new vector by taking the largest of each component from two vectors, that is, ... " />
-            <marker date="1482773561689" expanded="true" signature="18083:18244" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="18109:18138" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="18160:18189" ph="{...}" />
-            <marker date="1482773561689" expanded="true" signature="18211:18240" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -575,93 +459,196 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="512">
           <caret line="393" column="26" lean-forward="false" selection-start-line="393" selection-start-column="26" selection-end-line="393" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlimTK/Properties/AssemblyInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlimTK/SlimTK.csproj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="55" lean-forward="false" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13EA682C-B9AE-4235-92AE-224FEF4E939E/9d/ffd3eb1d/Vector3.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="1193" column="23" lean-forward="false" selection-start-line="1193" selection-start-column="23" selection-end-line="1193" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlimTK/VectorExtensions.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1482774154108" expanded="true" signature="0:1445" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
-            <marker date="1482774154108" expanded="true" signature="1446:2547" ph="/* Copyright (c) 2007-2011 SlimDX Group ... */" />
-            <marker date="1482774154108" expanded="true" signature="2555:2681" ph="..." />
-            <marker date="1482774154108" expanded="true" signature="2699:21037" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="2703:2805" ph="/// Represents an axis-aligned bounding box in three dimensional space. ... " />
-            <marker date="1482774154108" expanded="true" signature="2921:21035" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="2927:2993" ph="/// The minimum point of the box. ... " />
-            <marker date="1482774154108" expanded="true" signature="3023:3089" ph="/// The maximum point of the box. ... " />
-            <marker date="1482774154108" expanded="true" signature="3119:3375" ph="/// Initializes a new instance of the &lt;see cref=&quot;BoundingBox&quot;/&gt; struct. ... " />
-            <marker date="1482774154108" expanded="true" signature="3430:3492" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="3496:3677" ph="/// Retrieves the eight corners of the bounding box. ... " />
-            <marker date="1482774154108" expanded="true" signature="3709:3799" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="3803:3984" ph="/// Retrieves the eight corners of the bounding box. ... " />
-            <marker date="1482774154108" expanded="true" signature="4028:4652" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="4656:4894" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="4932:5030" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="5034:5420" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="5478:5557" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="5561:5962" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Ray&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="6019:6095" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="6099:6343" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;Plane&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="6402:6471" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="6475:7120" ph="/* Determines if there is an intersection between the current object and a triangle. ... */" />
-            <marker date="1482774154108" expanded="true" signature="7124:7370" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="7416:7481" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="7485:7731" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="7773:7812" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="7816:8071" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="8123:8194" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="8198:8453" ph="/// Determines if there is an intersection between the current object and a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="8501:8543" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="8547:8764" ph="/// Determines whether the current objects contains a point. ... " />
-            <marker date="1482774154108" expanded="true" signature="8817:8884" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="8888:9105" ph="/// Determines whether the current objects contains a point. ... " />
-            <marker date="1482774154108" expanded="true" signature="9154:9193" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="9197:9836" ph="/* Determines whether the current objects contains a triangle. ... */" />
-            <marker date="1482774154108" expanded="true" signature="9840:10073" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="10128:10191" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="10195:10428" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingBox&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="10479:10516" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="10520:10762" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="10823:10892" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="10896:11138" ph="/// Determines whether the current objects contains a &lt;see cref=&quot;BoundingSphere&quot;/&gt;. ... " />
-            <marker date="1482774154108" expanded="true" signature="11195:11235" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="11239:11652" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-            <marker date="1482774154108" expanded="true" signature="11726:12085" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="11753:11816" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="11953:12041" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="12089:12456" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that fully contains the given points. ... " />
-            <marker date="1482774154108" expanded="true" signature="12513:12870" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="12540:12603" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="12740:12828" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="12874:13167" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-            <marker date="1482774154108" expanded="true" signature="13250:13530" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="13534:13781" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; from a given sphere. ... " />
-            <marker date="1482774154108" expanded="true" signature="13843:14152" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="14156:14529" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-            <marker date="1482774154108" expanded="true" signature="14628:14766" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="14770:15097" ph="/// Constructs a &lt;see cref=&quot;BoundingBox&quot;/&gt; that is as large as the total combined area of the two specified boxes ... " />
-            <marker date="1482774154108" expanded="true" signature="15171:15339" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="15343:15589" ph="/// Transforms this box by the specified matrix. ... " />
-            <marker date="1482774154108" expanded="true" signature="15640:16029" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="15810:15981" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="16033:16370" ph="/// Tests for equality between two objects. ... " />
-            <marker date="1482774154108" expanded="true" signature="16493:16535" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="16539:16883" ph="/// Tests for inequality between two objects. ... " />
-            <marker date="1482774154108" expanded="true" signature="17006:17049" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="17053:17258" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="17294:17432" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="17436:17688" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="17728:17991" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="17755:17788" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="17995:18264" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="18321:18447" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="18451:18767" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="18839:19080" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="18866:18913" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="19084:19307" ph="/// Returns a hash code for this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="19343:19450" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="19454:19805" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="19902:19984" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="19988:20339" ph="/// Determines whether the specified &lt;see cref=&quot;Vector4&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="20432:20469" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="20473:20842" ph="/// Determines whether the specified &lt;see cref=&quot;System.Object&quot;/&gt; is equal to this instance. ... " />
-            <marker date="1482774154108" expanded="true" signature="20886:21032" ph="{...}" />
-            <marker date="1482774154108" expanded="true" signature="20922:20950" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="0:1136" ph="/* Copyright (c) 2007-2010 SlimDX Group ... */" />
+            <marker date="1493658500513" expanded="false" signature="1144:1193" ph="..." />
+            <marker date="1493658500513" expanded="true" signature="1211:4287" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="1251:4285" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="1257:1629" ph="/// Determines whether the specified &lt;see cref=&quot;OpenTK.Vector3&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1493658500513" expanded="true" signature="1688:1779" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="1783:2220" ph="/// Determines whether the specified &lt;see cref=&quot;OpenTK.Vector3&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1493658500513" expanded="true" signature="2294:2484" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="2488:2740" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+            <marker date="1493658500513" expanded="true" signature="2808:3123" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="2835:2875" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="3127:3396" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+            <marker date="1493658500513" expanded="true" signature="3481:3581" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="3585:3901" ph="/// Returns a &lt;see cref=&quot;System.String&quot;/&gt; that represents this instance. ... " />
+            <marker date="1493658500513" expanded="true" signature="4001:4282" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="4028:4082" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlimTK/VectorMath.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1151">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1493658500513" expanded="true" signature="0:1136" ph="/* Copyright (c) 2007-2010 SlimDX Group ... */" />
+            <marker date="1493658500513" expanded="false" signature="1144:1165" ph="..." />
+            <marker date="1493658500513" expanded="true" signature="1183:5181" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="1217:5179" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="1223:1949" ph="/// Projects a 3D vector from screen space into object space. ... " />
+            <marker date="1493658500513" expanded="true" signature="2125:2449" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="2453:3133" ph="/// Projects a 3D vector from screen space into object space. ... " />
+            <marker date="1493658500513" expanded="true" signature="3284:3425" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="3429:3872" ph="/// Calculates the distance between two vectors. ... " />
+            <marker date="1493658500513" expanded="true" signature="3935:4104" ph="{...}" />
+            <marker date="1493658500513" expanded="true" signature="4108:4956" ph="/// Calculates the squared distance between two vectors. ... " />
+            <marker date="1493658500513" expanded="true" signature="5026:5176" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlimTK/Viewport.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="255" column="55" lean-forward="false" selection-start-line="255" selection-start-column="55" selection-end-line="255" selection-end-column="55" />
+          <folding>
+            <marker date="1497992483256" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+            <marker date="1497992483256" expanded="false" signature="1134:1260" ph="..." />
+            <marker date="1497992483256" expanded="true" signature="1278:12125" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="1282:1349" ph="/// Defines the viewport dimensions. ... " />
+            <marker date="1497992483256" expanded="true" signature="1445:12123" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="1451:1562" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+            <marker date="1497992483256" expanded="true" signature="1582:1693" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+            <marker date="1497992483256" expanded="true" signature="1713:1782" ph="/// Width dimension of the viewport. ... " />
+            <marker date="1497992483256" expanded="true" signature="1806:1876" ph="/// Height dimension of the viewport. ... " />
+            <marker date="1497992483256" expanded="true" signature="1901:1988" ph="/// Gets or sets the minimum depth of the clip volume. ... " />
+            <marker date="1497992483256" expanded="true" signature="2017:2104" ph="/// Gets or sets the maximum depth of the clip volume. ... " />
+            <marker date="1497992483256" expanded="true" signature="2133:2576" ph="/// Initializes a new instance of the &lt;see cref=&quot;Viewport&quot;/&gt; struct. ... " />
+            <marker date="1497992483256" expanded="true" signature="2631:2763" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="2767:3360" ph="/// Initializes a new instance of the &lt;see cref=&quot;Viewport&quot;/&gt; struct. ... " />
+            <marker date="1497992483256" expanded="true" signature="3447:3591" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="3595:3817" ph="/// Initializes a new instance of the &lt;see cref=&quot;Viewport&quot;/&gt; struct. ... " />
+            <marker date="1497992483256" expanded="true" signature="3853:4013" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="4017:4118" ph="/// Gets the size of this resource. ... " />
+            <marker date="1497992483256" expanded="true" signature="4144:4350" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="4230:4346" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="4354:4708" ph="/// Determines whether the specified &lt;see cref=&quot;Viewport&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1497992483256" expanded="true" signature="4802:5036" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="5040:5394" ph="/// Determines whether the specified &lt;see cref=&quot;Viewport&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1497992483256" expanded="true" signature="5484:5521" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="5525:5829" ph="/// Determines whether the specified object is equal to this instance. ... " />
+            <marker date="1497992483256" expanded="true" signature="5871:6007" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="5902:5930" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="6011:6234" ph="/// Returns a hash code for this instance. ... " />
+            <marker date="1497992483256" expanded="true" signature="6270:6610" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="6287:6606" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="6614:6819" ph="/// Implements the operator ==. ... " />
+            <marker date="1497992483256" expanded="true" signature="6936:6978" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="6982:7187" ph="/// Implements the operator !=. ... " />
+            <marker date="1497992483256" expanded="true" signature="7304:7347" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="7351:7524" ph="/// Retrieves a string representation of this object. ... " />
+            <marker date="1497992483256" expanded="true" signature="7560:7758" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="7762:8125" ph="/// Projects a 3D vector from object space into screen space. ... " />
+            <marker date="1497992483256" expanded="true" signature="8215:8356" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="8360:8643" ph="/// Projects a 3D vector from object space into screen space. ... " />
+            <marker date="1497992483256" expanded="true" signature="8725:9217" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="8969:9006" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="9221:9601" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+            <marker date="1497992483256" expanded="true" signature="9693:9879" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="9883:10193" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+            <marker date="1497992483256" expanded="true" signature="10277:10772" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="10731:10768" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="10776:10895" ph="/// Gets the aspect ratio used by the viewport. ... " />
+            <marker date="1497992483256" expanded="true" signature="10922:11046" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="10933:11042" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="10964:11022" ph="{...}" />
+            <marker date="1497992483256" expanded="true" signature="11050:12120" ph="/* Performs an implicit conversion from &lt;see cref=&quot;Viewport&quot;/&gt; to &lt;see cref=&quot;RawViewport&quot;/&gt;. ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SlimTK/ViewportF.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="304" column="55" lean-forward="false" selection-start-line="304" selection-start-column="55" selection-end-line="304" selection-end-column="55" />
+          <folding>
+            <marker date="1497992497932" expanded="true" signature="0:1126" ph="/* Copyright (c) 2010-2014 OpenTK - Alexandre Mutel ... */" />
+            <marker date="1497992497932" expanded="false" signature="1134:1260" ph="..." />
+            <marker date="1497992497932" expanded="true" signature="1278:12363" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="1282:1396" ph="/// Defines the viewport dimensions using float coordinates for (X,Y,Width,Height). ... " />
+            <marker date="1497992497932" expanded="true" signature="1494:12361" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="1500:1611" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+            <marker date="1497992497932" expanded="true" signature="1633:1744" ph="/// Position of the pixel coordinate of the upper-left corner of the viewport. ... " />
+            <marker date="1497992497932" expanded="true" signature="1766:1835" ph="/// Width dimension of the viewport. ... " />
+            <marker date="1497992497932" expanded="true" signature="1861:1931" ph="/// Height dimension of the viewport. ... " />
+            <marker date="1497992497932" expanded="true" signature="1958:2045" ph="/// Gets or sets the minimum depth of the clip volume. ... " />
+            <marker date="1497992497932" expanded="true" signature="2074:2161" ph="/// Gets or sets the maximum depth of the clip volume. ... " />
+            <marker date="1497992497932" expanded="true" signature="2190:2634" ph="/// Initializes a new instance of the &lt;see cref=&quot;ViewportF&quot;/&gt; struct. ... " />
+            <marker date="1497992497932" expanded="true" signature="2698:2830" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="2834:3428" ph="/// Initializes a new instance of the &lt;see cref=&quot;ViewportF&quot;/&gt; struct. ... " />
+            <marker date="1497992497932" expanded="true" signature="3524:3668" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="3672:3895" ph="/// Initializes a new instance of the &lt;see cref=&quot;ViewportF&quot;/&gt; struct. ... " />
+            <marker date="1497992497932" expanded="true" signature="3933:4093" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="4097:4198" ph="/// Gets the size of this resource. ... " />
+            <marker date="1497992497932" expanded="true" signature="4225:4432" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="4312:4428" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="4436:4793" ph="/// Determines whether the specified &lt;see cref=&quot;ViewportF&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1497992497932" expanded="true" signature="4835:5181" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="5185:5542" ph="/// Determines whether the specified &lt;see cref=&quot;ViewportF&quot;/&gt; is equal to this instance. ... " />
+            <marker date="1497992497932" expanded="true" signature="5633:5670" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="5674:5978" ph="/// Determines whether the specified object is equal to this instance. ... " />
+            <marker date="1497992497932" expanded="true" signature="6020:6158" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="6052:6080" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="6162:6385" ph="/// Returns a hash code for this instance. ... " />
+            <marker date="1497992497932" expanded="true" signature="6421:6817" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="6438:6813" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="6821:7026" ph="/// Implements the operator ==. ... " />
+            <marker date="1497992497932" expanded="true" signature="7145:7187" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="7191:7396" ph="/// Implements the operator !=. ... " />
+            <marker date="1497992497932" expanded="true" signature="7515:7558" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="7562:7734" ph="/// Retrieves a string representation of this object. ... " />
+            <marker date="1497992497932" expanded="true" signature="7770:7968" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="7972:8334" ph="/// Projects a 3D vector from object space into screen space. ... " />
+            <marker date="1497992497932" expanded="true" signature="8424:8565" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="8569:8852" ph="/// Projects a 3D vector from object space into screen space. ... " />
+            <marker date="1497992497932" expanded="true" signature="8934:9426" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="9178:9215" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="9430:9810" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+            <marker date="1497992497932" expanded="true" signature="9902:10088" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="10092:10402" ph="/// Converts a screen space point into a corresponding point in world space. ... " />
+            <marker date="1497992497932" expanded="true" signature="10486:10981" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="10940:10977" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="10985:11104" ph="/// Gets the aspect ratio used by the viewport. ... " />
+            <marker date="1497992497932" expanded="true" signature="11131:11260" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="11142:11256" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="11186:11236" ph="{...}" />
+            <marker date="1497992497932" expanded="true" signature="11264:12358" ph="/* Performs an explicit conversion from &lt;see cref=&quot;Viewport&quot;/&gt; to &lt;see cref=&quot;ViewportF&quot;/&gt;. ... */" />
           </folding>
         </state>
       </provider>
