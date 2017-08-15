@@ -11,11 +11,11 @@
     <Copyright>Copyright Jarl Gullberg 2017</Copyright>
   </PropertyGroup>
   <PropertyGroup>
-    <PackageVersion>2.0.0-preview1</PackageVersion>
+    <PackageVersion>2.0.1</PackageVersion>
     <PackageId>SlimTK</PackageId>
     <PackageLicenseUrl>https://www.gnu.org/licenses/gpl-3.0.en.html</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Nihlus/SlimTK</PackageProjectUrl>
-    <PackageReleaseNotes>Initial release on NuGet and port to .NET Standard 2.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Update dependencies.</PackageReleaseNotes>
     <PackageTags>opentk;opengl;slimdx;directx;cross-platform</PackageTags>
     <PackageOutputPath>../nuget</PackageOutputPath>
     <IncludeSymbols>true</IncludeSymbols>
@@ -23,8 +23,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="OpenTK" Version="3.0.0-pre" />
-    <PackageReference Include="System.Numerics.Vectors">
-      <Version>4.4.0-preview1-25305-02</Version>
-    </PackageReference>
+    <PackageReference Include="System.Numerics.Vectors" Version="4.4.0" />
   </ItemGroup>
 </Project>
