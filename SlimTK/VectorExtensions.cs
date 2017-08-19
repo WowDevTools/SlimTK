@@ -29,15 +29,26 @@ namespace SlimTK
 	public static class VectorExtensions
 	{
 		/// <summary>
-        /// Converts a <see cref="System.Numerics.Vector3"/> value to an equivalent
-        /// <see cref="OpenTK.Vector3"/> value.
-        /// </summary>
-        /// <param name="vector">A Vector3f value.</param>
-        /// <returns>The Vector3f as a Vector3.</returns>
+		/// Converts a <see cref="System.Numerics.Vector3"/> value to an equivalent
+		/// <see cref="OpenTK.Vector3"/> value.
+		/// </summary>
+		/// <param name="vector">A System.Numerics.Vector3 value.</param>
+		/// <returns>The System.Numerics.Vector3 as an OpenTK.Vector3.</returns>
         public static Vector3 AsOpenTKVector(this System.Numerics.Vector3 vector)
         {
             return new Vector3(vector.X, vector.Y, vector.Z);
         }
+
+		/// <summary>
+		/// Converts a <see cref="System.Numerics.Vector2"/> value to an equivalent
+		/// <see cref="OpenTK.Vector2"/> value.
+		/// </summary>
+		/// <param name="vector">A System.Numerics.Vector2 value.</param>
+		/// <returns>The System.Numerics.Vector2 as an OpenTK.Vector2.</returns>
+		public static Vector2 AsOpenTKVector(this System.Numerics.Vector2 vector)
+		{
+			return new Vector2(vector.X, vector.Y);
+		}
 
         /// <summary>
         /// Converts a <see cref="OpenTK.Vector3"/> value to an equivalent
