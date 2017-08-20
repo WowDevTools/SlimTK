@@ -29,6 +29,17 @@ namespace SlimTK
 	public static class VectorExtensions
 	{
 		/// <summary>
+		/// Converts a <see cref="System.Numerics.Quaternion"/> value to an equivalent
+		/// <see cref="OpenTK.Quaternion"/> value.
+		/// </summary>
+		/// <param name="quaternion">A System.Numerics.Quaternion value.</param>
+		/// <returns>The System.Numerics.Quaternion as an OpenTK.Quaternion.</returns>
+		public static Quaternion AsOpenTKQuaternion(this System.Numerics.Quaternion quaternion)
+		{
+			return new Quaternion(quaternion.X, quaternion.Y, quaternion.Z, quaternion.W);
+		}
+
+		/// <summary>
 		/// Converts a <see cref="System.Numerics.Vector3"/> value to an equivalent
 		/// <see cref="OpenTK.Vector3"/> value.
 		/// </summary>
