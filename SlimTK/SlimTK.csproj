@@ -22,7 +22,7 @@
     <RepositoryUrl>https://github.com/Nihlus/SlimTK</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="OpenTK" Version="3.0.0-pre" />
+    <PackageReference Include="OpenTK" Version="3.0.0-git00002" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.4.0" />
   </ItemGroup>
 </Project>
